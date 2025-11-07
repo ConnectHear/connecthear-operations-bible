@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectHear Operations Bible v2.0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --sidebar-bg: #f8fafc;
+            --sidebar-border: #e2e8f0;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --hover-bg: #e0e7ff;
+            --content-bg: #ffffff;
+            --header-bg: #ffffff;
+            --search-border: #cbd5e1;
+            --accent-color: #0ea5e9;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text-primary);
+            line-height: 1.6;
+            background: #f1f5f9;
+        }
+
+        /* Header */
+        .header {
+            background: var(--header-bg);
+            border-bottom: 1px solid var(--sidebar-border);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .version-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .search-container {
+            position: relative;
+            width: 400px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border: 2px solid var(--search-border);
+            border-radius: 0.5rem;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            margin-top: 73px;
+            height: calc(100vh - 73px);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 320px;
+            background: var(--sidebar-bg);
+            border-right: 1px solid var(--sidebar-border);
+            overflow-y: auto;
+            padding: 1.5rem 0;
+        }
+
+        .sidebar::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--search-border);
+            border-radius: 4px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .nav-section {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-department {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .nav-department:hover {
+            background: var(--hover-bg);
+        }
+
+        .nav-department.active {
+            background: var(--hover-bg);
+            color: var(--primary-color);
+        }
+
+        .expand-icon {
+            margin-left: auto;
+            transition: transform 0.2s;
+            font-size: 0.75rem;
+        }
+
+        .expand-icon.expanded {
+            transform: rotate(90deg);
+        }
+
+        .nav-areas {
+            display: none;
+            padding-left: 1rem;
+        }
+
+        .nav-areas.visible {
+            display: block;
+        }
+
+        .nav-area {
+            padding: 0.5rem 1.5rem;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .nav-area:hover {
+            background: var(--hover-bg);
+            color: var(--text-primary);
+        }
+
+        .nav-workstreams {
+            display: none;
+            padding-left: 2rem;
+        }
+
+        .nav-workstreams.visible {
+            display: block;
+        }
+
+        .nav-workstream {
+            padding: 0.4rem 1.5rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+
+        .nav-workstream:hover {
+            background: var(--hover-bg);
+            color: var(--text-primary);
+        }
+
+        .nav-workstream.active {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem 3rem;
+            background: var(--content-bg);
+        }
+
+        .main-content::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .main-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .main-content::-webkit-scrollbar-thumb {
+            background: var(--search-border);
+            border-radius: 5px;
+        }
+
+        /* Breadcrumbs */
+        .breadcrumbs {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        .breadcrumbs span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            margin-bottom: 3rem;
+        }
+
+        .content-section h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .content-section h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .content-section h4 {
+            color: var(--text-primary);
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .workstream-card {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .workstream-header {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .workstream-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .meta-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 0.25rem;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-value {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .description {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+        }
+
+        .tag.frequency {
+            background: #0ea5e9;
+        }
+
+        .tag.owner {
+            background: #8b5cf6;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--sidebar-border);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: #f8fafc;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        li {
+            margin: 0.5rem 0;
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .sidebar {
+                width: 280px;
+            }
+
+            .search-container {
+                width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .search-container {
+                width: 100%;
+            }
+
+            .sidebar {
+                position: fixed;
+                left: -320px;
+                top: 73px;
+                height: calc(100vh - 73px);
+                transition: left 0.3s;
+                z-index: 50;
+                box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            }
+
+            .sidebar.mobile-visible {
+                left: 0;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-secondary);
+        }
+
+        .empty-state h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1>
+            🔷 ConnectHear Operations Bible
+            <span class="version-badge">v2.0</span>
+        </h1>
+        <div class="search-container">
+            <span class="search-icon">🔍</span>
+            <input 
+                type="text" 
+                class="search-input" 
+                id="searchInput"
+                placeholder="Search workstreams, owners, departments..."
+            >
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <!-- Department: Business Development -->
+            <div class="nav-section">
+                <div class="nav-department" onclick="toggleDepartment('bd')">
+                    <span>🔷</span>
+                    <span>Business Development</span>
+                    <span class="expand-icon" id="bd-icon">▶</span>
+                </div>
+                <div class="nav-areas" id="bd-areas">
+                    <!-- Area: Partnerships & Sales -->
+                    <div class="nav-area" onclick="toggleArea('bd-partnerships'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Partnerships & Sales</span>
+                    </div>
+                    <div class="nav-workstreams" id="bd-partnerships-workstreams">
+                        <div class="nav-workstream" onclick="scrollToSection('bd-lead-sourcing'); event.stopPropagation();">
+                            Lead Sourcing & Tracking
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-outreach'); event.stopPropagation();">
+                            Outreach & Demos
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-proposal'); event.stopPropagation();">
+                            Proposal Development
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-contracting'); event.stopPropagation();">
+                            Contracting & Closure
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-renewal'); event.stopPropagation();">
+                            Renewal & Upsell
+                        </div>
+                    </div>
+
+                    <!-- Area: Client Management -->
+                    <div class="nav-area" onclick="toggleArea('bd-client'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Client Management</span>
+                    </div>
+                    <div class="nav-workstreams" id="bd-client-workstreams">
+                        <div class="nav-workstream" onclick="scrollToSection('bd-onboarding'); event.stopPropagation();">
+                            Account Onboarding
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-sla'); event.stopPropagation();">
+                            SLA Tracking
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-feedback'); event.stopPropagation();">
+                            Client Feedback
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-relationship'); event.stopPropagation();">
+                            Relationship Building
+                        </div>
+                    </div>
+
+                    <!-- Area: Proposals & Grants -->
+                    <div class="nav-area" onclick="toggleArea('bd-grants'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Proposals & Grants Support</span>
+                    </div>
+                    <div class="nav-workstreams" id="bd-grants-workstreams">
+                        <div class="nav-workstream" onclick="scrollToSection('bd-grants-scanning'); event.stopPropagation();">
+                            Opportunity Scanning
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-grants-evaluation'); event.stopPropagation();">
+                            Go/No-Go Evaluation
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-grants-concept'); event.stopPropagation();">
+                            Concept Note Preparation
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('bd-grants-handoff'); event.stopPropagation();">
+                            Handoff to Finance
+                        </div>
+                    </div>
+
+                    <!-- More areas abbreviated for space -->
+                    <div class="nav-area" onclick="toggleArea('bd-expansion'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Market Expansion</span>
+                    </div>
+                    <div class="nav-area" onclick="toggleArea('bd-events'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Events & Demos</span>
+                    </div>
+                    <div class="nav-area" onclick="toggleArea('bd-coordination'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Internal Coordination</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Department: Finance & Compliance -->
+            <div class="nav-section">
+                <div class="nav-department" onclick="toggleDepartment('finance')">
+                    <span>🔷</span>
+                    <span>Finance & Compliance</span>
+                    <span class="expand-icon" id="finance-icon">▶</span>
+                </div>
+                <div class="nav-areas" id="finance-areas">
+                    <div class="nav-area" onclick="toggleArea('finance-ops'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Finance Operations</span>
+                    </div>
+                    <div class="nav-workstreams" id="finance-ops-workstreams">
+                        <div class="nav-workstream" onclick="scrollToSection('finance-payable'); event.stopPropagation();">
+                            Accounts Payable
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('finance-receivable'); event.stopPropagation();">
+                            Accounts Receivable
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('finance-payroll'); event.stopPropagation();">
+                            Payroll & Stipends
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('finance-expenses'); event.stopPropagation();">
+                            Expense Claims
+                        </div>
+                        <div class="nav-workstream" onclick="scrollToSection('finance-petty-cash'); event.stopPropagation();">
+                            Petty Cash
+                        </div>
+                    </div>
+
+                    <div class="nav-area" onclick="toggleArea('finance-accounting'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Accounting & Reporting</span>
+                    </div>
+                    <div class="nav-area" onclick="toggleArea('finance-grants'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Grants Management</span>
+                    </div>
+                    <div class="nav-area" onclick="toggleArea('finance-legal'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Legal & Compliance</span>
+                    </div>
+                    <div class="nav-area" onclick="toggleArea('finance-procurement'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Procurement & Vendor</span>
+                    </div>
+                    <div class="nav-area" onclick="toggleArea('finance-audit'); event.stopPropagation();">
+                        <span>📍</span>
+                        <span>Audit & Controls</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Placeholder for other departments -->
+            <div class="nav-section">
+                <div class="nav-department">
+                    <span>🔷</span>
+                    <span>Content & Design</span>
+                    <span class="expand-icon">▶</span>
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-department">
+                    <span>🔷</span>
+                    <span>Product & Projects</span>
+                    <span class="expand-icon">▶</span>
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-department">
+                    <span>🔷</span>
+                    <span>Sign Language</span>
+                    <span class="expand-icon">▶</span>
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-department">
+                    <span>🔷</span>
+                    <span>Marketing</span>
+                    <span class="expand-icon">▶</span>
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-department">
+                    <span>🔷</span>
+                    <span>AdminOps</span>
+                    <span class="expand-icon">▶</span>
+                </div>
+            </div>
+
+            <div class="nav-section">
+                <div class="nav-department">
+                    <span>🔷</span>
+                    <span>Leadership / PMO</span>
+                    <span class="expand-icon">▶</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="mainContent">
+            <div class="breadcrumbs" id="breadcrumbs">
+                <span>📍 Home</span>
+            </div>
+
+            <!-- Welcome Section -->
+            <div class="content-section" id="home-section">
+                <h2>🔷 Welcome to ConnectHear Operations Bible</h2>
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+                    <strong style="color: var(--primary-color);">Version 2.0</strong> • Last Updated: November 2025
+                </p>
+                
+                <div style="background: #eff6ff; border-left: 4px solid var(--primary-color); padding: 1.5rem; border-radius: 0.5rem; margin-bottom: 2rem;">
+                    <h3 style="margin-top: 0;">📚 How to Use This Document</h3>
+                    <ul>
+                        <li><strong>Navigate:</strong> Use the sidebar to browse departments, areas, and workstreams</li>
+                        <li><strong>Search:</strong> Type in the search bar to find specific processes, owners, or keywords</li>
+                        <li><strong>RACI Key:</strong> R = Responsible, A = Accountable, C = Consulted, I = Informed</li>
+                        <li><strong>Hierarchy:</strong> Department → Area → Workstream → Process</li>
+                    </ul>
+                </div>
+
+                <h3>🎯 Quick Links</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border); cursor: pointer;" onclick="toggleDepartment('bd')">
+                        <h4 style="margin: 0;">🔷 Business Development</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Sales, partnerships, grants, market expansion</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border); cursor: pointer;" onclick="toggleDepartment('finance')">
+                        <h4 style="margin: 0;">🔷 Finance & Compliance</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Accounting, payroll, grants, tax compliance</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border);">
+                        <h4 style="margin: 0;">🔷 Content & Design</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Brand, product design, video, marketing creatives</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border);">
+                        <h4 style="margin: 0;">🔷 Product & Projects</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Product management, engineering, AI R&D, QA</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border);">
+                        <h4 style="margin: 0;">🔷 Sign Language</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Interpretation, training, quality, lexicon</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border);">
+                        <h4 style="margin: 0;">🔷 Marketing</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Campaigns, social media, PR, events, analytics</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border);">
+                        <h4 style="margin: 0;">🔷 AdminOps</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">HR, procurement, facilities, IT, policies</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--sidebar-border);">
+                        <h4 style="margin: 0;">🔷 Leadership / PMO</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Strategic planning, oversight, org development</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BD: Lead Sourcing & Tracking -->
+            <div class="content-section hidden" id="bd-lead-sourcing">
+                <div class="breadcrumbs">
+                    <span>🔷 Business Development</span> <span>→</span>
+                    <span>📍 Partnerships & Sales</span> <span>→</span>
+                    <span>Lead Sourcing & Tracking</span>
+                </div>
+
+                <div class="workstream-card">
+                    <div class="workstream-header">Lead Sourcing & Tracking</div>
+                    
+                    <div class="workstream-meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Frequency</div>
+                            <div class="meta-value">Weekly (CRM updates), Daily (new leads)</div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Owner</div>
+                            <div class="meta-value">BD Associate (Hiba/Ahmed)</div>
+                        </div>
+                    </div>
+
+                    <div class="description">
+                        <h4>Description</h4>
+                        <p>Maintaining CRM database with all incoming leads from multiple sources including direct inquiries, indirect sources (interpreters receiving requests, event interactions, leadership networking), social media, and referrals. Track lead progression through defined pipeline stages.</p>
+                    </div>
+
+                    <div class="description">
+                        <h4>Output</h4>
+                        <ul>
+                            <li>Updated CRM sheet with all leads</li>
+                            <li>Lead status tracking with pipeline stages: New → Contacted → Qualified → Won/Lost</li>
+                            <li>Indirect lead register with source attribution</li>
+                        </ul>
+                    </div>
+
+                    <div class="description">
+                        <h4>Dependencies</h4>
+                        <ul>
+                            <li>Marketing (for social media traffic and campaigns)</li>
+                            <li>Sign Language Department (for interpreter-sourced leads)</li>
+                            <li>Leadership (for networking-sourced opportunities)</li>
+                        </ul>
+                    </div>
+
+                    <div class="description">
+                        <h4>RACI Matrix</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Role</th>
+                                    <th>R</th>
+                                    <th>A</th>
+                                    <th>C</th>
+                                    <th>I</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>BD Associate (Hiba/Ahmed)</td>
+                                    <td>✅</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>BD Manager/Azima</td>
+                                    <td></td>
+                                    <td>✅</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Interpreters</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>✅</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Marketing</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>✅</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Leadership</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>✅</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="description">
+                        <h4>Key Process Notes</h4>
+                        <ul>
+                            <li><strong>Indirect Lead Scenarios:</strong>
+                                <ul>
+                                    <li>Interpreters receive calls from employees (4 free calls, then 5th triggers BD contact)</li>
+                                    <li>Interpreters collect company requests at events and forward to BD</li>
+                                    <li>Leadership meets potential clients at events/conferences</li>
+                                </ul>
+                            </li>
+                            <li><strong>Tracking Requirements:</strong> Simple stage tracking for incentive calculation</li>
+                            <li><strong>Lead Qualification:</strong> Record employer details, decision-maker info, and service interest</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- More sections will be generated by script -->
+            
+        </main>
+    </div>
+
+    <script>
+        // Navigation Functions
+        function toggleDepartment(deptId) {
+            const areas = document.getElementById(`${deptId}-areas`);
+            const icon = document.getElementById(`${deptId}-icon`);
+            
+            if (areas.classList.contains('visible')) {
+                areas.classList.remove('visible');
+                icon.classList.remove('expanded');
+            } else {
+                // Close all other departments
+                document.querySelectorAll('.nav-areas.visible').forEach(el => {
+                    el.classList.remove('visible');
+                });
+                document.querySelectorAll('.expand-icon.expanded').forEach(el => {
+                    el.classList.remove('expanded');
+                });
+                
+                areas.classList.add('visible');
+                icon.classList.add('expanded');
+            }
+        }
+
+        function toggleArea(areaId) {
+            const workstreams = document.getElementById(`${areaId}-workstreams`);
+            if (workstreams) {
+                if (workstreams.classList.contains('visible')) {
+                    workstreams.classList.remove('visible');
+                } else {
+                    workstreams.classList.add('visible');
+                }
+            }
+        }
+
+        function scrollToSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.add('hidden');
+            });
+            
+            // Show selected section
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.remove('hidden');
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                
+                // Update active state in nav
+                document.querySelectorAll('.nav-workstream').forEach(ws => {
+                    ws.classList.remove('active');
+                });
+                event.target.classList.add('active');
+            }
+        }
+
+        // Search Functionality
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            
+            if (searchTerm === '') {
+                // Show home section
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                document.getElementById('home-section').classList.remove('hidden');
+                return;
+            }
+            
+            // Filter navigation items
+            document.querySelectorAll('.nav-workstream').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    // Expand parent areas and departments
+                    const parent = item.closest('.nav-workstreams');
+                    if (parent) {
+                        parent.classList.add('visible');
+                        const grandparent = parent.closest('.nav-areas');
+                        if (grandparent) {
+                            grandparent.classList.add('visible');
+                        }
+                    }
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Initialize - show home section
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('home-section').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>

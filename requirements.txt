@@ -1,0 +1,20 @@
+# ConnectHear Operations Portal - Python Requirements
+
+# No external dependencies required for core functionality!
+# The parser and generator use only Python standard library:
+# - re (regex)
+# - json (JSON handling)
+# - pathlib (file handling)
+# - typing (type hints)
+
+# Optional: Testing
+pytest>=7.0.0
+pytest-cov>=4.0.0
+
+# Optional: Development
+black>=23.0.0  # Code formatting
+flake8>=6.0.0  # Linting
+mypy>=1.0.0    # Type checking
+
+# Optional: Watch mode for development
+watchdog>=3.0.0  # File watching for auto-rebuild

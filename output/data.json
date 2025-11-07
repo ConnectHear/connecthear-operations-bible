@@ -1,0 +1,1441 @@
+{
+  "departments": [
+    {
+      "id": "business-development",
+      "name": "Business Development",
+      "emoji": "🔷",
+      "areas": [
+        {
+          "id": "partnerships-sales",
+          "name": "Partnerships & Sales",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "lead-sourcing-tracking",
+              "name": "Lead Sourcing & Tracking",
+              "description": "Maintaining CRM database with all incoming leads from multiple sources including direct inquiries, indirect sources (interpreters receiving requests, event interactions, leadership networking), social media, and referrals. Track lead progression through defined pipeline stages.",
+              "frequency": "Weekly (CRM updates), Daily (new lead logging)",
+              "output": [
+                "Updated CRM sheet with all leads",
+                "Lead status tracking with pipeline stages: New → Contacted → Qualified → Won/Lost",
+                "Indirect lead register with source attribution"
+              ],
+              "dependencies": [
+                {
+                  "team": "Marketing",
+                  "reason": "for social media traffic and campaigns"
+                },
+                {
+                  "team": "Sign Language Department",
+                  "reason": "for interpreter-sourced leads from calls and events"
+                },
+                {
+                  "team": "Leadership",
+                  "reason": "for networking-sourced opportunities"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "BD Associate (Hiba/Ahmed)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Interpreters",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "Marketing",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": true
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Key Process Notes",
+                  "content": [
+                    "**Indirect Lead Scenarios:**",
+                    "Interpreters receive calls from employees (4 free calls, then 5th triggers BD contact)",
+                    "Interpreters collect company requests at events and forward to BD",
+                    "Leadership meets potential clients at events/conferences",
+                    "**Tracking Requirements:** Simple stage tracking for incentive calculation",
+                    "**Lead Qualification:** Record employer details, decision-maker info, and service interest"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Maintaining CRM database with all incoming leads from multiple sources including direct inquiries, indirect sources (interpreters receiving requests, event interactions, leadership networking), social media, and referrals. Track lead progression through defined pipeline stages.\n\n**Frequency:** Weekly (CRM updates), Daily (new lead logging)\n\n**Output:** \n- Updated CRM sheet with all leads\n- Lead status tracking with pipeline stages: New → Contacted → Qualified → Won/Lost\n- Indirect lead register with source attribution\n\n**Dependencies:** \n- Marketing (for social media traffic and campaigns)\n- Sign Language Department (for interpreter-sourced leads from calls and events)\n- Leadership (for networking-sourced opportunities)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate (Hiba/Ahmed) | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Interpreters | | | ✅ | |\n| Marketing | | | ✅ | |\n| Leadership | | | | ✅ |\n\n**Key Process Notes:**\n- **Indirect Lead Scenarios:**\n  - Interpreters receive calls from employees (4 free calls, then 5th triggers BD contact)\n  - Interpreters collect company requests at events and forward to BD\n  - Leadership meets potential clients at events/conferences\n- **Tracking Requirements:** Simple stage tracking for incentive calculation\n- **Lead Qualification:** Record employer details, decision-maker info, and service interest\n\n---\n"
+            },
+            {
+              "id": "outreach-demos",
+              "name": "Outreach & Demos",
+              "description": "- **For App Services:** Conduct email outreach campaigns, schedule product demos, present ConnectHear app capabilities, and gather feedback for proposal development - **For Training/Interpretation Services:** Send service details, capabilities overview, and schedule discussion calls - Maintain recurring task system in CRM for consistent follow-up activity",
+              "frequency": "Weekly (outreach campaigns), Per Lead (demos)",
+              "output": [
+                "Outreach email logs with response tracking",
+                "Demo session recordings and feedback notes",
+                "Next-step requirements documented for proposal phase"
+              ],
+              "dependencies": [
+                {
+                  "team": "Product Team",
+                  "reason": "for app demo support and technical questions"
+                },
+                {
+                  "team": "Sign Language Department",
+                  "reason": "for service capability details"
+                },
+                {
+                  "team": "Marketing",
+                  "reason": "for presentation materials"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Product Team",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "SL Department",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Key Process Notes",
+                  "content": [
+                    "CRM must include recurring task system for daily BD activity planning",
+                    "Demo feedback directly feeds into proposal customization",
+                    "Track demo-to-proposal conversion rate"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** \n- **For App Services:** Conduct email outreach campaigns, schedule product demos, present ConnectHear app capabilities, and gather feedback for proposal development\n- **For Training/Interpretation Services:** Send service details, capabilities overview, and schedule discussion calls\n- Maintain recurring task system in CRM for consistent follow-up activity\n\n**Frequency:** Weekly (outreach campaigns), Per Lead (demos)\n\n**Output:** \n- Outreach email logs with response tracking\n- Demo session recordings and feedback notes\n- Next-step requirements documented for proposal phase\n\n**Dependencies:** \n- Product Team (for app demo support and technical questions)\n- Sign Language Department (for service capability details)\n- Marketing (for presentation materials)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Product Team | | | ✅ | |\n| SL Department | | | ✅ | |\n\n**Key Process Notes:**\n- CRM must include recurring task system for daily BD activity planning\n- Demo feedback directly feeds into proposal customization\n- Track demo-to-proposal conversion rate\n\n---\n"
+            },
+            {
+              "id": "proposal-development",
+              "name": "Proposal Development",
+              "description": "Prepare comprehensive proposal decks and documents based on client requirements, incorporating inputs from technical teams, pricing from Finance, and service specifications from delivery departments.",
+              "frequency": "Per Lead",
+              "output": [
+                "Customized proposal deck/document",
+                "Pricing sheet with breakdown",
+                "Service package specification",
+                "Timeline and delivery milestones"
+              ],
+              "dependencies": [
+                {
+                  "team": "Finance",
+                  "reason": "for pricing confirmation and approval"
+                },
+                {
+                  "team": "Product Team",
+                  "reason": "for technical feasibility"
+                },
+                {
+                  "team": "Sign Language Department",
+                  "reason": "for interpreter availability"
+                },
+                {
+                  "team": "Content & Design",
+                  "reason": "for proposal formatting"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "Delivery Teams",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "Content & Design",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": true
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Prepare comprehensive proposal decks and documents based on client requirements, incorporating inputs from technical teams, pricing from Finance, and service specifications from delivery departments.\n\n**Frequency:** Per Lead\n\n**Output:** \n- Customized proposal deck/document\n- Pricing sheet with breakdown\n- Service package specification\n- Timeline and delivery milestones\n\n**Dependencies:** \n- Finance (for pricing confirmation and approval)\n- Product Team (for technical feasibility)\n- Sign Language Department (for interpreter availability)\n- Content & Design (for proposal formatting)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Finance Associate (Umaima) | | | ✅ | |\n| Delivery Teams | | | ✅ | |\n| Content & Design | | | ✅ | |\n| Leadership | | | | ✅ |\n\n---\n"
+            },
+            {
+              "id": "contracting-closure",
+              "name": "Contracting & Closure",
+              "description": "Finalize contracts with legal and financial terms, obtain signatures from all parties, and archive signed agreements. **Critical Gap:** Currently only app services have proper contracts (Digital Services Agreement). Training and interpretation services rely on MOUs which are not legally binding and create revenue recognition and payment risks.",
+              "frequency": "Per Deal",
+              "output": [
+                "Signed contract (Digital Services Agreement for app, Service Agreement for training/interpretation)",
+                "**Mandatory:** Purchase Order (PO) from client before service delivery begins",
+                "Contract archived in shared drive with proper naming convention",
+                "Contract terms logged in CRM for renewal tracking"
+              ],
+              "dependencies": [
+                {
+                  "team": "Finance",
+                  "reason": "for contract review, terms approval, and PO verification"
+                },
+                {
+                  "team": "Legal",
+                  "reason": "for contract language and compliance, if applicable"
+                },
+                {
+                  "team": "Leadership",
+                  "reason": "for final approval on significant deals"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Associate",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": true
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Critical Implementation Requirements",
+                  "content": [
+                    "**New Policy:** No service delivery without Purchase Order (PO) from client",
+                    "**Contract Development Needed:** Create standard Service Agreements for:",
+                    "Interpretation services (hourly/event-based)",
+                    "Training programs (corporate/public batches)",
+                    "**Revenue Protection:** Contracts ensure proper invoicing, payment terms, and reduce delayed payment risk",
+                    "**PO Requirement:** Ensures client's finance department is aware and payment is budgeted"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Finalize contracts with legal and financial terms, obtain signatures from all parties, and archive signed agreements. **Critical Gap:** Currently only app services have proper contracts (Digital Services Agreement). Training and interpretation services rely on MOUs which are not legally binding and create revenue recognition and payment risks.\n\n**Frequency:** Per Deal\n\n**Output:** \n- Signed contract (Digital Services Agreement for app, Service Agreement for training/interpretation)\n- **Mandatory:** Purchase Order (PO) from client before service delivery begins\n- Contract archived in shared drive with proper naming convention\n- Contract terms logged in CRM for renewal tracking\n\n**Dependencies:** \n- Finance (for contract review, terms approval, and PO verification)\n- Legal (for contract language and compliance, if applicable)\n- Leadership (for final approval on significant deals)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Finance Associate | | | ✅ | |\n| Leadership | | | | ✅ |\n\n**Critical Implementation Requirements:**\n- **New Policy:** No service delivery without Purchase Order (PO) from client\n- **Contract Development Needed:** Create standard Service Agreements for:\n  - Interpretation services (hourly/event-based)\n  - Training programs (corporate/public batches)\n- **Revenue Protection:** Contracts ensure proper invoicing, payment terms, and reduce delayed payment risk\n- **PO Requirement:** Ensures client's finance department is aware and payment is budgeted\n\n\n\n---\n"
+            },
+            {
+              "id": "renewal-upsell",
+              "name": "Renewal & Upsell",
+              "description": "Track contract expiration dates, proactively reach out to clients for renewal discussions, negotiate updated terms, and identify opportunities for service expansion.",
+              "frequency": "Quarterly (pipeline review), Per Contract (renewal outreach 60-90 days before expiry)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Associate",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Track contract expiration dates, proactively reach out to clients for renewal discussions, negotiate updated terms, and identify opportunities for service expansion.\n\n**Frequency:** Quarterly (pipeline review), Per Contract (renewal outreach 60-90 days before expiry)\n\n**Output:** Renewal agreements, upsell proposals, updated contract database\n\n**Dependencies:** Finance (for updated pricing), Delivery Teams (for service performance data)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Finance Associate | | | ✅ | |\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "client-management",
+          "name": "Client Management",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "account-onboarding",
+              "name": "Account Onboarding",
+              "description": "**App Services Only:** Welcome new client organizations, conduct kickoff meetings, align technical requirements with Product Team, and coordinate interpreter pool assignment.",
+              "frequency": "Per Client",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Product Team",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** **App Services Only:** Welcome new client organizations, conduct kickoff meetings, align technical requirements with Product Team, and coordinate interpreter pool assignment.\n\n**Frequency:** Per Client\n\n**Output:** Welcome email, kickoff meeting notes, client setup in app, interpreter assignment\n\n**Dependencies:** Product Team (for technical setup), Sign Language Department (for interpreter pool)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Product Team | | | ✅ | |\n\n---\n"
+            },
+            {
+              "id": "sla-tracking",
+              "name": "SLA Tracking",
+              "description": "**Currently Not Implemented - Future Requirement:** Monitor service performance metrics against contracted SLAs and send regular performance reports to clients.",
+              "frequency": "Monthly (client reports), Weekly (internal tracking)",
+              "output": [
+                "Monthly/Quarterly client performance reports (call metrics, response time, duration, issues)",
+                "Internal SLA dashboard"
+              ],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Product Team",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                },
+                {
+                  "role": "Lead Interpreter",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Implementation Requirements",
+                  "content": [
+                    "Develop reporting template",
+                    "Set up analytics dashboard",
+                    "Define SLA thresholds",
+                    "Integrate with ERPNext service delivery marking"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** **Currently Not Implemented - Future Requirement:** Monitor service performance metrics against contracted SLAs and send regular performance reports to clients.\n\n**Frequency:** Monthly (client reports), Weekly (internal tracking)\n\n**Output:** \n- Monthly/Quarterly client performance reports (call metrics, response time, duration, issues)\n- Internal SLA dashboard\n\n**Dependencies:** Product Team (for analytics), Sign Language Department (for service data)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Product Team | | | ✅ | |\n| Lead Interpreter | | | ✅ | |\n\n**Implementation Requirements:**\n- Develop reporting template\n- Set up analytics dashboard\n- Define SLA thresholds\n- Integrate with ERPNext service delivery marking\n\n---\n"
+            },
+            {
+              "id": "client-feedback",
+              "name": "Client Feedback",
+              "description": "Systematically collect client feedback after service delivery. Mark services as \"Delivered\" in ERPNext to trigger automated feedback collection.",
+              "frequency": "Per Service Delivery, Monthly (compilation)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Systematically collect client feedback after service delivery. Mark services as \"Delivered\" in ERPNext to trigger automated feedback collection.\n\n**Frequency:** Per Service Delivery, Monthly (compilation)\n\n**Output:** Client feedback forms, aggregated summary, client health sheet, testimonials\n\n**Dependencies:** AdminOps (for survey tools), Marketing (for testimonials), Delivery Teams (for service completion)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n\n---\n"
+            },
+            {
+              "id": "relationship-building",
+              "name": "Relationship Building",
+              "description": "Maintain ongoing relationships through check-ins, sharing updates, celebrating occasions (Eid, holidays), and maintaining detailed contact intelligence.",
+              "frequency": "Quarterly (formal check-ins), Ongoing (occasion-based outreach)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Key Process Notes",
+                  "content": [
+                    "Maintain \"Key Facts Sheet\" for each POC with personal details",
+                    "Example: Note daughter's dance recital for rapport building",
+                    "Send Eid greetings, public holiday messages, milestone congratulations"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Maintain ongoing relationships through check-ins, sharing updates, celebrating occasions (Eid, holidays), and maintaining detailed contact intelligence.\n\n**Frequency:** Quarterly (formal check-ins), Ongoing (occasion-based outreach)\n\n**Output:** Check-in meeting notes, client contact intelligence database, relationship health tracking\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n\n**Key Process Notes:**\n- Maintain \"Key Facts Sheet\" for each POC with personal details\n- Example: Note daughter's dance recital for rapport building\n- Send Eid greetings, public holiday messages, milestone congratulations\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "proposals-grants-support",
+          "name": "Proposals & Grants Support",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "opportunity-scanning",
+              "name": "Opportunity Scanning",
+              "description": "Continuously identify grant opportunities and funding calls. **New Structure:** Mir (Project Associate/Public Affairs) works alongside BD team.",
+              "frequency": "Weekly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Mir (Projects/Public Affairs)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Continuously identify grant opportunities and funding calls. **New Structure:** Mir (Project Associate/Public Affairs) works alongside BD team.\n\n**Frequency:** Weekly\n\n**Output:** Grant opportunity tracker with deadlines, eligibility, requirements\n\n**Dependencies:** Leadership (for strategic alignment), Projects (Mir - for public affairs)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Mir (Projects/Public Affairs) | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n\n---\n"
+            },
+            {
+              "id": "gono-go-evaluation",
+              "name": "Go/No-Go Evaluation",
+              "description": "Evaluate grant opportunities against eligibility, strategic fit, resources, and ROI.",
+              "frequency": "Weekly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Mir (Projects)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance/Product/Leadership",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Evaluate grant opportunities against eligibility, strategic fit, resources, and ROI.\n\n**Frequency:** Weekly\n\n**Output:** Go/No-Go decision matrix, resource assessment, strategic alignment justification\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Mir (Projects) | ✅ | | | |\n| Finance/Product/Leadership | | | ✅ | |\n\n---\n"
+            },
+            {
+              "id": "concept-note-preparation",
+              "name": "Concept Note Preparation",
+              "description": "Draft tailored concept notes specific to each grant, gathering inputs from relevant teams.",
+              "frequency": "Per Grant",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Mir (Projects)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "All Relevant Depts",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Draft tailored concept notes specific to each grant, gathering inputs from relevant teams.\n\n**Frequency:** Per Grant\n\n**Output:** Grant-specific concept note, budget breakdown, supporting documentation\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Mir (Projects) | ✅ | | | |\n| All Relevant Depts | | | ✅ | |\n\n---\n"
+            },
+            {
+              "id": "handoff-to-finance",
+              "name": "Handoff to Finance",
+              "description": "Transfer completed concept notes, final application documents, and supporting materials to Finance team.",
+              "frequency": "Per Grant",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Associate",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Transfer completed concept notes, final application documents, and supporting materials to Finance team.\n\n**Frequency:** Per Grant\n\n**Output:** Complete application package, budget documentation, timeline and reporting requirements\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Finance Associate | | ✅ | | |\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "market-expansion",
+          "name": "Market Expansion",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "regionaldomain-analysis",
+              "name": "Regional/Domain Analysis",
+              "description": "Research expansion opportunities in new regions or industry verticals. Assess market size, regulations, accessibility spending, GDP, competitive landscape.",
+              "frequency": "Quarterly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Research expansion opportunities in new regions or industry verticals. Assess market size, regulations, accessibility spending, GDP, competitive landscape.\n\n**Frequency:** Quarterly\n\n**Output:** One-page market scan, entry strategy recommendations, risk assessment, regulatory requirements\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Leadership | | | ✅ | |\n\n**Examples:**\n- **Geographic:** Africa vs Middle East - regulations, GDP, accessibility spending\n- **Industry:** Healthcare, Education, Banking - specific needs\n- Example: DHA requiring Filipino Sign Language - unexpected localization need\n\n---\n"
+            },
+            {
+              "id": "partnership-identification",
+              "name": "Partnership Identification",
+              "description": "Identify and approach potential local partners, resellers, or collaborators in target markets.",
+              "frequency": "Quarterly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Identify and approach potential local partners, resellers, or collaborators in target markets.\n\n**Frequency:** Quarterly\n\n**Output:** Target partner list, partnership model proposals, initial outreach, evaluation criteria\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Leadership | | | ✅ | |\n\n---\n"
+            },
+            {
+              "id": "localization-input",
+              "name": "Localization Input",
+              "description": "Document specific local requirements including sign language variants, cultural adaptations, regulatory compliance, and service customizations.",
+              "frequency": "Per Expansion Initiative",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Product/SL/Content Teams",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Document specific local requirements including sign language variants, cultural adaptations, regulatory compliance, and service customizations.\n\n**Frequency:** Per Expansion Initiative\n\n**Output:** Localization requirements document (sign language variants, translations, cultural considerations, compliance needs)\n\n**Dependencies:** Product Team, Sign Language Department, Content & Design\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Product/SL/Content Teams | | | ✅ | |\n\n---\n"
+            },
+            {
+              "id": "feasibility-report",
+              "name": "Feasibility Report",
+              "description": "Compile comprehensive feasibility analysis combining market research, partnerships, localization, and financial projections.",
+              "frequency": "Per Expansion Case",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance/Leadership",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Compile comprehensive feasibility analysis combining market research, partnerships, localization, and financial projections.\n\n**Frequency:** Per Expansion Case\n\n**Output:** Comprehensive feasibility report with market analysis, partnerships, localization costs, financial projections, risk assessment, go/no-go recommendation\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Finance/Leadership | | | ✅ | |\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "events-demos",
+          "name": "Events & Demos",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "event-pipeline",
+              "name": "Event Pipeline",
+              "description": "Maintain annual and quarterly event calendar, evaluate ROI for each event type.",
+              "frequency": "Quarterly (planning), Ongoing (updates)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Marketing Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Key Process Notes",
+                  "content": [
+                    "Plan events 3-6 months in advance",
+                    "Track lead generation per event for ROI",
+                    "Coordinate with Marketing for promotion and post-event content"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Maintain annual and quarterly event calendar, evaluate ROI for each event type.\n\n**Frequency:** Quarterly (planning), Ongoing (updates)\n\n**Output:** Annual event calendar, quarterly participation plan, event ROI tracking, budget allocation\n\n**Dependencies:** Marketing, Finance, Sign Language Department\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Marketing Associate | ✅ | | | |\n\n**Key Process Notes:**\n- Plan events 3-6 months in advance\n- Track lead generation per event for ROI\n- Coordinate with Marketing for promotion and post-event content\n\n---\n"
+            },
+            {
+              "id": "preparation-lead-capture-follow-up",
+              "name": "Preparation, Lead Capture, Follow-Up",
+              "description": "Complete pre-event logistics, collect contact data during events, and send thank-you communications within 5 days.",
+              "frequency": "Per Event",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Complete pre-event logistics, collect contact data during events, and send thank-you communications within 5 days.\n\n**Frequency:** Per Event\n\n**Output:** Demo kits, interpreter confirmations, contact data captured and uploaded to CRM, follow-up emails sent\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "internal-coordination",
+          "name": "Internal Coordination",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "weekly-review",
+              "name": "Weekly Review",
+              "description": "Weekly BD team standup to review leads, deals, blockers, and priorities.",
+              "frequency": "Weekly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Weekly BD team standup to review leads, deals, blockers, and priorities.\n\n**Frequency:** Weekly\n\n**Output:** Meeting notes, blocker resolution plan, weekly priorities\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n\n---\n"
+            },
+            {
+              "id": "monthly-summary",
+              "name": "Monthly Summary",
+              "description": "Prepare comprehensive monthly BD performance report with KPIs, deals closed, pipeline value, revenue generated.",
+              "frequency": "Monthly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Associate",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Prepare comprehensive monthly BD performance report with KPIs, deals closed, pipeline value, revenue generated.\n\n**Frequency:** Monthly\n\n**Output:** One-page BD summary (new leads by source, demos, proposals, contracts, revenue, pipeline value, key wins/challenges)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Finance Associate | | | ✅ | |\n\n---\n"
+            },
+            {
+              "id": "cross-team-collaboration",
+              "name": "Cross-Team Collaboration",
+              "description": "Regular coordination with Finance, Product, Marketing, and delivery teams.",
+              "frequency": "Weekly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "BD Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "All Relevant Teams",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Regular coordination with Finance, Product, Marketing, and delivery teams.\n\n**Frequency:** Weekly\n\n**Output:** Coordination meeting notes, updated capacity information, pricing alignments, campaign coordination\n\n**Dependencies:** Finance, Product, Marketing, Delivery Teams\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| All Relevant Teams | | | ✅ | |\n\n---\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "finance-compliance",
+      "name": "Finance & Compliance",
+      "emoji": "🔷",
+      "areas": [
+        {
+          "id": "finance-operations",
+          "name": "Finance Operations",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "accounts-payable",
+              "name": "Accounts Payable",
+              "description": "Process all outgoing payments to vendors. **Process Flow:** Invoice received → Verify against PO → Confirm vendor documentation → Calculate 4% withholding → Process payment → File withholding tax → Issue tax challan → Receive receipt.",
+              "frequency": "Weekly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership (Arhum)",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Critical Requirements",
+                  "content": [
+                    "Create accounts payable checklist",
+                    "Standardize vendor folder structure",
+                    "Implement approval thresholds"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Process all outgoing payments to vendors. **Process Flow:** Invoice received → Verify against PO → Confirm vendor documentation → Calculate 4% withholding → Process payment → File withholding tax → Issue tax challan → Receive receipt.\n\n**Frequency:** Weekly\n\n**Output:** Vendor payments processed, withholding tax filed, tax challans issued, payment receipts archived\n\n**Dependencies:** AdminOps (for PO verification), Vendors\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Leadership (Arhum) | | ✅ | | |\n\n**Critical Requirements:**\n- Create accounts payable checklist\n- Standardize vendor folder structure\n- Implement approval thresholds\n\n---\n"
+            },
+            {
+              "id": "accounts-receivable",
+              "name": "Accounts Receivable",
+              "description": "Issue client invoices, track payments, send reminders. Handle both online and physical invoices. **Cash Basis Accounting:** Revenue only recorded when payment received.",
+              "frequency": "Weekly (issuance/tracking), Daily (payment monitoring)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Team",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Key Notes",
+                  "content": [
+                    "**Recurring Invoice Automation:** Auto-generate on 5th of month",
+                    "**Current Tool:** Using Wave app - consider ERPNext migration",
+                    "**Cash Basis:** Revenue only when payment received (see Tax Compliance implications)"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Issue client invoices, track payments, send reminders. Handle both online and physical invoices. **Cash Basis Accounting:** Revenue only recorded when payment received.\n\n**Invoice Types:** One-time (project-based), Recurring (monthly/quarterly subscriptions)\n\n**Process Flow:** Service complete → Invoice generated → Send via agreed method → Reminders (2 weeks before, on due date) → Payment received → Bank reconciliation → Invoice marked paid → Update aging report\n\n**Frequency:** Weekly (issuance/tracking), Daily (payment monitoring)\n\n**Output:** Invoices issued, payment reminders, bank reconciliation, receivables aging report (invoices issued/paid/outstanding/overdue/upcoming)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| BD Team | | | ✅ | |\n\n**Key Notes:**\n- **Recurring Invoice Automation:** Auto-generate on 5th of month\n- **Current Tool:** Using Wave app - consider ERPNext migration\n- **Cash Basis:** Revenue only when payment received (see Tax Compliance implications)\n\n---\n"
+            },
+            {
+              "id": "payroll-stipends",
+              "name": "Payroll & Stipends",
+              "description": "Calculate and process all earned payments: salaries, stipends, project payments, bonuses. Ensure project payments are mapped to service delivery via cost centers.",
+              "frequency": "Monthly (salaries/stipends), Per Project (project payments)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership (Arhum)",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Critical Requirements",
+                  "content": [
+                    "**Project Payment Mapping:** Link each payment to service delivery invoice",
+                    "Use cost centers (e.g., \"Interpretation - Corporate Event\")",
+                    "Enables profitability analysis per service type",
+                    "**Current Gap:** No systematic tracking of interpreter payments to service deliveries"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Calculate and process all earned payments: salaries, stipends, project payments, bonuses. Ensure project payments are mapped to service delivery via cost centers.\n\n**Frequency:** Monthly (salaries/stipends), Per Project (project payments)\n\n**Output:** Salary slips, disbursements processed, project payments mapped to service delivery, payroll tax calculations\n\n**Dependencies:** AdminOps (for attendance), Delivery Teams (for project verification)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Leadership (Arhum) | | ✅ | | |\n\n**Critical Requirements:**\n- **Project Payment Mapping:** Link each payment to service delivery invoice\n- Use cost centers (e.g., \"Interpretation - Corporate Event\")\n- Enables profitability analysis per service type\n- **Current Gap:** No systematic tracking of interpreter payments to service deliveries\n\n---\n"
+            },
+            {
+              "id": "expense-claims",
+              "name": "Expense Claims",
+              "description": "Process staff expense reimbursements with proper mapping to service delivery/project.",
+              "frequency": "Weekly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Critical Requirements",
+                  "content": [
+                    "**Service Delivery Mapping:** Tag to Project → Campaign → Service Delivery",
+                    "**Example:** Iman/Ismail travel to event → Mapped to XYZ Corp Event Invoice",
+                    "Enables cost tracking: expenses incurred vs invoice amount = profitability"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Process staff expense reimbursements with proper mapping to service delivery/project.\n\n**Frequency:** Weekly\n\n**Output:** Verified expense claims, reimbursements processed, expenses mapped to service delivery via cost centers\n\n**Dependencies:** AdminOps (for approval), Delivery Teams (for linkage)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Critical Requirements:**\n- **Service Delivery Mapping:** Tag to Project → Campaign → Service Delivery\n- **Example:** Iman/Ismail travel to event → Mapped to XYZ Corp Event Invoice\n- Enables cost tracking: expenses incurred vs invoice amount = profitability\n\n---\n"
+            },
+            {
+              "id": "petty-cash",
+              "name": "Petty Cash",
+              "description": "Maintain fixed monthly petty cash fund for small, immediate expenses. Track all disbursements and reconcile monthly.",
+              "frequency": "Daily (tracking), Monthly (reconciliation)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Key Notes",
+                  "content": [
+                    "Fixed amount (e.g., PKR 50,000-70,000) from bank",
+                    "Used for: office supplies, printouts, stationery, guest refreshments",
+                    "**Aspiration:** Same-day interpreter travel reimbursements"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** Maintain fixed monthly petty cash fund for small, immediate expenses. Track all disbursements and reconcile monthly.\n\n**Frequency:** Daily (tracking), Monthly (reconciliation)\n\n**Output:** Petty cash log, receipt collection, monthly reconciliation, cash balance verification\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Key Notes:**\n- Fixed amount (e.g., PKR 50,000-70,000) from bank\n- Used for: office supplies, printouts, stationery, guest refreshments\n- **Aspiration:** Same-day interpreter travel reimbursements\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "accounting-reporting",
+          "name": "Accounting & Reporting",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "bookkeeping",
+              "name": "Bookkeeping",
+              "description": "Record all financial transactions daily by date and cost center in ERPNext.",
+              "frequency": "Weekly (entry), Daily (monitoring)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Record all financial transactions daily by date and cost center in ERPNext.\n\n**Frequency:** Weekly (entry), Daily (monitoring)\n\n**Output:** Updated general ledger, transactions by cost center, organized records\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n---\n"
+            },
+            {
+              "id": "bank-reconciliation",
+              "name": "Bank Reconciliation",
+              "description": "**Daily Process (Target):** Match ledger with bank statements daily. **Currently:** Done every few weeks but should be daily.",
+              "frequency": "Daily (target)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** **Daily Process (Target):** Match ledger with bank statements daily. **Currently:** Done every few weeks but should be daily.\n\n**Frequency:** Daily (target)\n\n**Output:** Bank reconciliation report, matched transactions, discrepancies resolved, day-end position verified\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Implementation Goal:**\n- **Target:** Daily reconciliation to catch discrepancies same-day\n- **Benefit:** Identifies unauthorized transactions immediately\n- **Current State:** Happens every few weeks\n\n---\n"
+            },
+            {
+              "id": "financial-reporting",
+              "name": "Financial Reporting",
+              "description": "Prepare monthly income/expense summaries, P&L, balance sheet, cash flow statements.",
+              "frequency": "Monthly",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Leadership (Arhum)",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Prepare monthly income/expense summaries, P&L, balance sheet, cash flow statements.\n\n**Frequency:** Monthly\n\n**Output:** Monthly financial report package (Income Statement, Balance Sheet, Cash Flow, Cost center analysis, Budget vs Actual variance)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Leadership (Arhum) | | ✅ | | |\n\n---\n"
+            },
+            {
+              "id": "budgeting-forecasting",
+              "name": "Budgeting & Forecasting",
+              "description": "**Not Currently Implemented - Future Development.** Collect departmental budgets, prepare annual budgets, create quarterly forecasts.",
+              "frequency": "Annual (budget), Quarterly (forecast)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Department Heads",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [
+                {
+                  "title": "Key Notes",
+                  "content": [
+                    "Will inform: annual increments, bonuses, capital purchases",
+                    "Enables sustainability planning",
+                    "Umaima to provide guidance on processes"
+                  ]
+                }
+              ],
+              "content_raw": "\n**Description:** **Not Currently Implemented - Future Development.** Collect departmental budgets, prepare annual budgets, create quarterly forecasts.\n\n**Frequency:** Annual (budget), Quarterly (forecast)\n\n**Output:** Annual budget by department/cost center, quarterly forecasts, resource allocation plan, sustainability analysis\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Department Heads | | | ✅ | |\n\n**Key Notes:**\n- Will inform: annual increments, bonuses, capital purchases\n- Enables sustainability planning\n- Umaima to provide guidance on processes\n\n---\n"
+            },
+            {
+              "id": "audit-preparation",
+              "name": "Audit Preparation",
+              "description": "Compile records, receipts, ledgers for internal and external audits.",
+              "frequency": "Annual (external), Ongoing (internal readiness)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "External Auditor",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Compile records, receipts, ledgers for internal and external audits.\n\n**Frequency:** Annual (external), Ongoing (internal readiness)\n\n**Output:** Organized audit documentation, complete transaction records, response to auditor queries\n\n**Dependencies:** External Auditor, All Departments\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| External Auditor | | | ✅ | |\n\n**Audit Types:**\n- **External:** Third-party review for fraud detection and compliance\n- **Internal:** Self-review of processes and controls\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "grants-management",
+          "name": "Grants Management",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "grant-registry-budget-allocation-expense-tracking",
+              "name": "Grant Registry, Budget Allocation, Expense Tracking",
+              "description": "Record active grants, distribute funds across cost centers, track utilization monthly.",
+              "frequency": "Per Grant (setup), Monthly (tracking)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Record active grants, distribute funds across cost centers, track utilization monthly.\n\n**Frequency:** Per Grant (setup), Monthly (tracking)\n\n**Output:** Grant registry, allocated budgets, utilization reports, variance analysis\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Critical Requirement:**\n- **Transaction Tagging:** Every expense taggable to specific grant in ERPNext\n- **Example:** GSMA grant - all related expenses tagged \"GSMA Project\"\n- Can generate ledger showing only GSMA income and expenses\n- **Donor Requirement:** GSMA asked \"Can your system isolate our grant transactions?\" - System must support this\n\n---\n"
+            },
+            {
+              "id": "donor-reporting-grant-close-out",
+              "name": "Donor Reporting & Grant Close-Out",
+              "description": "Submit financial and narrative reports per grant cycle. Prepare final statements at completion.",
+              "frequency": "Per Grant Cycle, At Completion",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Program Teams",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Submit financial and narrative reports per grant cycle. Prepare final statements at completion.\n\n**Frequency:** Per Grant Cycle, At Completion\n\n**Output:** Financial reports by grant, narrative reports, supporting documentation, final statements, archived grant files\n\n**Dependencies:** All Departments (for program activities)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Program Teams | | | ✅ | |\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "legal-compliance",
+          "name": "Legal & Compliance",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "contract-review",
+              "name": "Contract Review",
+              "description": "Review all agreements for financial terms, legal compliance, payment clauses. Track special terms (e.g., annual price increases).",
+              "frequency": "Per Contract",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD Team",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Review all agreements for financial terms, legal compliance, payment clauses. Track special terms (e.g., annual price increases).\n\n**Frequency:** Per Contract\n\n**Output:** Contract reviewed/approved, key terms logged, contract filed, financial obligations flagged\n\n**Dependencies:** BD, Leadership\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| BD Team | | | ✅ | |\n\n**Example:** HBL 3-year contract with 5% annual price increase - Finance tracks pricing must increase after 12 months\n\n---\n"
+            },
+            {
+              "id": "tax-compliance",
+              "name": "Tax Compliance",
+              "description": "File all required taxes. ConnectHear uses **cash basis accounting** - revenue only reported when payment received.",
+              "frequency": "Daily/Monthly/Quarterly/Annual",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** File all required taxes. ConnectHear uses **cash basis accounting** - revenue only reported when payment received.\n\n**Tax Schedule:**\n- **Monthly:** (1) Payroll Tax on payday, (2) Sales Tax 15% on payments received that month, (3) Withholding Tax 4% on vendor payments\n- **Quarterly:** Advance Income Tax (AIT) - prediction and prepayment\n- **Annual:** Income Tax - final filing reconciling AIT with actual profit\n\n**Frequency:** Daily/Monthly/Quarterly/Annual\n\n**Output:** Tax returns filed on time, payment receipts, calculation documentation, compliance records\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Critical Understanding - Cash Basis:**\n- **Example:** UBL hasn't paid 2023/2024 invoices\n- ConnectHear has NOT reported this revenue to FBR (payment not received)\n- When UBL pays in 2025, revenue reported in 2025 tax filings\n- **Benefit:** Don't pay tax on money not yet received\n- **Implication:** Accounts receivable tracking is critical\n\n---\n"
+            },
+            {
+              "id": "regulatory-liaison-risk-register-insurance",
+              "name": "Regulatory Liaison, Risk Register, Insurance",
+              "description": "Coordinate with SECP, FBR, SRB, PRA. Maintain risk register with impact-likelihood matrix. Maintain insurance coverage for assets and people.",
+              "frequency": "Monthly/Quarterly/Annual",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "All Department Heads",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Coordinate with SECP, FBR, SRB, PRA. Maintain risk register with impact-likelihood matrix. Maintain insurance coverage for assets and people.\n\n**Frequency:** Monthly/Quarterly/Annual\n\n**Output:** Portal access maintained, compliance filings, risk register with mitigation strategies, active insurance policies\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| All Department Heads | | | ✅ | |\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "procurement-vendor",
+          "name": "Procurement & Vendor",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "vendor-onboarding-purchase-requisition-payment-po-asset-register",
+              "name": "Vendor Onboarding, Purchase Requisition, Payment & PO, Asset Register",
+              "description": "Collect vendor documentation (NTN, CNIC, bank details), approve purchases above threshold, match invoice to PO before payment, track capital assets with depreciation.",
+              "frequency": "Per Vendor/Purchase, Quarterly (asset register)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "AdminOps",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Collect vendor documentation (NTN, CNIC, bank details), approve purchases above threshold, match invoice to PO before payment, track capital assets with depreciation.\n\n**Frequency:** Per Vendor/Purchase, Quarterly (asset register)\n\n**Output:** Vendor profiles in ERPNext, approved purchases, three-way match completed, asset register updated\n\n**Dependencies:** AdminOps, Vendors\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| AdminOps | | | ✅ | |\n\n---\n"
+            }
+          ]
+        },
+        {
+          "id": "audit-controls",
+          "name": "Audit & Controls",
+          "emoji": "📍",
+          "workstreams": [
+            {
+              "id": "internal-checks-external-audit-process-documentation",
+              "name": "Internal Checks, External Audit, Process Documentation",
+              "description": "Monthly random transaction sampling, coordinate annual external audit, maintain finance SOPs using GSMA policies as template.",
+              "frequency": "Monthly (internal checks), Annual (external audit/SOP review)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "External Auditor",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Monthly random transaction sampling, coordinate annual external audit, maintain finance SOPs using GSMA policies as template.\n\n**Frequency:** Monthly (internal checks), Annual (external audit/SOP review)\n\n**Output:** Internal audit reports, external audit facilitation and recommendations, complete finance SOPs\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| External Auditor | | | ✅ | |\n\n**Key Reference:** GSMA policies to be shared by Arhum as template\n\n---\n"
+            },
+            {
+              "id": "approval-thresholds",
+              "name": "Approval Thresholds",
+              "description": "Implement spending approval limits based on transaction amount.",
+              "frequency": "Continuous (enforcement), Quarterly (review)",
+              "output": [],
+              "dependencies": [],
+              "raci": [
+                {
+                  "role": "Finance Associate (Umaima)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "All Department Heads",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "content_raw": "\n**Description:** Implement spending approval limits based on transaction amount.\n\n**Proposed Structure (Example - To Be Finalized):**\n- Up to PKR 1,000: Line Manager\n- PKR 1,001-10,000: Finance Associate\n- Above PKR 10,000: Leadership (Arhum/Azima)\n\n**Frequency:** Continuous (enforcement), Quarterly (review)\n\n**Output:** Approval matrix documented, threshold enforcement in ERPNext, exception reports\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| All Department Heads | | | ✅ | |\n\n---\n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "content-design",
+      "name": "Content & Design",
+      "emoji": "🔷",
+      "areas": []
+    },
+    {
+      "id": "product-projects",
+      "name": "Product & Projects",
+      "emoji": "🔷",
+      "areas": []
+    },
+    {
+      "id": "sign-language-training-interpretation",
+      "name": "Sign Language – Training & Interpretation",
+      "emoji": "🔷",
+      "areas": []
+    },
+    {
+      "id": "marketing",
+      "name": "Marketing",
+      "emoji": "🔷",
+      "areas": []
+    },
+    {
+      "id": "adminops",
+      "name": "AdminOps",
+      "emoji": "🔷",
+      "areas": []
+    },
+    {
+      "id": "leadership-pmo",
+      "name": "Leadership / PMO",
+      "emoji": "🔷",
+      "areas": []
+    }
+  ],
+  "metadata": {
+    "version": "2.0",
+    "last_updated": "November 2025",
+    "total_departments": 8,
+    "total_areas": 12,
+    "total_workstreams": 40
+  }
+}
