@@ -17,6 +17,18 @@ def escape_html(text: str) -> str:
     return html.escape(text) if text else ''
 
 
+def convert_markdown_bold(text: str) -> str:
+    """Convert markdown bold (**text**) to HTML strong tags."""
+    if not text:
+        return ''
+    # Escape HTML first
+    text = html.escape(text)
+    # Then convert **text** to <strong>text</strong>
+    import re
+    text = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', text)
+    return text
+
+
 def load_template_file(filename: str) -> str:
     """Load a template file from src/templates/"""
     template_path = Path(__file__).parent / 'templates' / filename
@@ -164,6 +176,19 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
     ws_id = f"ws-{dept['id']}-{area['id']}-{ws['id']}"
     ws_name = escape_html(ws.get('name', 'Untitled Workstream'))
 
+    # Build TOC based on available sections
+    toc_items = []
+    if ws.get('description'):
+        toc_items.append(('description', 'Description', '📝'))
+    if ws.get('output'):
+        toc_items.append(('output', 'Output', '📊'))
+    if ws.get('dependencies'):
+        toc_items.append(('dependencies', 'Dependencies', '🔗'))
+    if ws.get('raci'):
+        toc_items.append(('raci', 'RACI Matrix', '👥'))
+    if ws.get('notes'):
+        toc_items.append(('notes', 'Notes', '💡'))
+
     html_content = f'''
 <section class="workstream-section" id="{ws_id}">
   <div class="workstream-header">
@@ -196,11 +221,32 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
   </div>
 '''
 
+    # Add mini-TOC if we have sections
+    if toc_items:
+        html_content += '''
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+'''
+        for section_id, section_name, icon in toc_items:
+            html_content += f'''
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="{ws_id}-{section_id}" onclick="scrollToSection('{ws_id}-{section_id}'); return false;">
+          <span class="toc-icon">{icon}</span>
+          <span class="toc-text">{section_name}</span>
+        </a>
+      </li>
+'''
+        html_content += '''
+    </ul>
+  </nav>
+'''
+
     # Description section
     if ws.get('description'):
-        description = escape_html(ws['description'])
+        description = convert_markdown_bold(ws['description'])
         html_content += f'''
-  <div class="content-section">
+  <div class="content-section" id="{ws_id}-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>{description}</p>
@@ -210,14 +256,14 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
 
     # Output section
     if ws.get('output'):
-        html_content += '''
-  <div class="content-section">
+        html_content += f'''
+  <div class="content-section" id="{ws_id}-output">
     <h2 class="section-title">Output</h2>
     <div class="section-content">
       <ul>
 '''
         for output_item in ws['output']:
-            output_text = escape_html(output_item)
+            output_text = convert_markdown_bold(output_item)
             html_content += f'        <li>{output_text}</li>\n'
 
         html_content += '''
@@ -228,15 +274,15 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
 
     # Dependencies section
     if ws.get('dependencies'):
-        html_content += '''
-  <div class="content-section">
+        html_content += f'''
+  <div class="content-section" id="{ws_id}-dependencies">
     <h2 class="section-title">Dependencies</h2>
     <div class="section-content">
       <ul class="dependency-list">
 '''
         for dep in ws['dependencies']:
-            team = escape_html(dep.get('team', ''))
-            reason = escape_html(dep.get('reason', ''))
+            team = convert_markdown_bold(dep.get('team', ''))
+            reason = convert_markdown_bold(dep.get('reason', ''))
             html_content += f'''
         <li class="dependency-item">
           <span class="dependency-team">{team}</span>
@@ -254,8 +300,8 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
 
     # RACI section
     if ws.get('raci'):
-        html_content += '''
-  <div class="content-section">
+        html_content += f'''
+  <div class="content-section" id="{ws_id}-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 '''
@@ -267,8 +313,10 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
 
     # Notes section
     if ws.get('notes'):
+        # Wrap all notes in a container with the ID (only one ID for all notes)
+        html_content += f'  <div id="{ws_id}-notes">\n'
         for note in ws['notes']:
-            note_title = escape_html(note.get('title', 'Notes'))
+            note_title = convert_markdown_bold(note.get('title', 'Notes'))
             html_content += f'''
   <div class="notes-section">
     <div class="notes-title">{note_title}</div>
@@ -277,17 +325,18 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
             if isinstance(note.get('content'), list):
                 html_content += '      <ul>\n'
                 for item in note['content']:
-                    item_text = escape_html(item)
+                    item_text = convert_markdown_bold(item)
                     html_content += f'        <li>{item_text}</li>\n'
                 html_content += '      </ul>\n'
             else:
-                content_text = escape_html(str(note.get('content', '')))
+                content_text = convert_markdown_bold(str(note.get('content', '')))
                 html_content += f'      <p>{content_text}</p>\n'
 
             html_content += '''
     </div>
   </div>
 '''
+        html_content += '  </div>\n'
 
     html_content += '</section>\n'
     return html_content

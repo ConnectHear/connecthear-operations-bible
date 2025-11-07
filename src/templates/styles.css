@@ -529,6 +529,90 @@ body {
   font-weight: 600;
 }
 
+/* Workstream Mini-TOC */
+.workstream-toc {
+  background: var(--bg-content);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.toc-header {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toc-header::before {
+  content: '→';
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.toc-item {
+  margin: 0;
+}
+
+.toc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.toc-link:hover {
+  background: var(--bg-hover);
+  color: var(--primary);
+  border-color: var(--border);
+}
+
+.toc-icon {
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.toc-text {
+  white-space: nowrap;
+}
+
+/* Responsive TOC */
+@media (max-width: 768px) {
+  .toc-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toc-link {
+    width: 100%;
+  }
+}
+
 /* Content Sections */
 .content-section {
   margin-bottom: var(--space-2xl);
@@ -554,9 +638,22 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding-bottom: var(--space-md);
+  padding: var(--space-md) 0;
   border-bottom: 2px solid var(--border-light);
   letter-spacing: -0.01em;
+  position: sticky;
+  top: 0;
+  background: var(--bg-content);
+  z-index: 10;
+  margin: 0 calc(-1 * var(--space-2xl));
+  padding-left: var(--space-2xl);
+  padding-right: var(--space-2xl);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-title.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .section-title::before {

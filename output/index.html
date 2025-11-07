@@ -536,6 +536,90 @@ body {
   font-weight: 600;
 }
 
+/* Workstream Mini-TOC */
+.workstream-toc {
+  background: var(--bg-content);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.toc-header {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toc-header::before {
+  content: '→';
+  font-size: 0.875rem;
+  color: var(--text-tertiary);
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+.toc-item {
+  margin: 0;
+}
+
+.toc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-sm);
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.toc-link:hover {
+  background: var(--bg-hover);
+  color: var(--primary);
+  border-color: var(--border);
+}
+
+.toc-icon {
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.toc-text {
+  white-space: nowrap;
+}
+
+/* Responsive TOC */
+@media (max-width: 768px) {
+  .toc-list {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .toc-link {
+    width: 100%;
+  }
+}
+
 /* Content Sections */
 .content-section {
   margin-bottom: var(--space-2xl);
@@ -561,9 +645,22 @@ body {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  padding-bottom: var(--space-md);
+  padding: var(--space-md) 0;
   border-bottom: 2px solid var(--border-light);
   letter-spacing: -0.01em;
+  position: sticky;
+  top: 0;
+  background: var(--bg-content);
+  z-index: 10;
+  margin: 0 calc(-1 * var(--space-2xl));
+  padding-left: var(--space-2xl);
+  padding-right: var(--space-2xl);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.3s ease;
+}
+
+.section-title.scrolled {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .section-title::before {
@@ -1593,14 +1690,56 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-lead-sourcing-tracking-description" onclick="scrollToSection('ws-business-development-partnerships-sales-lead-sourcing-tracking-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-lead-sourcing-tracking-output" onclick="scrollToSection('ws-business-development-partnerships-sales-lead-sourcing-tracking-output'); return false;">
+          <span class="toc-icon">📊</span>
+          <span class="toc-text">Output</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-lead-sourcing-tracking-dependencies" onclick="scrollToSection('ws-business-development-partnerships-sales-lead-sourcing-tracking-dependencies'); return false;">
+          <span class="toc-icon">🔗</span>
+          <span class="toc-text">Dependencies</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-lead-sourcing-tracking-raci" onclick="scrollToSection('ws-business-development-partnerships-sales-lead-sourcing-tracking-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-lead-sourcing-tracking-notes" onclick="scrollToSection('ws-business-development-partnerships-sales-lead-sourcing-tracking-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-partnerships-sales-lead-sourcing-tracking-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Maintaining CRM database with all incoming leads from multiple sources including direct inquiries, indirect sources (interpreters receiving requests, event interactions, leadership networking), social media, and referrals. Track lead progression through defined pipeline stages.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-lead-sourcing-tracking-output">
     <h2 class="section-title">Output</h2>
     <div class="section-content">
       <ul>
@@ -1612,7 +1751,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-lead-sourcing-tracking-dependencies">
     <h2 class="section-title">Dependencies</h2>
     <div class="section-content">
       <ul class="dependency-list">
@@ -1636,7 +1775,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-lead-sourcing-tracking-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -1699,20 +1838,22 @@ body {
 
     </div>
   </div>
+  <div id="ws-business-development-partnerships-sales-lead-sourcing-tracking-notes">
 
   <div class="notes-section">
     <div class="notes-title">Key Process Notes</div>
     <div class="notes-content">
       <ul>
-        <li>**Indirect Lead Scenarios:**</li>
+        <li><strong>Indirect Lead Scenarios:</strong></li>
         <li>Interpreters receive calls from employees (4 free calls, then 5th triggers BD contact)</li>
         <li>Interpreters collect company requests at events and forward to BD</li>
         <li>Leadership meets potential clients at events/conferences</li>
-        <li>**Tracking Requirements:** Simple stage tracking for incentive calculation</li>
-        <li>**Lead Qualification:** Record employer details, decision-maker info, and service interest</li>
+        <li><strong>Tracking Requirements:</strong> Simple stage tracking for incentive calculation</li>
+        <li><strong>Lead Qualification:</strong> Record employer details, decision-maker info, and service interest</li>
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -1732,14 +1873,56 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-outreach-demos-description" onclick="scrollToSection('ws-business-development-partnerships-sales-outreach-demos-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-outreach-demos-output" onclick="scrollToSection('ws-business-development-partnerships-sales-outreach-demos-output'); return false;">
+          <span class="toc-icon">📊</span>
+          <span class="toc-text">Output</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-outreach-demos-dependencies" onclick="scrollToSection('ws-business-development-partnerships-sales-outreach-demos-dependencies'); return false;">
+          <span class="toc-icon">🔗</span>
+          <span class="toc-text">Dependencies</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-outreach-demos-raci" onclick="scrollToSection('ws-business-development-partnerships-sales-outreach-demos-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-outreach-demos-notes" onclick="scrollToSection('ws-business-development-partnerships-sales-outreach-demos-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-partnerships-sales-outreach-demos-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>- **For App Services:** Conduct email outreach campaigns, schedule product demos, present ConnectHear app capabilities, and gather feedback for proposal development - **For Training/Interpretation Services:** Send service details, capabilities overview, and schedule discussion calls - Maintain recurring task system in CRM for consistent follow-up activity</p>
+      <p>- <strong>For App Services:</strong> Conduct email outreach campaigns, schedule product demos, present ConnectHear app capabilities, and gather feedback for proposal development - <strong>For Training/Interpretation Services:</strong> Send service details, capabilities overview, and schedule discussion calls - Maintain recurring task system in CRM for consistent follow-up activity</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-outreach-demos-output">
     <h2 class="section-title">Output</h2>
     <div class="section-content">
       <ul>
@@ -1751,7 +1934,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-outreach-demos-dependencies">
     <h2 class="section-title">Dependencies</h2>
     <div class="section-content">
       <ul class="dependency-list">
@@ -1775,7 +1958,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-outreach-demos-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -1830,6 +2013,7 @@ body {
 
     </div>
   </div>
+  <div id="ws-business-development-partnerships-sales-outreach-demos-notes">
 
   <div class="notes-section">
     <div class="notes-title">Key Process Notes</div>
@@ -1841,6 +2025,7 @@ body {
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -1860,14 +2045,49 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-proposal-development-description" onclick="scrollToSection('ws-business-development-partnerships-sales-proposal-development-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-proposal-development-output" onclick="scrollToSection('ws-business-development-partnerships-sales-proposal-development-output'); return false;">
+          <span class="toc-icon">📊</span>
+          <span class="toc-text">Output</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-proposal-development-dependencies" onclick="scrollToSection('ws-business-development-partnerships-sales-proposal-development-dependencies'); return false;">
+          <span class="toc-icon">🔗</span>
+          <span class="toc-text">Dependencies</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-proposal-development-raci" onclick="scrollToSection('ws-business-development-partnerships-sales-proposal-development-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-partnerships-sales-proposal-development-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Prepare comprehensive proposal decks and documents based on client requirements, incorporating inputs from technical teams, pricing from Finance, and service specifications from delivery departments.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-proposal-development-output">
     <h2 class="section-title">Output</h2>
     <div class="section-content">
       <ul>
@@ -1880,7 +2100,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-proposal-development-dependencies">
     <h2 class="section-title">Dependencies</h2>
     <div class="section-content">
       <ul class="dependency-list">
@@ -1909,7 +2129,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-proposal-development-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -1998,19 +2218,61 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-contracting-closure-description" onclick="scrollToSection('ws-business-development-partnerships-sales-contracting-closure-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-contracting-closure-output" onclick="scrollToSection('ws-business-development-partnerships-sales-contracting-closure-output'); return false;">
+          <span class="toc-icon">📊</span>
+          <span class="toc-text">Output</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-contracting-closure-dependencies" onclick="scrollToSection('ws-business-development-partnerships-sales-contracting-closure-dependencies'); return false;">
+          <span class="toc-icon">🔗</span>
+          <span class="toc-text">Dependencies</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-contracting-closure-raci" onclick="scrollToSection('ws-business-development-partnerships-sales-contracting-closure-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-contracting-closure-notes" onclick="scrollToSection('ws-business-development-partnerships-sales-contracting-closure-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-partnerships-sales-contracting-closure-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>Finalize contracts with legal and financial terms, obtain signatures from all parties, and archive signed agreements. **Critical Gap:** Currently only app services have proper contracts (Digital Services Agreement). Training and interpretation services rely on MOUs which are not legally binding and create revenue recognition and payment risks.</p>
+      <p>Finalize contracts with legal and financial terms, obtain signatures from all parties, and archive signed agreements. <strong>Critical Gap:</strong> Currently only app services have proper contracts (Digital Services Agreement). Training and interpretation services rely on MOUs which are not legally binding and create revenue recognition and payment risks.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-contracting-closure-output">
     <h2 class="section-title">Output</h2>
     <div class="section-content">
       <ul>
         <li>Signed contract (Digital Services Agreement for app, Service Agreement for training/interpretation)</li>
-        <li>**Mandatory:** Purchase Order (PO) from client before service delivery begins</li>
+        <li><strong>Mandatory:</strong> Purchase Order (PO) from client before service delivery begins</li>
         <li>Contract archived in shared drive with proper naming convention</li>
         <li>Contract terms logged in CRM for renewal tracking</li>
 
@@ -2018,7 +2280,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-contracting-closure-dependencies">
     <h2 class="section-title">Dependencies</h2>
     <div class="section-content">
       <ul class="dependency-list">
@@ -2042,7 +2304,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-contracting-closure-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2097,20 +2359,22 @@ body {
 
     </div>
   </div>
+  <div id="ws-business-development-partnerships-sales-contracting-closure-notes">
 
   <div class="notes-section">
     <div class="notes-title">Critical Implementation Requirements</div>
     <div class="notes-content">
       <ul>
-        <li>**New Policy:** No service delivery without Purchase Order (PO) from client</li>
-        <li>**Contract Development Needed:** Create standard Service Agreements for:</li>
+        <li><strong>New Policy:</strong> No service delivery without Purchase Order (PO) from client</li>
+        <li><strong>Contract Development Needed:</strong> Create standard Service Agreements for:</li>
         <li>Interpretation services (hourly/event-based)</li>
         <li>Training programs (corporate/public batches)</li>
-        <li>**Revenue Protection:** Contracts ensure proper invoicing, payment terms, and reduce delayed payment risk</li>
-        <li>**PO Requirement:** Ensures client&#x27;s finance department is aware and payment is budgeted</li>
+        <li><strong>Revenue Protection:</strong> Contracts ensure proper invoicing, payment terms, and reduce delayed payment risk</li>
+        <li><strong>PO Requirement:</strong> Ensures client&#x27;s finance department is aware and payment is budgeted</li>
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -2130,14 +2394,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-renewal-upsell-description" onclick="scrollToSection('ws-business-development-partnerships-sales-renewal-upsell-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-partnerships-sales-renewal-upsell-raci" onclick="scrollToSection('ws-business-development-partnerships-sales-renewal-upsell-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-partnerships-sales-renewal-upsell-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Track contract expiration dates, proactively reach out to clients for renewal discussions, negotiate updated terms, and identify opportunities for service expansion.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-partnerships-sales-renewal-upsell-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2202,14 +2487,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-account-onboarding-description" onclick="scrollToSection('ws-business-development-client-management-account-onboarding-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-account-onboarding-raci" onclick="scrollToSection('ws-business-development-client-management-account-onboarding-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-client-management-account-onboarding-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>**App Services Only:** Welcome new client organizations, conduct kickoff meetings, align technical requirements with Product Team, and coordinate interpreter pool assignment.</p>
+      <p><strong>App Services Only:</strong> Welcome new client organizations, conduct kickoff meetings, align technical requirements with Product Team, and coordinate interpreter pool assignment.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-client-management-account-onboarding-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2274,14 +2580,49 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-sla-tracking-description" onclick="scrollToSection('ws-business-development-client-management-sla-tracking-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-sla-tracking-output" onclick="scrollToSection('ws-business-development-client-management-sla-tracking-output'); return false;">
+          <span class="toc-icon">📊</span>
+          <span class="toc-text">Output</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-sla-tracking-raci" onclick="scrollToSection('ws-business-development-client-management-sla-tracking-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-sla-tracking-notes" onclick="scrollToSection('ws-business-development-client-management-sla-tracking-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-client-management-sla-tracking-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>**Currently Not Implemented - Future Requirement:** Monitor service performance metrics against contracted SLAs and send regular performance reports to clients.</p>
+      <p><strong>Currently Not Implemented - Future Requirement:</strong> Monitor service performance metrics against contracted SLAs and send regular performance reports to clients.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-client-management-sla-tracking-output">
     <h2 class="section-title">Output</h2>
     <div class="section-content">
       <ul>
@@ -2292,7 +2633,7 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-client-management-sla-tracking-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2339,6 +2680,7 @@ body {
 
     </div>
   </div>
+  <div id="ws-business-development-client-management-sla-tracking-notes">
 
   <div class="notes-section">
     <div class="notes-title">Implementation Requirements</div>
@@ -2351,6 +2693,7 @@ body {
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -2370,14 +2713,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-client-feedback-description" onclick="scrollToSection('ws-business-development-client-management-client-feedback-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-client-feedback-raci" onclick="scrollToSection('ws-business-development-client-management-client-feedback-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-client-management-client-feedback-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Systematically collect client feedback after service delivery. Mark services as &quot;Delivered&quot; in ERPNext to trigger automated feedback collection.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-client-management-client-feedback-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2434,14 +2798,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-relationship-building-description" onclick="scrollToSection('ws-business-development-client-management-relationship-building-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-relationship-building-raci" onclick="scrollToSection('ws-business-development-client-management-relationship-building-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-client-management-relationship-building-notes" onclick="scrollToSection('ws-business-development-client-management-relationship-building-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-client-management-relationship-building-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Maintain ongoing relationships through check-ins, sharing updates, celebrating occasions (Eid, holidays), and maintaining detailed contact intelligence.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-client-management-relationship-building-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2472,6 +2864,7 @@ body {
 
     </div>
   </div>
+  <div id="ws-business-development-client-management-relationship-building-notes">
 
   <div class="notes-section">
     <div class="notes-title">Key Process Notes</div>
@@ -2483,6 +2876,7 @@ body {
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -2502,14 +2896,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-opportunity-scanning-description" onclick="scrollToSection('ws-business-development-proposals-grants-support-opportunity-scanning-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-opportunity-scanning-raci" onclick="scrollToSection('ws-business-development-proposals-grants-support-opportunity-scanning-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-proposals-grants-support-opportunity-scanning-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>Continuously identify grant opportunities and funding calls. **New Structure:** Mir (Project Associate/Public Affairs) works alongside BD team.</p>
+      <p>Continuously identify grant opportunities and funding calls. <strong>New Structure:</strong> Mir (Project Associate/Public Affairs) works alongside BD team.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-proposals-grants-support-opportunity-scanning-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2574,14 +2989,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-gono-go-evaluation-description" onclick="scrollToSection('ws-business-development-proposals-grants-support-gono-go-evaluation-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-gono-go-evaluation-raci" onclick="scrollToSection('ws-business-development-proposals-grants-support-gono-go-evaluation-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-proposals-grants-support-gono-go-evaluation-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Evaluate grant opportunities against eligibility, strategic fit, resources, and ROI.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-proposals-grants-support-gono-go-evaluation-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2646,14 +3082,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-concept-note-preparation-description" onclick="scrollToSection('ws-business-development-proposals-grants-support-concept-note-preparation-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-concept-note-preparation-raci" onclick="scrollToSection('ws-business-development-proposals-grants-support-concept-note-preparation-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-proposals-grants-support-concept-note-preparation-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Draft tailored concept notes specific to each grant, gathering inputs from relevant teams.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-proposals-grants-support-concept-note-preparation-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2718,14 +3175,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-handoff-to-finance-description" onclick="scrollToSection('ws-business-development-proposals-grants-support-handoff-to-finance-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-proposals-grants-support-handoff-to-finance-raci" onclick="scrollToSection('ws-business-development-proposals-grants-support-handoff-to-finance-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-proposals-grants-support-handoff-to-finance-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Transfer completed concept notes, final application documents, and supporting materials to Finance team.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-proposals-grants-support-handoff-to-finance-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2782,14 +3260,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-regionaldomain-analysis-description" onclick="scrollToSection('ws-business-development-market-expansion-regionaldomain-analysis-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-regionaldomain-analysis-raci" onclick="scrollToSection('ws-business-development-market-expansion-regionaldomain-analysis-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-market-expansion-regionaldomain-analysis-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Research expansion opportunities in new regions or industry verticals. Assess market size, regulations, accessibility spending, GDP, competitive landscape.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-market-expansion-regionaldomain-analysis-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2846,14 +3345,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-partnership-identification-description" onclick="scrollToSection('ws-business-development-market-expansion-partnership-identification-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-partnership-identification-raci" onclick="scrollToSection('ws-business-development-market-expansion-partnership-identification-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-market-expansion-partnership-identification-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Identify and approach potential local partners, resellers, or collaborators in target markets.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-market-expansion-partnership-identification-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2910,14 +3430,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-localization-input-description" onclick="scrollToSection('ws-business-development-market-expansion-localization-input-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-localization-input-raci" onclick="scrollToSection('ws-business-development-market-expansion-localization-input-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-market-expansion-localization-input-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Document specific local requirements including sign language variants, cultural adaptations, regulatory compliance, and service customizations.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-market-expansion-localization-input-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -2974,14 +3515,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-feasibility-report-description" onclick="scrollToSection('ws-business-development-market-expansion-feasibility-report-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-market-expansion-feasibility-report-raci" onclick="scrollToSection('ws-business-development-market-expansion-feasibility-report-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-market-expansion-feasibility-report-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Compile comprehensive feasibility analysis combining market research, partnerships, localization, and financial projections.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-market-expansion-feasibility-report-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3038,14 +3600,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-events-demos-event-pipeline-description" onclick="scrollToSection('ws-business-development-events-demos-event-pipeline-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-events-demos-event-pipeline-raci" onclick="scrollToSection('ws-business-development-events-demos-event-pipeline-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-events-demos-event-pipeline-notes" onclick="scrollToSection('ws-business-development-events-demos-event-pipeline-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-events-demos-event-pipeline-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Maintain annual and quarterly event calendar, evaluate ROI for each event type.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-events-demos-event-pipeline-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3084,6 +3674,7 @@ body {
 
     </div>
   </div>
+  <div id="ws-business-development-events-demos-event-pipeline-notes">
 
   <div class="notes-section">
     <div class="notes-title">Key Process Notes</div>
@@ -3095,6 +3686,7 @@ body {
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -3114,14 +3706,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-events-demos-preparation-lead-capture-follow-up-description" onclick="scrollToSection('ws-business-development-events-demos-preparation-lead-capture-follow-up-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-events-demos-preparation-lead-capture-follow-up-raci" onclick="scrollToSection('ws-business-development-events-demos-preparation-lead-capture-follow-up-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-events-demos-preparation-lead-capture-follow-up-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Complete pre-event logistics, collect contact data during events, and send thank-you communications within 5 days.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-events-demos-preparation-lead-capture-follow-up-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3170,14 +3783,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-internal-coordination-weekly-review-description" onclick="scrollToSection('ws-business-development-internal-coordination-weekly-review-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-internal-coordination-weekly-review-raci" onclick="scrollToSection('ws-business-development-internal-coordination-weekly-review-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-internal-coordination-weekly-review-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Weekly BD team standup to review leads, deals, blockers, and priorities.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-internal-coordination-weekly-review-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3234,14 +3868,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-internal-coordination-monthly-summary-description" onclick="scrollToSection('ws-business-development-internal-coordination-monthly-summary-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-internal-coordination-monthly-summary-raci" onclick="scrollToSection('ws-business-development-internal-coordination-monthly-summary-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-internal-coordination-monthly-summary-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Prepare comprehensive monthly BD performance report with KPIs, deals closed, pipeline value, revenue generated.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-internal-coordination-monthly-summary-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3298,14 +3953,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-internal-coordination-cross-team-collaboration-description" onclick="scrollToSection('ws-business-development-internal-coordination-cross-team-collaboration-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-business-development-internal-coordination-cross-team-collaboration-raci" onclick="scrollToSection('ws-business-development-internal-coordination-cross-team-collaboration-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-business-development-internal-coordination-cross-team-collaboration-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Regular coordination with Finance, Product, Marketing, and delivery teams.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-business-development-internal-coordination-cross-team-collaboration-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3362,14 +4038,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-accounts-payable-description" onclick="scrollToSection('ws-finance-compliance-finance-operations-accounts-payable-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-accounts-payable-raci" onclick="scrollToSection('ws-finance-compliance-finance-operations-accounts-payable-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-accounts-payable-notes" onclick="scrollToSection('ws-finance-compliance-finance-operations-accounts-payable-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-finance-operations-accounts-payable-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>Process all outgoing payments to vendors. **Process Flow:** Invoice received → Verify against PO → Confirm vendor documentation → Calculate 4% withholding → Process payment → File withholding tax → Issue tax challan → Receive receipt.</p>
+      <p>Process all outgoing payments to vendors. <strong>Process Flow:</strong> Invoice received → Verify against PO → Confirm vendor documentation → Calculate 4% withholding → Process payment → File withholding tax → Issue tax challan → Receive receipt.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-finance-operations-accounts-payable-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3408,6 +4112,7 @@ body {
 
     </div>
   </div>
+  <div id="ws-finance-compliance-finance-operations-accounts-payable-notes">
 
   <div class="notes-section">
     <div class="notes-title">Critical Requirements</div>
@@ -3419,6 +4124,7 @@ body {
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -3438,14 +4144,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-accounts-receivable-description" onclick="scrollToSection('ws-finance-compliance-finance-operations-accounts-receivable-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-accounts-receivable-raci" onclick="scrollToSection('ws-finance-compliance-finance-operations-accounts-receivable-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-accounts-receivable-notes" onclick="scrollToSection('ws-finance-compliance-finance-operations-accounts-receivable-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-finance-operations-accounts-receivable-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>Issue client invoices, track payments, send reminders. Handle both online and physical invoices. **Cash Basis Accounting:** Revenue only recorded when payment received.</p>
+      <p>Issue client invoices, track payments, send reminders. Handle both online and physical invoices. <strong>Cash Basis Accounting:</strong> Revenue only recorded when payment received.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-finance-operations-accounts-receivable-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3484,17 +4218,19 @@ body {
 
     </div>
   </div>
+  <div id="ws-finance-compliance-finance-operations-accounts-receivable-notes">
 
   <div class="notes-section">
     <div class="notes-title">Key Notes</div>
     <div class="notes-content">
       <ul>
-        <li>**Recurring Invoice Automation:** Auto-generate on 5th of month</li>
-        <li>**Current Tool:** Using Wave app - consider ERPNext migration</li>
-        <li>**Cash Basis:** Revenue only when payment received (see Tax Compliance implications)</li>
+        <li><strong>Recurring Invoice Automation:</strong> Auto-generate on 5th of month</li>
+        <li><strong>Current Tool:</strong> Using Wave app - consider ERPNext migration</li>
+        <li><strong>Cash Basis:</strong> Revenue only when payment received (see Tax Compliance implications)</li>
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -3514,14 +4250,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-payroll-stipends-description" onclick="scrollToSection('ws-finance-compliance-finance-operations-payroll-stipends-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-payroll-stipends-raci" onclick="scrollToSection('ws-finance-compliance-finance-operations-payroll-stipends-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-payroll-stipends-notes" onclick="scrollToSection('ws-finance-compliance-finance-operations-payroll-stipends-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-finance-operations-payroll-stipends-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Calculate and process all earned payments: salaries, stipends, project payments, bonuses. Ensure project payments are mapped to service delivery via cost centers.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-finance-operations-payroll-stipends-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3560,18 +4324,20 @@ body {
 
     </div>
   </div>
+  <div id="ws-finance-compliance-finance-operations-payroll-stipends-notes">
 
   <div class="notes-section">
     <div class="notes-title">Critical Requirements</div>
     <div class="notes-content">
       <ul>
-        <li>**Project Payment Mapping:** Link each payment to service delivery invoice</li>
+        <li><strong>Project Payment Mapping:</strong> Link each payment to service delivery invoice</li>
         <li>Use cost centers (e.g., &quot;Interpretation - Corporate Event&quot;)</li>
         <li>Enables profitability analysis per service type</li>
-        <li>**Current Gap:** No systematic tracking of interpreter payments to service deliveries</li>
+        <li><strong>Current Gap:</strong> No systematic tracking of interpreter payments to service deliveries</li>
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -3591,14 +4357,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-expense-claims-description" onclick="scrollToSection('ws-finance-compliance-finance-operations-expense-claims-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-expense-claims-raci" onclick="scrollToSection('ws-finance-compliance-finance-operations-expense-claims-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-expense-claims-notes" onclick="scrollToSection('ws-finance-compliance-finance-operations-expense-claims-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-finance-operations-expense-claims-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Process staff expense reimbursements with proper mapping to service delivery/project.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-finance-operations-expense-claims-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3629,17 +4423,19 @@ body {
 
     </div>
   </div>
+  <div id="ws-finance-compliance-finance-operations-expense-claims-notes">
 
   <div class="notes-section">
     <div class="notes-title">Critical Requirements</div>
     <div class="notes-content">
       <ul>
-        <li>**Service Delivery Mapping:** Tag to Project → Campaign → Service Delivery</li>
-        <li>**Example:** Iman/Ismail travel to event → Mapped to XYZ Corp Event Invoice</li>
+        <li><strong>Service Delivery Mapping:</strong> Tag to Project → Campaign → Service Delivery</li>
+        <li><strong>Example:</strong> Iman/Ismail travel to event → Mapped to XYZ Corp Event Invoice</li>
         <li>Enables cost tracking: expenses incurred vs invoice amount = profitability</li>
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -3659,14 +4455,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-petty-cash-description" onclick="scrollToSection('ws-finance-compliance-finance-operations-petty-cash-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-petty-cash-raci" onclick="scrollToSection('ws-finance-compliance-finance-operations-petty-cash-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-finance-operations-petty-cash-notes" onclick="scrollToSection('ws-finance-compliance-finance-operations-petty-cash-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-finance-operations-petty-cash-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Maintain fixed monthly petty cash fund for small, immediate expenses. Track all disbursements and reconcile monthly.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-finance-operations-petty-cash-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3697,6 +4521,7 @@ body {
 
     </div>
   </div>
+  <div id="ws-finance-compliance-finance-operations-petty-cash-notes">
 
   <div class="notes-section">
     <div class="notes-title">Key Notes</div>
@@ -3704,10 +4529,11 @@ body {
       <ul>
         <li>Fixed amount (e.g., PKR 50,000-70,000) from bank</li>
         <li>Used for: office supplies, printouts, stationery, guest refreshments</li>
-        <li>**Aspiration:** Same-day interpreter travel reimbursements</li>
+        <li><strong>Aspiration:</strong> Same-day interpreter travel reimbursements</li>
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -3727,14 +4553,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-bookkeeping-description" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-bookkeeping-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-bookkeeping-raci" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-bookkeeping-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-bookkeeping-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Record all financial transactions daily by date and cost center in ERPNext.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-bookkeeping-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3783,14 +4630,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-bank-reconciliation-description" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-bank-reconciliation-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-bank-reconciliation-raci" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-bank-reconciliation-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-bank-reconciliation-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>**Daily Process (Target):** Match ledger with bank statements daily. **Currently:** Done every few weeks but should be daily.</p>
+      <p><strong>Daily Process (Target):</strong> Match ledger with bank statements daily. <strong>Currently:</strong> Done every few weeks but should be daily.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-bank-reconciliation-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3839,14 +4707,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-financial-reporting-description" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-financial-reporting-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-financial-reporting-raci" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-financial-reporting-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-financial-reporting-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Prepare monthly income/expense summaries, P&amp;L, balance sheet, cash flow statements.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-financial-reporting-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3903,14 +4792,42 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-budgeting-forecasting-description" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-budgeting-forecasting-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-budgeting-forecasting-raci" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-budgeting-forecasting-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-budgeting-forecasting-notes" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-budgeting-forecasting-notes'); return false;">
+          <span class="toc-icon">💡</span>
+          <span class="toc-text">Notes</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-budgeting-forecasting-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>**Not Currently Implemented - Future Development.** Collect departmental budgets, prepare annual budgets, create quarterly forecasts.</p>
+      <p><strong>Not Currently Implemented - Future Development.</strong> Collect departmental budgets, prepare annual budgets, create quarterly forecasts.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-budgeting-forecasting-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -3949,6 +4866,7 @@ body {
 
     </div>
   </div>
+  <div id="ws-finance-compliance-accounting-reporting-budgeting-forecasting-notes">
 
   <div class="notes-section">
     <div class="notes-title">Key Notes</div>
@@ -3960,6 +4878,7 @@ body {
       </ul>
 
     </div>
+  </div>
   </div>
 </section>
 
@@ -3979,14 +4898,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-audit-preparation-description" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-audit-preparation-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-accounting-reporting-audit-preparation-raci" onclick="scrollToSection('ws-finance-compliance-accounting-reporting-audit-preparation-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-audit-preparation-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Compile records, receipts, ledgers for internal and external audits.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-accounting-reporting-audit-preparation-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4043,14 +4983,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-grants-management-grant-registry-budget-allocation-expense-tracking-description" onclick="scrollToSection('ws-finance-compliance-grants-management-grant-registry-budget-allocation-expense-tracking-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-grants-management-grant-registry-budget-allocation-expense-tracking-raci" onclick="scrollToSection('ws-finance-compliance-grants-management-grant-registry-budget-allocation-expense-tracking-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-grants-management-grant-registry-budget-allocation-expense-tracking-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Record active grants, distribute funds across cost centers, track utilization monthly.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-grants-management-grant-registry-budget-allocation-expense-tracking-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4099,14 +5060,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-grants-management-donor-reporting-grant-close-out-description" onclick="scrollToSection('ws-finance-compliance-grants-management-donor-reporting-grant-close-out-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-grants-management-donor-reporting-grant-close-out-raci" onclick="scrollToSection('ws-finance-compliance-grants-management-donor-reporting-grant-close-out-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-grants-management-donor-reporting-grant-close-out-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Submit financial and narrative reports per grant cycle. Prepare final statements at completion.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-grants-management-donor-reporting-grant-close-out-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4163,14 +5145,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-legal-compliance-contract-review-description" onclick="scrollToSection('ws-finance-compliance-legal-compliance-contract-review-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-legal-compliance-contract-review-raci" onclick="scrollToSection('ws-finance-compliance-legal-compliance-contract-review-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-legal-compliance-contract-review-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Review all agreements for financial terms, legal compliance, payment clauses. Track special terms (e.g., annual price increases).</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-legal-compliance-contract-review-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4227,14 +5230,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-legal-compliance-tax-compliance-description" onclick="scrollToSection('ws-finance-compliance-legal-compliance-tax-compliance-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-legal-compliance-tax-compliance-raci" onclick="scrollToSection('ws-finance-compliance-legal-compliance-tax-compliance-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-legal-compliance-tax-compliance-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
-      <p>File all required taxes. ConnectHear uses **cash basis accounting** - revenue only reported when payment received.</p>
+      <p>File all required taxes. ConnectHear uses <strong>cash basis accounting</strong> - revenue only reported when payment received.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-legal-compliance-tax-compliance-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4283,14 +5307,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-legal-compliance-regulatory-liaison-risk-register-insurance-description" onclick="scrollToSection('ws-finance-compliance-legal-compliance-regulatory-liaison-risk-register-insurance-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-legal-compliance-regulatory-liaison-risk-register-insurance-raci" onclick="scrollToSection('ws-finance-compliance-legal-compliance-regulatory-liaison-risk-register-insurance-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-legal-compliance-regulatory-liaison-risk-register-insurance-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Coordinate with SECP, FBR, SRB, PRA. Maintain risk register with impact-likelihood matrix. Maintain insurance coverage for assets and people.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-legal-compliance-regulatory-liaison-risk-register-insurance-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4347,14 +5392,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-procurement-vendor-vendor-onboarding-purchase-requisition-payment-po-asset-register-description" onclick="scrollToSection('ws-finance-compliance-procurement-vendor-vendor-onboarding-purchase-requisition-payment-po-asset-register-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-procurement-vendor-vendor-onboarding-purchase-requisition-payment-po-asset-register-raci" onclick="scrollToSection('ws-finance-compliance-procurement-vendor-vendor-onboarding-purchase-requisition-payment-po-asset-register-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-procurement-vendor-vendor-onboarding-purchase-requisition-payment-po-asset-register-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Collect vendor documentation (NTN, CNIC, bank details), approve purchases above threshold, match invoice to PO before payment, track capital assets with depreciation.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-procurement-vendor-vendor-onboarding-purchase-requisition-payment-po-asset-register-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4411,14 +5477,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-audit-controls-internal-checks-external-audit-process-documentation-description" onclick="scrollToSection('ws-finance-compliance-audit-controls-internal-checks-external-audit-process-documentation-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-audit-controls-internal-checks-external-audit-process-documentation-raci" onclick="scrollToSection('ws-finance-compliance-audit-controls-internal-checks-external-audit-process-documentation-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-audit-controls-internal-checks-external-audit-process-documentation-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Monthly random transaction sampling, coordinate annual external audit, maintain finance SOPs using GSMA policies as template.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-audit-controls-internal-checks-external-audit-process-documentation-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4475,14 +5562,35 @@ body {
     </div>
   </div>
 
-  <div class="content-section">
+  <nav class="workstream-toc">
+    <div class="toc-header">Quick Jump:</div>
+    <ul class="toc-list">
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-audit-controls-approval-thresholds-description" onclick="scrollToSection('ws-finance-compliance-audit-controls-approval-thresholds-description'); return false;">
+          <span class="toc-icon">📝</span>
+          <span class="toc-text">Description</span>
+        </a>
+      </li>
+
+      <li class="toc-item">
+        <a href="#" class="toc-link" data-section-id="ws-finance-compliance-audit-controls-approval-thresholds-raci" onclick="scrollToSection('ws-finance-compliance-audit-controls-approval-thresholds-raci'); return false;">
+          <span class="toc-icon">👥</span>
+          <span class="toc-text">RACI Matrix</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <div class="content-section" id="ws-finance-compliance-audit-controls-approval-thresholds-description">
     <h2 class="section-title">Description</h2>
     <div class="section-content">
       <p>Implement spending approval limits based on transaction amount.</p>
     </div>
   </div>
 
-  <div class="content-section">
+  <div class="content-section" id="ws-finance-compliance-audit-controls-approval-thresholds-raci">
     <h2 class="section-title">RACI Matrix</h2>
     <div class="section-content">
 
@@ -4558,6 +5666,23 @@ function generateId(text) {
 
 function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    // Get the section's position
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+    // Add offset to account for sticky headers and provide breathing room
+    const offset = 100;
+    const scrollToPosition = sectionTop - offset;
+
+    // Scroll to position with smooth behavior
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth'
+    });
+  }
 }
 
 // Navigation Functions

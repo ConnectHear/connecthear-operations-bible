@@ -26,6 +26,23 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    // Get the section's position
+    const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+    // Add offset to account for sticky headers and provide breathing room
+    const offset = 100;
+    const scrollToPosition = sectionTop - offset;
+
+    // Scroll to position with smooth behavior
+    window.scrollTo({
+      top: scrollToPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
 // Navigation Functions
 function toggleDepartment(deptId) {
   const deptElement = document.querySelector(`[data-dept-id="${deptId}"]`);
