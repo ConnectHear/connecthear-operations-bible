@@ -132,11 +132,176 @@ def parse_dependencies(lines: List[str]) -> List[Dict[str, str]]:
     return dependencies
 
 
+def parse_process_steps(lines: List[str], start_idx: int) -> Tuple[Dict, int]:
+    """
+    Parse the **Process Steps:** section.
+
+    Args:
+        lines: All lines for this workstream
+        start_idx: Index where Process Steps section starts
+
+    Returns:
+        Tuple of (process_steps dict, next_index)
+    """
+    process_steps = {
+        'steps': [],
+        'decision_points': [],
+        'common_issues': [],
+        'tools': [],
+        'related_workstreams': []
+    }
+
+    i = start_idx + 1  # Skip the "**Process Steps:**" line
+    current_step = None
+    current_section = 'steps'  # Track which subsection we're in
+
+    while i < len(lines):
+        line = lines[i].strip()
+
+        # Stop if we hit next workstream, area, or department
+        # But NOT #### (which is a Process Steps subsection)
+        if line.startswith('# ') and not line.startswith('#### '):
+            break
+        if line.startswith('## ') and not line.startswith('#### '):
+            break
+        if line.startswith('### ') and not line.startswith('#### '):
+            break
+
+        # Stop if we hit another major workstream section (like **Description:**, **RACI:**)
+        # But NOT Process Steps subsections like **Issue:**, **Solution:**, **If X:**
+        if (line.startswith('**') and ':' in line and
+            not line.startswith('**If') and
+            not line.startswith('**Issue:') and
+            not line.startswith('**Solution:')):
+            # This is a new section like **RACI:**, **Dependencies:**, stop parsing process steps
+            break
+
+        # Check for Process Steps subsections (#### headers)
+        if line.startswith('####'):
+            # Extract the subsection title
+            subsection_title = line.replace('####', '').strip()
+
+            if 'Decision Points' in subsection_title:
+                current_section = 'decision_points'
+                i += 1
+                continue
+            elif 'Common Issues' in subsection_title:
+                current_section = 'common_issues'
+                i += 1
+                continue
+            elif 'Tools' in subsection_title or 'Access' in subsection_title:
+                current_section = 'tools'
+                i += 1
+                continue
+            elif 'Key Thresholds' in subsection_title:
+                current_section = 'tools'  # Treat thresholds as tools
+                i += 1
+                continue
+            elif 'Related Workstreams' in subsection_title:
+                current_section = 'related_workstreams'
+                i += 1
+                continue
+
+            # Check if it's a numbered step (#### 1., #### 2., etc.)
+            step_match = re.match(r'^(\d+)\.\s*(.+)$', subsection_title)
+            if step_match and current_section == 'steps':
+                # Save previous step if exists
+                if current_step:
+                    process_steps['steps'].append(current_step)
+
+                # Start new step
+                step_num = int(step_match.group(1))
+                step_title = step_match.group(2).strip()
+                current_step = {
+                    'number': step_num,
+                    'title': step_title,
+                    'details': []
+                }
+                i += 1
+                continue
+
+        # Parse step details (bullet points) - only for steps section
+        if current_section == 'steps' and current_step and (line.startswith('-') or line.startswith('*')):
+            detail = re.sub(r'^[-*]\s*', '', line)
+            current_step['details'].append(detail)
+            i += 1
+            continue
+
+        # Parse Decision Points
+        if current_section == 'decision_points':
+            # Format: **If X:** Action OR **Condition:** Action
+            decision_match = re.match(r'\*\*(.+?):\*\*\s*(.+)$', line)
+            if decision_match:
+                condition = decision_match.group(1).strip()
+                action = decision_match.group(2).strip()
+                process_steps['decision_points'].append({
+                    'condition': condition,
+                    'action': action
+                })
+            elif line.startswith('-') or line.startswith('*'):
+                # Alternative format: - If X: Action
+                detail = re.sub(r'^[-*]\s*', '', line)
+                if ':' in detail:
+                    parts = detail.split(':', 1)
+                    process_steps['decision_points'].append({
+                        'condition': parts[0].strip(),
+                        'action': parts[1].strip()
+                    })
+            i += 1
+            continue
+
+        # Parse Common Issues
+        if current_section == 'common_issues':
+            # Format: **Issue:** Description **Solution:** Fix
+            if line.startswith('**Issue:**'):
+                issue_text = line.replace('**Issue:**', '').strip()
+                solution_text = ''
+
+                # Look ahead for solution on next line
+                if i + 1 < len(lines) and '**Solution:**' in lines[i + 1]:
+                    solution_text = lines[i + 1].replace('**Solution:**', '').strip()
+                    i += 1
+
+                process_steps['common_issues'].append({
+                    'issue': issue_text,
+                    'solution': solution_text
+                })
+            i += 1
+            continue
+
+        # Parse Tools & Access (bullet list)
+        if current_section == 'tools' and (line.startswith('-') or line.startswith('*')):
+            tool = re.sub(r'^[-*]\s*', '', line)
+            process_steps['tools'].append(tool)
+            i += 1
+            continue
+
+        # Parse Related Workstreams (bullet list)
+        if current_section == 'related_workstreams' and (line.startswith('-') or line.startswith('*')):
+            ws = re.sub(r'^[-*]\s*', '', line)
+            process_steps['related_workstreams'].append(ws)
+            i += 1
+            continue
+
+        # Skip empty lines
+        if not line:
+            i += 1
+            continue
+
+        i += 1
+
+    # Save last step
+    if current_step:
+        process_steps['steps'].append(current_step)
+
+    return process_steps, i
+
+
 def parse_workstream_content(lines: List[str]) -> Dict:
     """
     Parse all content sections of a workstream.
 
-    Sections: Description, Frequency, Output, Dependencies, RACI, Notes
+    Sections: Description, Frequency, Output, Dependencies, RACI, Notes, Process Steps (v2.0)
 
     Args:
         lines: All lines for this workstream
@@ -151,6 +316,7 @@ def parse_workstream_content(lines: List[str]) -> Dict:
         'dependencies': [],
         'raci': [],
         'notes': [],
+        'process_steps': None,  # v2.0: Process steps section
         'content_raw': '\n'.join(lines)
     }
 
@@ -235,6 +401,13 @@ def parse_workstream_content(lines: List[str]) -> Dict:
                 i += 1
 
             content['raci'] = parse_raci_table(raci_lines)
+            continue
+
+        # Extract Process Steps (v2.0)
+        elif line.startswith('**Process Steps:**'):
+            process_steps_data, next_i = parse_process_steps(lines, i)
+            content['process_steps'] = process_steps_data
+            i = next_i
             continue
 
         # Extract notes sections (Key Process Notes, Critical Implementation Requirements, etc.)

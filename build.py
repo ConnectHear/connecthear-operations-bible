@@ -25,7 +25,7 @@ def main():
     print()
 
     # Define paths
-    input_md = Path('input/ConnectHear_Operations_Bible_v2.md')
+    input_md = Path('input/ConnectHear_Operations_Bible_v2.1_WITH_PROCESS_STEPS.md')
     output_json = Path('output/data.json')
     output_html = Path('output/index.html')
 
@@ -114,6 +114,7 @@ def main():
         'Search': 'id="search-input"' in html_content,
         'JavaScript': 'OPERATIONS_DATA' in html_content,
         'CSS': 'class="workstream-section"' in html_content,
+        'Process Steps (v2.0)': 'class="process-steps"' in html_content,
     }
 
     all_passed = True

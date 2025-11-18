@@ -29,6 +29,146 @@ def convert_markdown_bold(text: str) -> str:
     return text
 
 
+def generate_process_steps_html(process_steps: Dict, ws_id: str) -> str:
+    """
+    Generate HTML for Process Steps section (v2.0).
+
+    Args:
+        process_steps: Process steps dictionary
+        ws_id: Workstream ID for anchor links
+
+    Returns:
+        HTML string for process steps
+    """
+    if not process_steps or not process_steps.get('steps'):
+        return ''
+
+    html_content = f'''
+  <div class="process-steps" id="{ws_id}-process-steps">
+    <h2 class="section-title">How to Do This</h2>
+    <div class="section-content">
+'''
+
+    # Main steps
+    if process_steps.get('steps'):
+        html_content += '''
+      <div class="steps-list">
+'''
+        for step in process_steps['steps']:
+            step_num = step.get('number', 1)
+            step_title = convert_markdown_bold(step.get('title', ''))
+            details = step.get('details', [])
+
+            html_content += f'''
+        <div class="step">
+          <div class="step-number">{step_num}</div>
+          <div class="step-content">
+            <h5 class="step-title">{step_title}</h5>
+'''
+
+            if details:
+                html_content += '''
+            <ul class="step-details">
+'''
+                for detail in details:
+                    detail_text = convert_markdown_bold(detail)
+                    html_content += f'              <li>{detail_text}</li>\n'
+
+                html_content += '''
+            </ul>
+'''
+
+            html_content += '''
+          </div>
+        </div>
+'''
+
+        html_content += '''
+      </div>
+'''
+
+    # Decision Points
+    if process_steps.get('decision_points'):
+        html_content += '''
+      <div class="decision-points">
+        <h5 class="subsection-title">Decision Points</h5>
+'''
+        for decision in process_steps['decision_points']:
+            condition = convert_markdown_bold(decision.get('condition', ''))
+            action = convert_markdown_bold(decision.get('action', ''))
+
+            html_content += f'''
+        <div class="decision">
+          <strong>{condition}:</strong>
+          <span>{action}</span>
+        </div>
+'''
+
+        html_content += '''
+      </div>
+'''
+
+    # Common Issues
+    if process_steps.get('common_issues'):
+        html_content += '''
+      <div class="common-issues">
+        <h5 class="subsection-title">Common Issues</h5>
+'''
+        for issue_item in process_steps['common_issues']:
+            issue = convert_markdown_bold(issue_item.get('issue', ''))
+            solution = convert_markdown_bold(issue_item.get('solution', ''))
+
+            html_content += f'''
+        <div class="issue-solution">
+          <p class="issue"><strong>Issue:</strong> {issue}</p>
+          <p class="solution"><strong>Solution:</strong> {solution}</p>
+        </div>
+'''
+
+        html_content += '''
+      </div>
+'''
+
+    # Tools & Access
+    if process_steps.get('tools'):
+        html_content += '''
+      <div class="tools-access">
+        <h5 class="subsection-title">Tools & Access</h5>
+        <ul class="tools-list">
+'''
+        for tool in process_steps['tools']:
+            tool_text = convert_markdown_bold(tool)
+            html_content += f'          <li>{tool_text}</li>\n'
+
+        html_content += '''
+        </ul>
+      </div>
+'''
+
+    # Related Workstreams
+    if process_steps.get('related_workstreams'):
+        html_content += '''
+      <div class="related-workstreams">
+        <h5 class="subsection-title">Related Workstreams</h5>
+        <ul class="related-list">
+'''
+        for ws in process_steps['related_workstreams']:
+            ws_text = convert_markdown_bold(ws)
+            html_content += f'          <li>{ws_text}</li>\n'
+
+        html_content += '''
+        </ul>
+      </div>
+'''
+
+    html_content += '''
+    </div>
+  </div>
+'''
+
+    return html_content
+
+
 def load_template_file(filename: str) -> str:
     """Load a template file from src/templates/"""
     template_path = Path(__file__).parent / 'templates' / filename
@@ -180,6 +320,8 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
     toc_items = []
     if ws.get('description'):
         toc_items.append(('description', 'Description', '📝'))
+    if ws.get('process_steps') and ws['process_steps'].get('steps'):
+        toc_items.append(('process-steps', 'How to Do This', '📋'))
     if ws.get('output'):
         toc_items.append(('output', 'Output', '📊'))
     if ws.get('dependencies'):
@@ -253,6 +395,10 @@ def generate_workstream_html(dept: Dict, area: Dict, ws: Dict) -> str:
     </div>
   </div>
 '''
+
+    # Process Steps section (v2.0)
+    if ws.get('process_steps') and ws['process_steps'].get('steps'):
+        html_content += generate_process_steps_html(ws['process_steps'], ws_id)
 
     # Output section
     if ws.get('output'):

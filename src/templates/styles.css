@@ -1062,3 +1062,306 @@ body {
 .mb-md { margin-bottom: var(--space-md); }
 .mb-lg { margin-bottom: var(--space-lg); }
 .mb-xl { margin-bottom: var(--space-xl); }
+
+/* ========================================
+   Process Steps (v2.0)
+   ======================================== */
+
+/* Main Process Steps Container */
+.process-steps {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.process-steps:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+/* Steps List */
+.steps-list {
+  margin: var(--space-xl) 0;
+}
+
+.step {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  background: white;
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.step:hover {
+  transform: translateX(8px);
+  box-shadow: 0 4px 16px rgba(79, 70, 229, 0.15);
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.step-number {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  min-width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-size-xl);
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 var(--space-md) 0;
+  line-height: 1.4;
+}
+
+.step-details {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.step-details li {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  position: relative;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.step-details li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+}
+
+.step-details li:last-child {
+  margin-bottom: 0;
+}
+
+/* Subsections Title */
+.subsection-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--space-xl) 0 var(--space-md) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.subsection-title::before {
+  content: '';
+  width: 3px;
+  height: 1.5rem;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 2px;
+}
+
+/* Decision Points */
+.decision-points {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 2px solid var(--border-light);
+}
+
+.decision {
+  background: white;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.decision:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.decision strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.decision span {
+  color: var(--text-primary);
+  margin-left: var(--space-xs);
+}
+
+/* Common Issues */
+.common-issues {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 2px solid var(--border-light);
+}
+
+.issue-solution {
+  background: white;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+  border-left: 4px solid var(--warning);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.issue-solution:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+}
+
+.issue-solution .issue {
+  margin: 0 0 var(--space-sm) 0;
+  color: var(--text-primary);
+}
+
+.issue-solution .issue strong {
+  color: var(--warning);
+}
+
+.issue-solution .solution {
+  margin: 0;
+  color: var(--text-primary);
+}
+
+.issue-solution .solution strong {
+  color: var(--success);
+}
+
+/* Tools & Access */
+.tools-access {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 2px solid var(--border-light);
+}
+
+.tools-list {
+  list-style: none;
+  margin: var(--space-md) 0 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-sm);
+}
+
+.tools-list li {
+  background: white;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: all 0.2s ease;
+}
+
+.tools-list li::before {
+  content: '🔧';
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+.tools-list li:hover {
+  background: var(--bg-hover);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Related Workstreams */
+.related-workstreams {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-xl);
+  border-top: 2px solid var(--border-light);
+}
+
+.related-list {
+  list-style: none;
+  margin: var(--space-md) 0 0 0;
+  padding: 0;
+}
+
+.related-list li {
+  background: white;
+  padding: var(--space-md);
+  margin-bottom: var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  transition: all 0.2s ease;
+}
+
+.related-list li::before {
+  content: '🔗';
+  font-size: var(--font-size-lg);
+  flex-shrink: 0;
+}
+
+.related-list li:hover {
+  background: var(--bg-hover);
+  border-color: var(--secondary);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(6, 182, 212, 0.15);
+}
+
+/* Mobile Responsive for Process Steps */
+@media (max-width: 768px) {
+  .process-steps {
+    padding: var(--space-lg);
+  }
+
+  .step {
+    flex-direction: column;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+  }
+
+  .step-number {
+    width: 2.5rem;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    font-size: var(--font-size-lg);
+  }
+
+  .tools-list {
+    grid-template-columns: 1fr;
+  }
+}

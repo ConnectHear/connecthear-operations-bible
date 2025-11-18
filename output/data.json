@@ -1,870 +1,6 @@
 {
   "departments": [
     {
-      "id": "business-development",
-      "name": "Business Development",
-      "emoji": "🔷",
-      "areas": [
-        {
-          "id": "partnerships-sales",
-          "name": "Partnerships & Sales",
-          "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "lead-sourcing-tracking",
-              "name": "Lead Sourcing & Tracking",
-              "description": "Maintaining CRM database with all incoming leads from multiple sources including direct inquiries, indirect sources (interpreters receiving requests, event interactions, leadership networking), social media, and referrals. Track lead progression through defined pipeline stages.",
-              "frequency": "Weekly (CRM updates), Daily (new lead logging)",
-              "output": [
-                "Updated CRM sheet with all leads",
-                "Lead status tracking with pipeline stages: New → Contacted → Qualified → Won/Lost",
-                "Indirect lead register with source attribution"
-              ],
-              "dependencies": [
-                {
-                  "team": "Marketing",
-                  "reason": "for social media traffic and campaigns"
-                },
-                {
-                  "team": "Sign Language Department",
-                  "reason": "for interpreter-sourced leads from calls and events"
-                },
-                {
-                  "team": "Leadership",
-                  "reason": "for networking-sourced opportunities"
-                }
-              ],
-              "raci": [
-                {
-                  "role": "BD Associate (Hiba/Ahmed)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Interpreters",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "Marketing",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "Leadership",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": true
-                }
-              ],
-              "notes": [
-                {
-                  "title": "Key Process Notes",
-                  "content": [
-                    "**Indirect Lead Scenarios:**",
-                    "Interpreters receive calls from employees (4 free calls, then 5th triggers BD contact)",
-                    "Interpreters collect company requests at events and forward to BD",
-                    "Leadership meets potential clients at events/conferences",
-                    "**Tracking Requirements:** Simple stage tracking for incentive calculation",
-                    "**Lead Qualification:** Record employer details, decision-maker info, and service interest"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Maintaining CRM database with all incoming leads from multiple sources including direct inquiries, indirect sources (interpreters receiving requests, event interactions, leadership networking), social media, and referrals. Track lead progression through defined pipeline stages.\n\n**Frequency:** Weekly (CRM updates), Daily (new lead logging)\n\n**Output:** \n- Updated CRM sheet with all leads\n- Lead status tracking with pipeline stages: New → Contacted → Qualified → Won/Lost\n- Indirect lead register with source attribution\n\n**Dependencies:** \n- Marketing (for social media traffic and campaigns)\n- Sign Language Department (for interpreter-sourced leads from calls and events)\n- Leadership (for networking-sourced opportunities)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate (Hiba/Ahmed) | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Interpreters | | | ✅ | |\n| Marketing | | | ✅ | |\n| Leadership | | | | ✅ |\n\n**Key Process Notes:**\n- **Indirect Lead Scenarios:**\n  - Interpreters receive calls from employees (4 free calls, then 5th triggers BD contact)\n  - Interpreters collect company requests at events and forward to BD\n  - Leadership meets potential clients at events/conferences\n- **Tracking Requirements:** Simple stage tracking for incentive calculation\n- **Lead Qualification:** Record employer details, decision-maker info, and service interest\n\n---\n"
-            },
-            {
-              "id": "outreach-demos",
-              "name": "Outreach & Demos",
-              "description": "- **For App Services:** Conduct email outreach campaigns, schedule product demos, present ConnectHear app capabilities, and gather feedback for proposal development - **For Training/Interpretation Services:** Send service details, capabilities overview, and schedule discussion calls - Maintain recurring task system in CRM for consistent follow-up activity",
-              "frequency": "Weekly (outreach campaigns), Per Lead (demos)",
-              "output": [
-                "Outreach email logs with response tracking",
-                "Demo session recordings and feedback notes",
-                "Next-step requirements documented for proposal phase"
-              ],
-              "dependencies": [
-                {
-                  "team": "Product Team",
-                  "reason": "for app demo support and technical questions"
-                },
-                {
-                  "team": "Sign Language Department",
-                  "reason": "for service capability details"
-                },
-                {
-                  "team": "Marketing",
-                  "reason": "for presentation materials"
-                }
-              ],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Product Team",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "SL Department",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [
-                {
-                  "title": "Key Process Notes",
-                  "content": [
-                    "CRM must include recurring task system for daily BD activity planning",
-                    "Demo feedback directly feeds into proposal customization",
-                    "Track demo-to-proposal conversion rate"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** \n- **For App Services:** Conduct email outreach campaigns, schedule product demos, present ConnectHear app capabilities, and gather feedback for proposal development\n- **For Training/Interpretation Services:** Send service details, capabilities overview, and schedule discussion calls\n- Maintain recurring task system in CRM for consistent follow-up activity\n\n**Frequency:** Weekly (outreach campaigns), Per Lead (demos)\n\n**Output:** \n- Outreach email logs with response tracking\n- Demo session recordings and feedback notes\n- Next-step requirements documented for proposal phase\n\n**Dependencies:** \n- Product Team (for app demo support and technical questions)\n- Sign Language Department (for service capability details)\n- Marketing (for presentation materials)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Product Team | | | ✅ | |\n| SL Department | | | ✅ | |\n\n**Key Process Notes:**\n- CRM must include recurring task system for daily BD activity planning\n- Demo feedback directly feeds into proposal customization\n- Track demo-to-proposal conversion rate\n\n---\n"
-            },
-            {
-              "id": "proposal-development",
-              "name": "Proposal Development",
-              "description": "Prepare comprehensive proposal decks and documents based on client requirements, incorporating inputs from technical teams, pricing from Finance, and service specifications from delivery departments.",
-              "frequency": "Per Lead",
-              "output": [
-                "Customized proposal deck/document",
-                "Pricing sheet with breakdown",
-                "Service package specification",
-                "Timeline and delivery milestones"
-              ],
-              "dependencies": [
-                {
-                  "team": "Finance",
-                  "reason": "for pricing confirmation and approval"
-                },
-                {
-                  "team": "Product Team",
-                  "reason": "for technical feasibility"
-                },
-                {
-                  "team": "Sign Language Department",
-                  "reason": "for interpreter availability"
-                },
-                {
-                  "team": "Content & Design",
-                  "reason": "for proposal formatting"
-                }
-              ],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "Delivery Teams",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "Content & Design",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "Leadership",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": true
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Prepare comprehensive proposal decks and documents based on client requirements, incorporating inputs from technical teams, pricing from Finance, and service specifications from delivery departments.\n\n**Frequency:** Per Lead\n\n**Output:** \n- Customized proposal deck/document\n- Pricing sheet with breakdown\n- Service package specification\n- Timeline and delivery milestones\n\n**Dependencies:** \n- Finance (for pricing confirmation and approval)\n- Product Team (for technical feasibility)\n- Sign Language Department (for interpreter availability)\n- Content & Design (for proposal formatting)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Finance Associate (Umaima) | | | ✅ | |\n| Delivery Teams | | | ✅ | |\n| Content & Design | | | ✅ | |\n| Leadership | | | | ✅ |\n\n---\n"
-            },
-            {
-              "id": "contracting-closure",
-              "name": "Contracting & Closure",
-              "description": "Finalize contracts with legal and financial terms, obtain signatures from all parties, and archive signed agreements. **Critical Gap:** Currently only app services have proper contracts (Digital Services Agreement). Training and interpretation services rely on MOUs which are not legally binding and create revenue recognition and payment risks.",
-              "frequency": "Per Deal",
-              "output": [
-                "Signed contract (Digital Services Agreement for app, Service Agreement for training/interpretation)",
-                "**Mandatory:** Purchase Order (PO) from client before service delivery begins",
-                "Contract archived in shared drive with proper naming convention",
-                "Contract terms logged in CRM for renewal tracking"
-              ],
-              "dependencies": [
-                {
-                  "team": "Finance",
-                  "reason": "for contract review, terms approval, and PO verification"
-                },
-                {
-                  "team": "Legal",
-                  "reason": "for contract language and compliance, if applicable"
-                },
-                {
-                  "team": "Leadership",
-                  "reason": "for final approval on significant deals"
-                }
-              ],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Finance Associate",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "Leadership",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": true
-                }
-              ],
-              "notes": [
-                {
-                  "title": "Critical Implementation Requirements",
-                  "content": [
-                    "**New Policy:** No service delivery without Purchase Order (PO) from client",
-                    "**Contract Development Needed:** Create standard Service Agreements for:",
-                    "Interpretation services (hourly/event-based)",
-                    "Training programs (corporate/public batches)",
-                    "**Revenue Protection:** Contracts ensure proper invoicing, payment terms, and reduce delayed payment risk",
-                    "**PO Requirement:** Ensures client's finance department is aware and payment is budgeted"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Finalize contracts with legal and financial terms, obtain signatures from all parties, and archive signed agreements. **Critical Gap:** Currently only app services have proper contracts (Digital Services Agreement). Training and interpretation services rely on MOUs which are not legally binding and create revenue recognition and payment risks.\n\n**Frequency:** Per Deal\n\n**Output:** \n- Signed contract (Digital Services Agreement for app, Service Agreement for training/interpretation)\n- **Mandatory:** Purchase Order (PO) from client before service delivery begins\n- Contract archived in shared drive with proper naming convention\n- Contract terms logged in CRM for renewal tracking\n\n**Dependencies:** \n- Finance (for contract review, terms approval, and PO verification)\n- Legal (for contract language and compliance, if applicable)\n- Leadership (for final approval on significant deals)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Finance Associate | | | ✅ | |\n| Leadership | | | | ✅ |\n\n**Critical Implementation Requirements:**\n- **New Policy:** No service delivery without Purchase Order (PO) from client\n- **Contract Development Needed:** Create standard Service Agreements for:\n  - Interpretation services (hourly/event-based)\n  - Training programs (corporate/public batches)\n- **Revenue Protection:** Contracts ensure proper invoicing, payment terms, and reduce delayed payment risk\n- **PO Requirement:** Ensures client's finance department is aware and payment is budgeted\n\n\n\n---\n"
-            },
-            {
-              "id": "renewal-upsell",
-              "name": "Renewal & Upsell",
-              "description": "Track contract expiration dates, proactively reach out to clients for renewal discussions, negotiate updated terms, and identify opportunities for service expansion.",
-              "frequency": "Quarterly (pipeline review), Per Contract (renewal outreach 60-90 days before expiry)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Finance Associate",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Track contract expiration dates, proactively reach out to clients for renewal discussions, negotiate updated terms, and identify opportunities for service expansion.\n\n**Frequency:** Quarterly (pipeline review), Per Contract (renewal outreach 60-90 days before expiry)\n\n**Output:** Renewal agreements, upsell proposals, updated contract database\n\n**Dependencies:** Finance (for updated pricing), Delivery Teams (for service performance data)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Finance Associate | | | ✅ | |\n\n---\n"
-            }
-          ]
-        },
-        {
-          "id": "client-management",
-          "name": "Client Management",
-          "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "account-onboarding",
-              "name": "Account Onboarding",
-              "description": "**App Services Only:** Welcome new client organizations, conduct kickoff meetings, align technical requirements with Product Team, and coordinate interpreter pool assignment.",
-              "frequency": "Per Client",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Product Team",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** **App Services Only:** Welcome new client organizations, conduct kickoff meetings, align technical requirements with Product Team, and coordinate interpreter pool assignment.\n\n**Frequency:** Per Client\n\n**Output:** Welcome email, kickoff meeting notes, client setup in app, interpreter assignment\n\n**Dependencies:** Product Team (for technical setup), Sign Language Department (for interpreter pool)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n| Product Team | | | ✅ | |\n\n---\n"
-            },
-            {
-              "id": "sla-tracking",
-              "name": "SLA Tracking",
-              "description": "**Currently Not Implemented - Future Requirement:** Monitor service performance metrics against contracted SLAs and send regular performance reports to clients.",
-              "frequency": "Monthly (client reports), Weekly (internal tracking)",
-              "output": [
-                "Monthly/Quarterly client performance reports (call metrics, response time, duration, issues)",
-                "Internal SLA dashboard"
-              ],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Product Team",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                },
-                {
-                  "role": "Lead Interpreter",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [
-                {
-                  "title": "Implementation Requirements",
-                  "content": [
-                    "Develop reporting template",
-                    "Set up analytics dashboard",
-                    "Define SLA thresholds",
-                    "Integrate with ERPNext service delivery marking"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** **Currently Not Implemented - Future Requirement:** Monitor service performance metrics against contracted SLAs and send regular performance reports to clients.\n\n**Frequency:** Monthly (client reports), Weekly (internal tracking)\n\n**Output:** \n- Monthly/Quarterly client performance reports (call metrics, response time, duration, issues)\n- Internal SLA dashboard\n\n**Dependencies:** Product Team (for analytics), Sign Language Department (for service data)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Product Team | | | ✅ | |\n| Lead Interpreter | | | ✅ | |\n\n**Implementation Requirements:**\n- Develop reporting template\n- Set up analytics dashboard\n- Define SLA thresholds\n- Integrate with ERPNext service delivery marking\n\n---\n"
-            },
-            {
-              "id": "client-feedback",
-              "name": "Client Feedback",
-              "description": "Systematically collect client feedback after service delivery. Mark services as \"Delivered\" in ERPNext to trigger automated feedback collection.",
-              "frequency": "Per Service Delivery, Monthly (compilation)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Systematically collect client feedback after service delivery. Mark services as \"Delivered\" in ERPNext to trigger automated feedback collection.\n\n**Frequency:** Per Service Delivery, Monthly (compilation)\n\n**Output:** Client feedback forms, aggregated summary, client health sheet, testimonials\n\n**Dependencies:** AdminOps (for survey tools), Marketing (for testimonials), Delivery Teams (for service completion)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n\n---\n"
-            },
-            {
-              "id": "relationship-building",
-              "name": "Relationship Building",
-              "description": "Maintain ongoing relationships through check-ins, sharing updates, celebrating occasions (Eid, holidays), and maintaining detailed contact intelligence.",
-              "frequency": "Quarterly (formal check-ins), Ongoing (occasion-based outreach)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [
-                {
-                  "title": "Key Process Notes",
-                  "content": [
-                    "Maintain \"Key Facts Sheet\" for each POC with personal details",
-                    "Example: Note daughter's dance recital for rapport building",
-                    "Send Eid greetings, public holiday messages, milestone congratulations"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Maintain ongoing relationships through check-ins, sharing updates, celebrating occasions (Eid, holidays), and maintaining detailed contact intelligence.\n\n**Frequency:** Quarterly (formal check-ins), Ongoing (occasion-based outreach)\n\n**Output:** Check-in meeting notes, client contact intelligence database, relationship health tracking\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n\n**Key Process Notes:**\n- Maintain \"Key Facts Sheet\" for each POC with personal details\n- Example: Note daughter's dance recital for rapport building\n- Send Eid greetings, public holiday messages, milestone congratulations\n\n---\n"
-            }
-          ]
-        },
-        {
-          "id": "proposals-grants-support",
-          "name": "Proposals & Grants Support",
-          "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "opportunity-scanning",
-              "name": "Opportunity Scanning",
-              "description": "Continuously identify grant opportunities and funding calls. **New Structure:** Mir (Project Associate/Public Affairs) works alongside BD team.",
-              "frequency": "Weekly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Mir (Projects/Public Affairs)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Continuously identify grant opportunities and funding calls. **New Structure:** Mir (Project Associate/Public Affairs) works alongside BD team.\n\n**Frequency:** Weekly\n\n**Output:** Grant opportunity tracker with deadlines, eligibility, requirements\n\n**Dependencies:** Leadership (for strategic alignment), Projects (Mir - for public affairs)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Mir (Projects/Public Affairs) | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n\n---\n"
-            },
-            {
-              "id": "gono-go-evaluation",
-              "name": "Go/No-Go Evaluation",
-              "description": "Evaluate grant opportunities against eligibility, strategic fit, resources, and ROI.",
-              "frequency": "Weekly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Mir (Projects)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Finance/Product/Leadership",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Evaluate grant opportunities against eligibility, strategic fit, resources, and ROI.\n\n**Frequency:** Weekly\n\n**Output:** Go/No-Go decision matrix, resource assessment, strategic alignment justification\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Mir (Projects) | ✅ | | | |\n| Finance/Product/Leadership | | | ✅ | |\n\n---\n"
-            },
-            {
-              "id": "concept-note-preparation",
-              "name": "Concept Note Preparation",
-              "description": "Draft tailored concept notes specific to each grant, gathering inputs from relevant teams.",
-              "frequency": "Per Grant",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Mir (Projects)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "All Relevant Depts",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Draft tailored concept notes specific to each grant, gathering inputs from relevant teams.\n\n**Frequency:** Per Grant\n\n**Output:** Grant-specific concept note, budget breakdown, supporting documentation\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Mir (Projects) | ✅ | | | |\n| All Relevant Depts | | | ✅ | |\n\n---\n"
-            },
-            {
-              "id": "handoff-to-finance",
-              "name": "Handoff to Finance",
-              "description": "Transfer completed concept notes, final application documents, and supporting materials to Finance team.",
-              "frequency": "Per Grant",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Finance Associate",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Transfer completed concept notes, final application documents, and supporting materials to Finance team.\n\n**Frequency:** Per Grant\n\n**Output:** Complete application package, budget documentation, timeline and reporting requirements\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Finance Associate | | ✅ | | |\n\n---\n"
-            }
-          ]
-        },
-        {
-          "id": "market-expansion",
-          "name": "Market Expansion",
-          "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "regionaldomain-analysis",
-              "name": "Regional/Domain Analysis",
-              "description": "Research expansion opportunities in new regions or industry verticals. Assess market size, regulations, accessibility spending, GDP, competitive landscape.",
-              "frequency": "Quarterly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Leadership",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Research expansion opportunities in new regions or industry verticals. Assess market size, regulations, accessibility spending, GDP, competitive landscape.\n\n**Frequency:** Quarterly\n\n**Output:** One-page market scan, entry strategy recommendations, risk assessment, regulatory requirements\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Leadership | | | ✅ | |\n\n**Examples:**\n- **Geographic:** Africa vs Middle East - regulations, GDP, accessibility spending\n- **Industry:** Healthcare, Education, Banking - specific needs\n- Example: DHA requiring Filipino Sign Language - unexpected localization need\n\n---\n"
-            },
-            {
-              "id": "partnership-identification",
-              "name": "Partnership Identification",
-              "description": "Identify and approach potential local partners, resellers, or collaborators in target markets.",
-              "frequency": "Quarterly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Leadership",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Identify and approach potential local partners, resellers, or collaborators in target markets.\n\n**Frequency:** Quarterly\n\n**Output:** Target partner list, partnership model proposals, initial outreach, evaluation criteria\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Leadership | | | ✅ | |\n\n---\n"
-            },
-            {
-              "id": "localization-input",
-              "name": "Localization Input",
-              "description": "Document specific local requirements including sign language variants, cultural adaptations, regulatory compliance, and service customizations.",
-              "frequency": "Per Expansion Initiative",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Product/SL/Content Teams",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Document specific local requirements including sign language variants, cultural adaptations, regulatory compliance, and service customizations.\n\n**Frequency:** Per Expansion Initiative\n\n**Output:** Localization requirements document (sign language variants, translations, cultural considerations, compliance needs)\n\n**Dependencies:** Product Team, Sign Language Department, Content & Design\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Product/SL/Content Teams | | | ✅ | |\n\n---\n"
-            },
-            {
-              "id": "feasibility-report",
-              "name": "Feasibility Report",
-              "description": "Compile comprehensive feasibility analysis combining market research, partnerships, localization, and financial projections.",
-              "frequency": "Per Expansion Case",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Finance/Leadership",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Compile comprehensive feasibility analysis combining market research, partnerships, localization, and financial projections.\n\n**Frequency:** Per Expansion Case\n\n**Output:** Comprehensive feasibility report with market analysis, partnerships, localization costs, financial projections, risk assessment, go/no-go recommendation\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Finance/Leadership | | | ✅ | |\n\n---\n"
-            }
-          ]
-        },
-        {
-          "id": "events-demos",
-          "name": "Events & Demos",
-          "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "event-pipeline",
-              "name": "Event Pipeline",
-              "description": "Maintain annual and quarterly event calendar, evaluate ROI for each event type.",
-              "frequency": "Quarterly (planning), Ongoing (updates)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Marketing Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [
-                {
-                  "title": "Key Process Notes",
-                  "content": [
-                    "Plan events 3-6 months in advance",
-                    "Track lead generation per event for ROI",
-                    "Coordinate with Marketing for promotion and post-event content"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Maintain annual and quarterly event calendar, evaluate ROI for each event type.\n\n**Frequency:** Quarterly (planning), Ongoing (updates)\n\n**Output:** Annual event calendar, quarterly participation plan, event ROI tracking, budget allocation\n\n**Dependencies:** Marketing, Finance, Sign Language Department\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Marketing Associate | ✅ | | | |\n\n**Key Process Notes:**\n- Plan events 3-6 months in advance\n- Track lead generation per event for ROI\n- Coordinate with Marketing for promotion and post-event content\n\n---\n"
-            },
-            {
-              "id": "preparation-lead-capture-follow-up",
-              "name": "Preparation, Lead Capture, Follow-Up",
-              "description": "Complete pre-event logistics, collect contact data during events, and send thank-you communications within 5 days.",
-              "frequency": "Per Event",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Complete pre-event logistics, collect contact data during events, and send thank-you communications within 5 days.\n\n**Frequency:** Per Event\n\n**Output:** Demo kits, interpreter confirmations, contact data captured and uploaded to CRM, follow-up emails sent\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n\n---\n"
-            }
-          ]
-        },
-        {
-          "id": "internal-coordination",
-          "name": "Internal Coordination",
-          "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "weekly-review",
-              "name": "Weekly Review",
-              "description": "Weekly BD team standup to review leads, deals, blockers, and priorities.",
-              "frequency": "Weekly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Manager/Azima",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Weekly BD team standup to review leads, deals, blockers, and priorities.\n\n**Frequency:** Weekly\n\n**Output:** Meeting notes, blocker resolution plan, weekly priorities\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| BD Manager/Azima | | ✅ | | |\n\n---\n"
-            },
-            {
-              "id": "monthly-summary",
-              "name": "Monthly Summary",
-              "description": "Prepare comprehensive monthly BD performance report with KPIs, deals closed, pipeline value, revenue generated.",
-              "frequency": "Monthly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Finance Associate",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Prepare comprehensive monthly BD performance report with KPIs, deals closed, pipeline value, revenue generated.\n\n**Frequency:** Monthly\n\n**Output:** One-page BD summary (new leads by source, demos, proposals, contracts, revenue, pipeline value, key wins/challenges)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| Finance Associate | | | ✅ | |\n\n---\n"
-            },
-            {
-              "id": "cross-team-collaboration",
-              "name": "Cross-Team Collaboration",
-              "description": "Regular coordination with Finance, Product, Marketing, and delivery teams.",
-              "frequency": "Weekly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "BD Associate",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "All Relevant Teams",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Regular coordination with Finance, Product, Marketing, and delivery teams.\n\n**Frequency:** Weekly\n\n**Output:** Coordination meeting notes, updated capacity information, pricing alignments, campaign coordination\n\n**Dependencies:** Finance, Product, Marketing, Delivery Teams\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| BD Associate | ✅ | | | |\n| All Relevant Teams | | | ✅ | |\n\n---\n"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": "finance-compliance",
       "name": "Finance & Compliance",
       "emoji": "🔷",
@@ -877,10 +13,24 @@
             {
               "id": "accounts-payable",
               "name": "Accounts Payable",
-              "description": "Process all outgoing payments to vendors. **Process Flow:** Invoice received → Verify against PO → Confirm vendor documentation → Calculate 4% withholding → Process payment → File withholding tax → Issue tax challan → Receive receipt.",
-              "frequency": "Weekly",
-              "output": [],
-              "dependencies": [],
+              "description": "Processing all outgoing payments to vendors, contractors, and service providers following proper authorization, documentation, and withholding tax requirements.",
+              "frequency": "Weekly (payment processing), Monthly (withholding tax filing with FBR)",
+              "output": [
+                "Vendor payments processed in ERPNext and bank",
+                "Withholding tax (4%) deducted and filed monthly",
+                "Payment receipts filed",
+                "Vendor documentation maintained"
+              ],
+              "dependencies": [
+                {
+                  "team": "AdminOps",
+                  "reason": "for PO verification"
+                },
+                {
+                  "team": "Tax Compliance",
+                  "reason": "for monthly withholding filing with FBR"
+                }
+              ],
               "raci": [
                 {
                   "role": "Finance Associate (Umaima)",
@@ -890,151 +40,1106 @@
                   "informed": false
                 },
                 {
-                  "role": "Leadership (Arhum)",
+                  "role": "Finance Manager",
                   "responsible": false,
                   "accountable": true,
                   "consulted": false,
                   "informed": false
-                }
-              ],
-              "notes": [
+                },
                 {
-                  "title": "Critical Requirements",
-                  "content": [
-                    "Create accounts payable checklist",
-                    "Standardize vendor folder structure",
-                    "Implement approval thresholds"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Process all outgoing payments to vendors. **Process Flow:** Invoice received → Verify against PO → Confirm vendor documentation → Calculate 4% withholding → Process payment → File withholding tax → Issue tax challan → Receive receipt.\n\n**Frequency:** Weekly\n\n**Output:** Vendor payments processed, withholding tax filed, tax challans issued, payment receipts archived\n\n**Dependencies:** AdminOps (for PO verification), Vendors\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Leadership (Arhum) | | ✅ | | |\n\n**Critical Requirements:**\n- Create accounts payable checklist\n- Standardize vendor folder structure\n- Implement approval thresholds\n\n---\n"
-            },
-            {
-              "id": "accounts-receivable",
-              "name": "Accounts Receivable",
-              "description": "Issue client invoices, track payments, send reminders. Handle both online and physical invoices. **Cash Basis Accounting:** Revenue only recorded when payment received.",
-              "frequency": "Weekly (issuance/tracking), Daily (payment monitoring)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
+                  "role": "AdminOps (procurement)",
+                  "responsible": false,
                   "accountable": false,
-                  "consulted": false,
+                  "consulted": true,
                   "informed": false
                 },
                 {
-                  "role": "BD Team",
+                  "role": "Arhum/Azima (approval >10k)",
                   "responsible": false,
                   "accountable": false,
                   "consulted": true,
                   "informed": false
                 }
               ],
-              "notes": [
-                {
-                  "title": "Key Notes",
-                  "content": [
-                    "**Recurring Invoice Automation:** Auto-generate on 5th of month",
-                    "**Current Tool:** Using Wave app - consider ERPNext migration",
-                    "**Cash Basis:** Revenue only when payment received (see Tax Compliance implications)"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Issue client invoices, track payments, send reminders. Handle both online and physical invoices. **Cash Basis Accounting:** Revenue only recorded when payment received.\n\n**Invoice Types:** One-time (project-based), Recurring (monthly/quarterly subscriptions)\n\n**Process Flow:** Service complete → Invoice generated → Send via agreed method → Reminders (2 weeks before, on due date) → Payment received → Bank reconciliation → Invoice marked paid → Update aging report\n\n**Frequency:** Weekly (issuance/tracking), Daily (payment monitoring)\n\n**Output:** Invoices issued, payment reminders, bank reconciliation, receivables aging report (invoices issued/paid/outstanding/overdue/upcoming)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| BD Team | | | ✅ | |\n\n**Key Notes:**\n- **Recurring Invoice Automation:** Auto-generate on 5th of month\n- **Current Tool:** Using Wave app - consider ERPNext migration\n- **Cash Basis:** Revenue only when payment received (see Tax Compliance implications)\n\n---\n"
+              "notes": [],
+              "process_steps": {
+                "steps": [
+                  {
+                    "number": 1,
+                    "title": "Receive and Verify Invoice",
+                    "details": [
+                      "Receive invoice from vendor (email or physical delivery)",
+                      "Check invoice includes: Vendor name and NTN, invoice number and date, itemized list, total amount, bank details",
+                      "If incomplete → Email vendor requesting missing information"
+                    ]
+                  },
+                  {
+                    "number": 2,
+                    "title": "Verify Purchase Order (PO)",
+                    "details": [
+                      "Check if invoice references a PO number",
+                      "If YES: Login to ERPNext, search for PO, verify amounts and items match",
+                      "If NO PO and < PKR 10,000 → Can proceed (record in notes)",
+                      "If NO PO and ≥ PKR 10,000 → Escalate to Arhum/Azima for approval first"
+                    ]
+                  },
+                  {
+                    "number": 3,
+                    "title": "Verify Vendor Documentation",
+                    "details": [
+                      "Check vendor docs on file: NTN, CNIC/incorporation cert, bank details",
+                      "Location: TBD (to be organized in Google Drive > Finance > Vendors)",
+                      "If missing → Email vendor, do NOT proceed until received"
+                    ]
+                  },
+                  {
+                    "number": 4,
+                    "title": "Calculate Withholding Tax",
+                    "details": [
+                      "Formula: Invoice Amount × 0.04 = Withholding Amount",
+                      "Example: PKR 100,000 × 0.04 = PKR 4,000 withholding",
+                      "Net Payment = PKR 100,000 - PKR 4,000 = PKR 96,000"
+                    ]
+                  },
+                  {
+                    "number": 5,
+                    "title": "Create Payment Entry in ERPNext",
+                    "details": [
+                      "Click: https://hub.connecthear.org/app/payment-entry/new-payment-entry-zsnndqemii",
+                      "Fill in: Type (Pay), Supplier (select vendor), Paid Amount (net after withholding)",
+                      "Add deduction row: Tax Deducted at Source = withholding amount",
+                      "Select Cost Center: Main-CHPL, 8100-Marketing, 8200-BizDev, 8300-Product&Projects, 8400-Content&Design, 8500-SL&Training, 8600-Finance, 8700-Legal, 8800-AdminOps",
+                      "Link to Project if applicable",
+                      "Attach invoice PDF",
+                      "Click \"Save\" → Status: \"Draft\""
+                    ]
+                  },
+                  {
+                    "number": 6,
+                    "title": "Get Approval (if required)",
+                    "details": [
+                      "If amount > PKR 10,000: Slack message to Arhum/Azima with details and ERPNext link",
+                      "If amount ≤ PKR 10,000: No approval needed, proceed"
+                    ]
+                  },
+                  {
+                    "number": 7,
+                    "title": "Submit Payment Entry",
+                    "details": [
+                      "Review all fields",
+                      "Click \"Submit\" → Status: \"Submitted\"",
+                      "Note payment entry number"
+                    ]
+                  },
+                  {
+                    "number": 8,
+                    "title": "Process Payment via HBL Bank",
+                    "details": [
+                      "Login to HBL bank portal",
+                      "Navigate: Payments → Make Payment",
+                      "Enter vendor bank details and NET amount (after withholding)",
+                      "Upload supporting document (ERPNext payment entry)",
+                      "Submit and note transaction reference"
+                    ]
+                  },
+                  {
+                    "number": 9,
+                    "title": "Update ERPNext",
+                    "details": [
+                      "Add bank transaction reference to payment entry",
+                      "Mark status as \"Paid\""
+                    ]
+                  },
+                  {
+                    "number": 10,
+                    "title": "File Withholding Tax with FBR (Monthly - by 5th)",
+                    "details": [
+                      "On or before 5th of each month for PREVIOUS month",
+                      "Login: https://iris.fbr.gov.pk",
+                      "Navigate: Returns → Withholding Tax",
+                      "Enter all vendor payments with 4% withheld",
+                      "Submit return and download challan"
+                    ]
+                  },
+                  {
+                    "number": 11,
+                    "title": "Issue Tax Challan to Vendor (If Requested)",
+                    "details": [
+                      "Currently only if vendor requests",
+                      "Email challan with details",
+                      "CC: arhum@connecthear.com, azima@connecthear.com"
+                    ]
+                  },
+                  {
+                    "number": 12,
+                    "title": "File Records",
+                    "details": [
+                      "Naming: CHPL-PMT-.MM-.YY-.####",
+                      "Save: Invoice, payment entry, bank receipt, FBR challan",
+                      "Location: TBD (Google Drive > Finance > Payments > [Year] > [Month])"
+                    ]
+                  }
+                ],
+                "decision_points": [
+                  {
+                    "condition": "If invoice > PKR 10,000 with no PO",
+                    "action": "Get approval from Arhum/Azima"
+                  },
+                  {
+                    "condition": "If vendor docs missing",
+                    "action": "Stop process, request documents"
+                  },
+                  {
+                    "condition": "If bank payment fails",
+                    "action": "Check balance, verify details, retry or escalate"
+                  }
+                ],
+                "common_issues": [
+                  {
+                    "issue": "Vendor not in ERPNext",
+                    "solution": "Create new supplier first (Buying → Supplier → New), then return to payment"
+                  },
+                  {
+                    "issue": "Payment fails at bank",
+                    "solution": "Check account balance, verify vendor bank details are correct, retry or contact vendor"
+                  },
+                  {
+                    "issue": "FBR portal down on filing deadline",
+                    "solution": "Note deadline, file as soon as restored, document that portal was unavailable"
+                  }
+                ],
+                "tools": [
+                  "ERPNext (Finance role) - https://hub.connecthear.org",
+                  "HBL Bank Portal",
+                  "FBR Portal - https://iris.fbr.gov.pk",
+                  "Google Drive (Finance folder)",
+                  "Withholding Tax Rate: 4%",
+                  "Approval Threshold: PKR 10,000",
+                  "Tax Filing Deadline: 5th of each month (for previous month)",
+                  "Physical Invoice Delivery: ~30% of invoices (especially out-of-city)",
+                  "--"
+                ],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Processing all outgoing payments to vendors, contractors, and service providers following proper authorization, documentation, and withholding tax requirements.\n\n**Frequency:** Weekly (payment processing), Monthly (withholding tax filing with FBR)\n\n**Output:**\n- Vendor payments processed in ERPNext and bank\n- Withholding tax (4%) deducted and filed monthly\n- Payment receipts filed\n- Vendor documentation maintained\n\n**Dependencies:**\n- AdminOps (for PO verification)\n- Tax Compliance (for monthly withholding filing with FBR)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Finance Manager | | ✅ | | |\n| AdminOps (procurement) | | | ✅ | |\n| Arhum/Azima (approval >10k) | | | ✅ | |\n\n**Process Steps:**\n\n#### 1. Receive and Verify Invoice\n- Receive invoice from vendor (email or physical delivery)\n- Check invoice includes: Vendor name and NTN, invoice number and date, itemized list, total amount, bank details\n- If incomplete → Email vendor requesting missing information\n\n#### 2. Verify Purchase Order (PO)\n- Check if invoice references a PO number\n- If YES: Login to ERPNext, search for PO, verify amounts and items match\n- If NO PO and < PKR 10,000 → Can proceed (record in notes)\n- If NO PO and ≥ PKR 10,000 → Escalate to Arhum/Azima for approval first\n\n#### 3. Verify Vendor Documentation\n- Check vendor docs on file: NTN, CNIC/incorporation cert, bank details\n- Location: TBD (to be organized in Google Drive > Finance > Vendors)\n- If missing → Email vendor, do NOT proceed until received\n\n#### 4. Calculate Withholding Tax\n- Formula: Invoice Amount × 0.04 = Withholding Amount\n- Example: PKR 100,000 × 0.04 = PKR 4,000 withholding\n- Net Payment = PKR 100,000 - PKR 4,000 = PKR 96,000\n\n#### 5. Create Payment Entry in ERPNext\n- Click: https://hub.connecthear.org/app/payment-entry/new-payment-entry-zsnndqemii\n- Fill in: Type (Pay), Supplier (select vendor), Paid Amount (net after withholding)\n- Add deduction row: Tax Deducted at Source = withholding amount\n- Select Cost Center: Main-CHPL, 8100-Marketing, 8200-BizDev, 8300-Product&Projects, 8400-Content&Design, 8500-SL&Training, 8600-Finance, 8700-Legal, 8800-AdminOps\n- Link to Project if applicable\n- Attach invoice PDF\n- Click \"Save\" → Status: \"Draft\"\n\n#### 6. Get Approval (if required)\n- If amount > PKR 10,000: Slack message to Arhum/Azima with details and ERPNext link\n- If amount ≤ PKR 10,000: No approval needed, proceed\n\n#### 7. Submit Payment Entry\n- Review all fields\n- Click \"Submit\" → Status: \"Submitted\"\n- Note payment entry number\n\n#### 8. Process Payment via HBL Bank\n- Login to HBL bank portal\n- Navigate: Payments → Make Payment\n- Enter vendor bank details and NET amount (after withholding)\n- Upload supporting document (ERPNext payment entry)\n- Submit and note transaction reference\n\n#### 9. Update ERPNext\n- Add bank transaction reference to payment entry\n- Mark status as \"Paid\"\n\n#### 10. File Withholding Tax with FBR (Monthly - by 5th)\n- On or before 5th of each month for PREVIOUS month\n- Login: https://iris.fbr.gov.pk\n- Navigate: Returns → Withholding Tax\n- Enter all vendor payments with 4% withheld\n- Submit return and download challan\n\n#### 11. Issue Tax Challan to Vendor (If Requested)\n- Currently only if vendor requests\n- Email challan with details\n- CC: arhum@connecthear.com, azima@connecthear.com\n\n#### 12. File Records\n- Naming: CHPL-PMT-.MM-.YY-.####\n- Save: Invoice, payment entry, bank receipt, FBR challan\n- Location: TBD (Google Drive > Finance > Payments > [Year] > [Month])\n\n#### Decision Points\n**If invoice > PKR 10,000 with no PO:** Get approval from Arhum/Azima\n**If vendor docs missing:** Stop process, request documents\n**If bank payment fails:** Check balance, verify details, retry or escalate\n\n#### Common Issues\n**Issue:** Vendor not in ERPNext\n**Solution:** Create new supplier first (Buying → Supplier → New), then return to payment\n\n**Issue:** Payment fails at bank\n**Solution:** Check account balance, verify vendor bank details are correct, retry or contact vendor\n\n**Issue:** FBR portal down on filing deadline\n**Solution:** Note deadline, file as soon as restored, document that portal was unavailable\n\n#### Tools & Access Required\n- ERPNext (Finance role) - https://hub.connecthear.org\n- HBL Bank Portal\n- FBR Portal - https://iris.fbr.gov.pk\n- Google Drive (Finance folder)\n\n#### Key Thresholds\n- Withholding Tax Rate: 4%\n- Approval Threshold: PKR 10,000\n- Tax Filing Deadline: 5th of each month (for previous month)\n- Physical Invoice Delivery: ~30% of invoices (especially out-of-city)\n\n---\n"
             },
             {
-              "id": "payroll-stipends",
-              "name": "Payroll & Stipends",
-              "description": "Calculate and process all earned payments: salaries, stipends, project payments, bonuses. Ensure project payments are mapped to service delivery via cost centers.",
-              "frequency": "Monthly (salaries/stipends), Per Project (project payments)",
-              "output": [],
-              "dependencies": [],
+              "id": "accounts-receivable",
+              "name": "Accounts Receivable",
+              "description": "Generating client invoices, sending to clients, tracking payment status, and reconciling receipts against bank statements.",
+              "frequency": "Per Service Delivery (invoicing), Weekly (payment tracking)",
+              "output": [
+                "Client invoices generated in ERPNext",
+                "Invoices sent via email (70%) or physical delivery (30%)",
+                "Payment reminders sent (2 weeks before, on due date, weekly after)",
+                "Payments reconciled in ERPNext"
+              ],
+              "dependencies": [
+                {
+                  "team": "Sign Language Department",
+                  "reason": "service delivery confirmation"
+                },
+                {
+                  "team": "Product Team",
+                  "reason": "for product/feature deliverables"
+                },
+                {
+                  "team": "BD",
+                  "reason": "for contract terms and client relationship"
+                }
+              ],
               "raci": [
                 {
-                  "role": "Finance Associate (Umaima)",
+                  "role": "Finance Associate",
                   "responsible": true,
                   "accountable": false,
                   "consulted": false,
                   "informed": false
                 },
                 {
-                  "role": "Leadership (Arhum)",
+                  "role": "Finance Manager",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "BD (for overdue)",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "process_steps": {
+                "steps": [
+                  {
+                    "number": 1,
+                    "title": "Confirm Service Delivery",
+                    "details": [
+                      "Receive confirmation from Ismail (interpretation) or Project team (training/product)",
+                      "Verify against contract: deliverable in scope, pricing/rates correct, payment terms"
+                    ]
+                  },
+                  {
+                    "number": 2,
+                    "title": "Gather Invoice Details",
+                    "details": [
+                      "Client legal name, billing address, NTN (if available)",
+                      "Service description, quantity, rate from contract",
+                      "Calculate total amount",
+                      "Determine due date based on payment terms (Net 15, Net 30)"
+                    ]
+                  },
+                  {
+                    "number": 3,
+                    "title": "Create Sales Invoice in ERPNext",
+                    "details": [
+                      "Search: \"New Sales Invoice\" from top search bar",
+                      "Fill in: Customer, Posting Date (today), Due Date (calculated)",
+                      "Add item row: Service type, description, quantity, rate",
+                      "Select Cost Center: 8500-SL&Training (interpretation/training), 8300-Product&Projects (tech)",
+                      "Link to Project if applicable",
+                      "Set Payment Terms (Net 15, Net 30)",
+                      "Attach supporting docs",
+                      "Click \"Save\" → Status: \"Draft\""
+                    ]
+                  },
+                  {
+                    "number": 4,
+                    "title": "Submit Invoice",
+                    "details": [
+                      "Review all fields",
+                      "Click \"Submit\" → Invoice number auto-generated: CHPL-INV-.MM-.YY-.####",
+                      "Example: CHPL-INV-.11-.24-.0123"
+                    ]
+                  },
+                  {
+                    "number": 5,
+                    "title": "Export and Deliver",
+                    "details": [
+                      "Click \"Print\" → Download PDF",
+                      "Check contract for delivery preference:",
+                      "**Email (70%)**: Most common, faster - Send to billing contact with payment details",
+                      "**Physical (30%)**: Out-of-city, government - Print, courier via TCS/Leopards",
+                      "Record delivery in ERPNext (add comment with date sent)"
+                    ]
+                  },
+                  {
+                    "number": 6,
+                    "title": "Set Payment Reminders",
+                    "details": [
+                      "First reminder: 2 weeks before due date (friendly)",
+                      "Second reminder: On due date (payment due notice)",
+                      "Follow-up: Weekly after due date if unpaid",
+                      "Currently manual reminders (transitioning to ERPNext automation)"
+                    ]
+                  },
+                  {
+                    "number": 7,
+                    "title": "Receive Payment Confirmation",
+                    "details": [
+                      "Bank notification when payment received",
+                      "Verify amount matches invoice",
+                      "Note transaction reference number and date"
+                    ]
+                  },
+                  {
+                    "number": 8,
+                    "title": "Reconcile in ERPNext",
+                    "details": [
+                      "Go to invoice → Create → Payment Entry",
+                      "OR search \"New Payment Entry\"",
+                      "Fill in: Type (Receive), Customer, Received Amount, Bank account",
+                      "Link to invoice, add payment reference",
+                      "Submit → Invoice status updates to \"Paid\""
+                    ]
+                  },
+                  {
+                    "number": 9,
+                    "title": "Update Aging Report",
+                    "details": [
+                      "Invoice removed from outstanding aging report once paid",
+                      "If overdue: Escalate to Arhum/Azima and BD/account manager"
+                    ]
+                  },
+                  {
+                    "number": 10,
+                    "title": "File Records",
+                    "details": [
+                      "Naming: CHPL-INV-.MM-.YY-.#### (same as invoice number)",
+                      "Save: Invoice PDF, service delivery confirmation, email correspondence, payment receipt",
+                      "Location: TBD (Google Drive > Finance > Invoices > [Year] > [Month])"
+                    ]
+                  }
+                ],
+                "decision_points": [],
+                "common_issues": [],
+                "tools": [],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Generating client invoices, sending to clients, tracking payment status, and reconciling receipts against bank statements.\n\n**Frequency:** Per Service Delivery (invoicing), Weekly (payment tracking)\n\n**Output:**\n- Client invoices generated in ERPNext\n- Invoices sent via email (70%) or physical delivery (30%)\n- Payment reminders sent (2 weeks before, on due date, weekly after)\n- Payments reconciled in ERPNext\n\n**Dependencies:**\n- Sign Language Department (service delivery confirmation)\n- Product Team (for product/feature deliverables)\n- BD (for contract terms and client relationship)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate | ✅ | | | |\n| Finance Manager | | ✅ | | |\n| BD (for overdue) | | | ✅ | |\n\n**Process Steps:**\n\n#### 1. Confirm Service Delivery\n- Receive confirmation from Ismail (interpretation) or Project team (training/product)\n- Verify against contract: deliverable in scope, pricing/rates correct, payment terms\n\n#### 2. Gather Invoice Details\n- Client legal name, billing address, NTN (if available)\n- Service description, quantity, rate from contract\n- Calculate total amount\n- Determine due date based on payment terms (Net 15, Net 30)\n\n#### 3. Create Sales Invoice in ERPNext\n- Search: \"New Sales Invoice\" from top search bar\n- Fill in: Customer, Posting Date (today), Due Date (calculated)\n- Add item row: Service type, description, quantity, rate\n- Select Cost Center: 8500-SL&Training (interpretation/training), 8300-Product&Projects (tech)\n- Link to Project if applicable\n- Set Payment Terms (Net 15, Net 30)\n- Attach supporting docs\n- Click \"Save\" → Status: \"Draft\"\n\n#### 4. Submit Invoice\n- Review all fields\n- Click \"Submit\" → Invoice number auto-generated: CHPL-INV-.MM-.YY-.####\n- Example: CHPL-INV-.11-.24-.0123\n\n#### 5. Export and Deliver\n- Click \"Print\" → Download PDF\n- Check contract for delivery preference:\n  - **Email (70%)**: Most common, faster - Send to billing contact with payment details\n  - **Physical (30%)**: Out-of-city, government - Print, courier via TCS/Leopards\n- Record delivery in ERPNext (add comment with date sent)\n\n#### 6. Set Payment Reminders\n- First reminder: 2 weeks before due date (friendly)\n- Second reminder: On due date (payment due notice)\n- Follow-up: Weekly after due date if unpaid\n- Currently manual reminders (transitioning to ERPNext automation)\n\n#### 7. Receive Payment Confirmation\n- Bank notification when payment received\n- Verify amount matches invoice\n- Note transaction reference number and date\n\n#### 8. Reconcile in ERPNext\n- Go to invoice → Create → Payment Entry\n- OR search \"New Payment Entry\"\n- Fill in: Type (Receive), Customer, Received Amount, Bank account\n- Link to invoice, add payment reference\n- Submit → Invoice status updates to \"Paid\"\n\n#### 9. Update Aging Report\n- Invoice removed from outstanding aging report once paid\n- If overdue: Escalate to Arhum/Azima and BD/account manager\n\n#### 10. File Records\n- Naming: CHPL-INV-.MM-.YY-.#### (same as invoice number)\n- Save: Invoice PDF, service delivery confirmation, email correspondence, payment receipt\n- Location: TBD (Google Drive > Finance > Invoices > [Year] > [Month])\n\n#### Decision Points\n**Email vs Physical:** Check contract - default email unless specified physical\n**Reminder escalation:** 2 weeks before (friendly) → on due date (firm) → 1 week overdue (urgent) → 2 weeks overdue (escalate to leadership)\n\n#### Common Issues\n**Issue:** Client disputes invoice amount\n**Solution:** Review contract pricing, check service delivery records, reconcile with client, issue credit note if needed\n\n**Issue:** Client hasn't received invoice (email)\n**Solution:** Check email sent successfully, resend, try alternate email, send via WhatsApp as backup\n\n**Issue:** Payment received but wrong amount\n**Solution:** Contact client for clarification - check if tax withheld, partial payment, or error\n\n#### Tools & Access\n- ERPNext (Finance role)\n- Email (finance@connecthear.org or personal @connecthear.org)\n- Courier account (TCS/Leopards)\n\n#### Key Numbers\n- Invoice Naming: CHPL-INV-.MM-.YY-.####\n- Delivery Split: 70% email, 30% physical/courier\n- Reminder Schedule: 2 weeks before, on due, weekly after\n- Typical Terms: Net 15 or Net 30\n\n---\n"
+            },
+            {
+              "id": "tax-compliance",
+              "name": "Tax Compliance",
+              "description": "Monthly filing of payroll tax, sales tax (15%), and withholding tax (4%) with Federal Board of Revenue (FBR).",
+              "frequency": "Monthly (by 5th of each month for previous month)",
+              "output": [
+                "Payroll tax return filed",
+                "Sales tax return filed (if applicable)",
+                "Withholding tax return filed",
+                "Tax challans downloaded and saved",
+                "Any tax payments processed"
+              ],
+              "dependencies": [
+                {
+                  "team": "Payroll",
+                  "reason": "for payroll tax data"
+                },
+                {
+                  "team": "Accounts Payable",
+                  "reason": "for withholding tax data"
+                },
+                {
+                  "team": "Accounts Receivable",
+                  "reason": "for sales tax data"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "Finance Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Manager",
                   "responsible": false,
                   "accountable": true,
                   "consulted": false,
                   "informed": false
                 }
               ],
-              "notes": [
-                {
-                  "title": "Critical Requirements",
-                  "content": [
-                    "**Project Payment Mapping:** Link each payment to service delivery invoice",
-                    "Use cost centers (e.g., \"Interpretation - Corporate Event\")",
-                    "Enables profitability analysis per service type",
-                    "**Current Gap:** No systematic tracking of interpreter payments to service deliveries"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Calculate and process all earned payments: salaries, stipends, project payments, bonuses. Ensure project payments are mapped to service delivery via cost centers.\n\n**Frequency:** Monthly (salaries/stipends), Per Project (project payments)\n\n**Output:** Salary slips, disbursements processed, project payments mapped to service delivery, payroll tax calculations\n\n**Dependencies:** AdminOps (for attendance), Delivery Teams (for project verification)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Leadership (Arhum) | | ✅ | | |\n\n**Critical Requirements:**\n- **Project Payment Mapping:** Link each payment to service delivery invoice\n- Use cost centers (e.g., \"Interpretation - Corporate Event\")\n- Enables profitability analysis per service type\n- **Current Gap:** No systematic tracking of interpreter payments to service deliveries\n\n---\n"
+              "notes": [],
+              "process_steps": {
+                "steps": [],
+                "decision_points": [],
+                "common_issues": [],
+                "tools": [],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Monthly filing of payroll tax, sales tax (15%), and withholding tax (4%) with Federal Board of Revenue (FBR).\n\n**Frequency:** Monthly (by 5th of each month for previous month)\n\n**Output:**\n- Payroll tax return filed\n- Sales tax return filed (if applicable)\n- Withholding tax return filed\n- Tax challans downloaded and saved\n- Any tax payments processed\n\n**Dependencies:**\n- Payroll (for payroll tax data)\n- Accounts Payable (for withholding tax data)\n- Accounts Receivable (for sales tax data)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate | ✅ | | | |\n| Finance Manager | | ✅ | | |\n\n**Process Steps:**\n\n**FILING DEADLINE:** By 5th of each month for PREVIOUS month (e.g., file Feb 5th for January taxes)\n\n#### A. PAYROLL TAX FILING\n\n**1. Generate Payroll Report**\n- After payroll processed: Go to HR → Payroll Entry → Select month\n- Download report showing gross salary, tax deducted, net salary\n- Note total payroll tax deducted\n\n**2. Login to FBR Portal**\n- Go to: https://iris.fbr.gov.pk\n- Enter shared Finance credentials\n\n**3. File Payroll Tax Return**\n- Navigate: Returns → Payroll Tax\n- Select: Previous month and year\n- Enter: Total payroll, total tax deducted, number of employees\n- Upload payroll report\n- Submit and download challan\n- If payment required: Process via bank\n\n**4. Record in ERPNext**\n- Add comment to payroll entry: \"Tax filed on [date], Challan #[number]\"\n- Attach challan PDF\n\n#### B. SALES TAX FILING\n\n**1. Identify Taxable Transactions**\n- Review all payments RECEIVED (not invoices issued) in previous month\n- Filter ERPNext: Accounts → Payment Entry (received) → Previous month\n- Calculate 15% on taxable receipts (most services exempt - verify contract)\n\n**2. Login to FBR Portal**\n- Navigate: Returns → Sales Tax\n\n**3. File Sales Tax Return**\n- Select: Previous month\n- Enter: Total sales, taxable amount, sales tax (15%), input tax, net tax payable\n- Upload: Payment receipts and invoices\n- Submit and download challan\n\n**4. Record in ERPNext**\n- Create journal entry or note: \"Sales tax filed for [month], Amount PKR [X]\"\n\n#### C. WITHHOLDING TAX FILING\n\n**1. Compile Vendor Payments**\n- ERPNext: Accounts → Payment Entry (paid) → Previous month\n- For each: Note vendor NTN, invoice amount, withholding (4%)\n- Create summary spreadsheet\n\n**2. Login to FBR Portal**\n- Navigate: Returns → Withholding Tax\n\n**3. File Withholding Tax Return**\n- Select: Previous month\n- For each vendor: Enter NTN, withholding amount, nature of payment\n- Attach invoice/payment proofs\n- Submit and download master challan\n\n**4. Issue Vendor Challans (If Requested)**\n- Currently: Only if vendor requests\n- Download individual challan from FBR\n- Email to vendor with subject: \"Withholding Tax Challan - [Month]\"\n- Future: Proactively send to all vendors\n\n**5. Record in ERPNext**\n- Update all payment entries: Add comment with filing date and challan number\n- Attach master challan\n\n#### Monthly Checklist (Complete by 5th)\n- [ ] Payroll tax: Report downloaded, FBR filed, challan saved, payment made\n- [ ] Sales tax: Receipts identified, FBR filed, challan saved, payment made\n- [ ] Withholding tax: Vendors compiled, FBR filed, challans saved, issued if requested\n- [ ] All challans saved to Google Drive > Finance > Tax > [Year] > [Month]\n- [ ] ERPNext entries updated\n\n#### Decision Points\n**If deadline approaching with incomplete data:** File with estimates to avoid penalty, amend later if needed\n**If FBR portal down:** Document unavailability, file immediately when restored\n**If vendor lacks NTN:** They must obtain NTN to receive payment (legal requirement)\n\n#### Common Issues\n**Issue:** FBR portal login fails\n**Solution:** Try different browser, clear cache, incognito mode, contact FBR helpline\n\n**Issue:** Sales tax unclear (exempt vs taxable)\n**Solution:** Check contract, consult Arhum/tax advisor, when in doubt file conservatively\n\n**Issue:** Missed filing deadline\n**Solution:** File ASAP, FBR charges late penalty (usually small), document reason\n\n#### Tools & Access\n- FBR Portal: https://iris.fbr.gov.pk (shared Finance login)\n- ERPNext: Payroll and Accounts modules\n- Bank portal: For tax payments\n\n#### Key Rates & Deadlines\n- Payroll Tax: Variable by employee bracket\n- Sales Tax: 15% (many services exempt)\n- Withholding Tax: 4% on vendor payments\n- Deadline: 5th of each month for previous month\n\n---\n"
             },
             {
-              "id": "expense-claims",
-              "name": "Expense Claims",
-              "description": "Process staff expense reimbursements with proper mapping to service delivery/project.",
-              "frequency": "Weekly",
-              "output": [],
-              "dependencies": [],
+              "id": "bank-reconciliation",
+              "name": "Bank Reconciliation",
+              "description": "Daily matching of bank statement transactions with ERPNext payment entries to ensure accurate records and identify discrepancies.",
+              "frequency": "Daily (target), Weekly (current practice)",
+              "output": [
+                "Bank transactions matched to ERPNext entries",
+                "Discrepancies identified and resolved",
+                "Closing balance reconciled",
+                "Monthly reconciliation report"
+              ],
+              "dependencies": [
+                {
+                  "team": "Accounts Payable",
+                  "reason": "for outgoing payments"
+                },
+                {
+                  "team": "Accounts Receivable",
+                  "reason": "for incoming payments"
+                },
+                {
+                  "team": "Payroll",
+                  "reason": "for salary disbursements"
+                }
+              ],
               "raci": [
                 {
-                  "role": "Finance Associate (Umaima)",
+                  "role": "Finance Associate",
                   "responsible": true,
                   "accountable": false,
                   "consulted": false,
                   "informed": false
-                }
-              ],
-              "notes": [
+                },
                 {
-                  "title": "Critical Requirements",
-                  "content": [
-                    "**Service Delivery Mapping:** Tag to Project → Campaign → Service Delivery",
-                    "**Example:** Iman/Ismail travel to event → Mapped to XYZ Corp Event Invoice",
-                    "Enables cost tracking: expenses incurred vs invoice amount = profitability"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** Process staff expense reimbursements with proper mapping to service delivery/project.\n\n**Frequency:** Weekly\n\n**Output:** Verified expense claims, reimbursements processed, expenses mapped to service delivery via cost centers\n\n**Dependencies:** AdminOps (for approval), Delivery Teams (for linkage)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Critical Requirements:**\n- **Service Delivery Mapping:** Tag to Project → Campaign → Service Delivery\n- **Example:** Iman/Ismail travel to event → Mapped to XYZ Corp Event Invoice\n- Enables cost tracking: expenses incurred vs invoice amount = profitability\n\n---\n"
-            },
-            {
-              "id": "petty-cash",
-              "name": "Petty Cash",
-              "description": "Maintain fixed monthly petty cash fund for small, immediate expenses. Track all disbursements and reconcile monthly.",
-              "frequency": "Daily (tracking), Monthly (reconciliation)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
+                  "role": "Finance Manager",
+                  "responsible": false,
+                  "accountable": true,
                   "consulted": false,
                   "informed": false
                 }
               ],
-              "notes": [
+              "notes": [],
+              "process_steps": {
+                "steps": [],
+                "decision_points": [],
+                "common_issues": [],
+                "tools": [],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Daily matching of bank statement transactions with ERPNext payment entries to ensure accurate records and identify discrepancies.\n\n**Frequency:** Daily (target), Weekly (current practice)\n\n**Output:**\n- Bank transactions matched to ERPNext entries\n- Discrepancies identified and resolved\n- Closing balance reconciled\n- Monthly reconciliation report\n\n**Dependencies:**\n- Accounts Payable (for outgoing payments)\n- Accounts Receivable (for incoming payments)\n- Payroll (for salary disbursements)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate | ✅ | | | |\n| Finance Manager | | ✅ | | |\n\n**Process Steps:**\n\n**CURRENT STATE:** Manual in Google Sheets\n**TARGET STATE:** Daily in ERPNext (transitioning)\n\n#### CURRENT MANUAL PROCESS\n\n**1. Download Bank Statement**\n- Login to HBL bank portal\n- Navigate: Statements / Transaction History\n- Select: Previous business day (or since last reconciliation)\n- Download as Excel or PDF\n- Save: CHPL-BANK-.MM-.DD-.YY.xlsx\n\n**2. Open Reconciliation Sheet**\n- Location: TBD (Google Sheets - to be organized)\n- Columns: Date, Type (Debit/Credit), Reference, Description, Amount, ERPNext Match, Status, Notes\n\n**3. Import Bank Transactions**\n- Copy from downloaded statement\n- Paste into reconciliation sheet\n- Sort by date (oldest first)\n\n**4. Match with ERPNext**\n- Open ERPNext: Accounts → Payment Entry → List\n- Filter by same date range\n- For each bank transaction:\n  - Look for matching payment: amount, date (±1-2 days), party name\n  - If found: Note ERPNext number in sheet, mark \"Matched\"\n  - If not found: Mark \"Unmatched\", investigate\n\n**5. Identify Discrepancies**\n- **In bank but not ERPNext:** Could be direct deposits, fees, interest, refunds → Create ERPNext entry\n- **In ERPNext but not bank:** Could be processing, failed, future-dated → Verify with bank, may cancel ERPNext entry\n\n**6. Create Missing ERPNext Entries**\n- For legitimate bank transactions not in ERPNext:\n  - Create payment entry (Type: Receive for credit, Pay for debit)\n  - Match amount, date, description\n  - Assign cost center\n  - Note in remarks: \"From bank rec [date]\"\n\n**7. Calculate Closing Balance**\n- Opening balance + Credits - Debits = Closing balance\n- Compare to bank statement ending balance\n- If mismatch: Review for missing transactions, check date cutoffs\n\n**8. Document and File**\n- Save reconciliation sheet\n- Export as PDF\n- Location: TBD (Google Drive > Finance > Reconciliation > [Year] > [Month])\n\n#### TRANSITIONING TO ERPNEXT\n\n**1. Enable Bank Reconciliation**\n- Go to: Accounts → Bank Reconciliation Tool\n\n**2. Import Bank Statement**\n- Click \"Import Bank Statement\"\n- Upload file (Excel/CSV)\n- Map columns to ERPNext fields\n- Preview and confirm\n\n**3. Auto-Match**\n- ERPNext attempts auto-match (exact amounts, similar dates)\n- Review suggested matches (Green = high confidence, Yellow = possible, Red = unmatched)\n- Accept accurate matches\n\n**4. Manual Matching**\n- For unmatched: Click transaction, search for payment entry\n- If found: Link manually\n- If not found: Create new entry\n\n**5. Submit Reconciliation**\n- Review summary\n- Check: Opening + transactions = closing\n- Submit → All linked entries marked \"Reconciled\"\n- Generate report for filing\n\n#### Decision Points\n**Bank transaction not in ERPNext:**\n- Known (fee/interest/deposit) → Create entry\n- Unknown → Investigate before creating\n- Duplicate → Check if already entered differently\n\n**ERPNext payment not in bank:**\n- Still processing (1-2 day lag) → Mark \"Pending\"\n- Failed → Verify, may need to cancel and redo\n- Future-dated → No action needed yet\n\n#### Common Issues\n**Issue:** Unrecognized bank transaction\n**Solution:** URGENT - Contact bank immediately (could be fraud)\n\n**Issue:** Missing transaction in statement\n**Solution:** Check date range, may be just outside range or still processing\n\n**Issue:** ERPNext \"Paid\" but not in bank\n**Solution:** Payment likely failed - contact bank, cancel ERPNext entry, investigate why\n\n**Issue:** Timing differences (1-2 day lag)\n**Solution:** Normal - mark \"Pending\" and reconcile next day\n\n#### Tools & Access\n- HBL Bank Portal (statement download)\n- ERPNext Accounts module\n- Google Sheets (temporary during transition)\n\n#### Best Practices\n- Daily reconciliation: 15-30 min/day prevents errors from compounding\n- Document everything: Unexplained transactions MUST be investigated\n- Month-end priority: Must be 100% reconciled before closing month\n\n---\n"
+            },
+            {
+              "id": "payroll-stipends",
+              "name": "Payroll & Stipends",
+              "description": "Monthly processing of employee salaries, stipends, and contractual payments with proper tax deduction, project allocation, and bank disbursement.",
+              "frequency": "Monthly (on payday - typically end of month)",
+              "output": [
+                "Payroll processed in ERPNext",
+                "Salary payments made via bank",
+                "Salary slips distributed to employees",
+                "Payroll tax filed with FBR (by 5th of next month)",
+                "Expenses properly allocated to cost centers and projects"
+              ],
+              "dependencies": [
                 {
-                  "title": "Key Notes",
-                  "content": [
-                    "Fixed amount (e.g., PKR 50,000-70,000) from bank",
-                    "Used for: office supplies, printouts, stationery, guest refreshments",
-                    "**Aspiration:** Same-day interpreter travel reimbursements"
-                  ]
+                  "team": "HR",
+                  "reason": "for attendance, leaves, salary changes"
+                },
+                {
+                  "team": "Project Teams",
+                  "reason": "for project time allocation"
+                },
+                {
+                  "team": "Tax Compliance",
+                  "reason": "for monthly payroll tax filing"
                 }
               ],
-              "content_raw": "\n**Description:** Maintain fixed monthly petty cash fund for small, immediate expenses. Track all disbursements and reconcile monthly.\n\n**Frequency:** Daily (tracking), Monthly (reconciliation)\n\n**Output:** Petty cash log, receipt collection, monthly reconciliation, cash balance verification\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Key Notes:**\n- Fixed amount (e.g., PKR 50,000-70,000) from bank\n- Used for: office supplies, printouts, stationery, guest refreshments\n- **Aspiration:** Same-day interpreter travel reimbursements\n\n---\n"
+              "raci": [
+                {
+                  "role": "Finance Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Manager/Arhum",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "HR",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "process_steps": {
+                "steps": [
+                  {
+                    "number": 1,
+                    "title": "Verify Employee Data",
+                    "details": [
+                      "Go to: HR → Employee → List",
+                      "For each employee verify: Salary structure active, bank details correct, tax settings configured, any changes approved"
+                    ]
+                  },
+                  {
+                    "number": 2,
+                    "title": "Process Attendance (if applicable)",
+                    "details": [
+                      "HR → Attendance → Bulk Attendance",
+                      "Review month: Mark present/absent, record leaves",
+                      "Calculate deductions for unpaid leaves"
+                    ]
+                  },
+                  {
+                    "number": 3,
+                    "title": "Create Payroll Entry",
+                    "details": [
+                      "HR → Payroll Entry → New",
+                      "Fill in: Posting Date (last day of month), Company (ConnectHear), Frequency (Monthly), Start/End dates",
+                      "Payment Account: HBL bank account",
+                      "Cost Center: 8600-Finance or split by department"
+                    ]
+                  },
+                  {
+                    "number": 4,
+                    "title": "Get Employees",
+                    "details": [
+                      "Click \"Get Employees\"",
+                      "Review list: Remove those who shouldn't be paid this month",
+                      "Verify all expected employees included"
+                    ]
+                  },
+                  {
+                    "number": 5,
+                    "title": "Generate Salary Slips",
+                    "details": [
+                      "Click \"Create Salary Slips\"",
+                      "Review each slip: Gross correct? Deductions correct? Net pay correct?",
+                      "If errors: Edit salary structure, regenerate"
+                    ]
+                  },
+                  {
+                    "number": 6,
+                    "title": "Link to Projects/Service Delivery ⭐ CRITICAL",
+                    "details": [
+                      "For each employee identify which projects they worked on",
+                      "Use ERPNext Project field to link salary expense to client projects",
+                      "Example: Interpreter on ABC Corp training → Link to \"ABC Corp Training\" project",
+                      "Multiple projects → Split proportionally",
+                      "Back-office staff → Link to Main-CHPL (overhead)"
+                    ]
+                  },
+                  {
+                    "number": 7,
+                    "title": "Assign Cost Centers",
+                    "details": [
+                      "By role/department:",
+                      "Interpreters/trainers → 8500-SL&Training",
+                      "Product/tech → 8300-Product&Projects",
+                      "BD → 8200-BizDev",
+                      "Finance → 8600-Finance",
+                      "Marketing → 8100-Marketing",
+                      "AdminOps → 8800-AdminOps",
+                      "Mixed/shared → Main-CHPL"
+                    ]
+                  },
+                  {
+                    "number": 8,
+                    "title": "Calculate Payroll Tax",
+                    "details": [
+                      "System auto-calculates based on employee tax bracket",
+                      "Verify calculation correct",
+                      "Total tax = Amount to file with FBR"
+                    ]
+                  },
+                  {
+                    "number": 9,
+                    "title": "Submit Payroll Entry",
+                    "details": [
+                      "Review summary: Total gross, deductions, net pay",
+                      "Click \"Submit\" → Salary slips finalized"
+                    ]
+                  },
+                  {
+                    "number": 10,
+                    "title": "Generate Bank Payment File",
+                    "details": [
+                      "Click \"Make Bank Entry\" or export payment list",
+                      "Download with: Employee name, bank account, IBAN, net pay",
+                      "Format for HBL bulk upload if needed"
+                    ]
+                  },
+                  {
+                    "number": 11,
+                    "title": "Process Bank Payments",
+                    "details": [
+                      "Login to HBL bank portal",
+                      "Navigate: Bulk Payments / Salary Upload",
+                      "Upload file, review total, authorize",
+                      "Get confirmation and transaction reference"
+                    ]
+                  },
+                  {
+                    "number": 12,
+                    "title": "Update ERPNext",
+                    "details": [
+                      "Add comment: \"Payments processed [date], Bank ref: [number]\"",
+                      "Status: \"Paid\""
+                    ]
+                  },
+                  {
+                    "number": 13,
+                    "title": "File Payroll Tax",
+                    "details": [
+                      "By 5th of next month",
+                      "Follow Tax Compliance workstream process",
+                      "Use total tax deducted from this payroll entry"
+                    ]
+                  },
+                  {
+                    "number": 14,
+                    "title": "Distribute Salary Slips",
+                    "details": [
+                      "Generate PDF slips (each employee or bulk print)",
+                      "Email to employees: \"Please find attached your salary slip for [Month]\"",
+                      "Or upload to employee self-service portal"
+                    ]
+                  }
+                ],
+                "decision_points": [],
+                "common_issues": [],
+                "tools": [],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Monthly processing of employee salaries, stipends, and contractual payments with proper tax deduction, project allocation, and bank disbursement.\n\n**Frequency:** Monthly (on payday - typically end of month)\n\n**Output:**\n- Payroll processed in ERPNext\n- Salary payments made via bank\n- Salary slips distributed to employees\n- Payroll tax filed with FBR (by 5th of next month)\n- Expenses properly allocated to cost centers and projects\n\n**Dependencies:**\n- HR (for attendance, leaves, salary changes)\n- Project Teams (for project time allocation)\n- Tax Compliance (for monthly payroll tax filing)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate | ✅ | | | |\n| Finance Manager/Arhum | | ✅ | | |\n| HR | | | ✅ | |\n\n**Process Steps:**\n\n#### 1. Verify Employee Data\n- Go to: HR → Employee → List\n- For each employee verify: Salary structure active, bank details correct, tax settings configured, any changes approved\n\n#### 2. Process Attendance (if applicable)\n- HR → Attendance → Bulk Attendance\n- Review month: Mark present/absent, record leaves\n- Calculate deductions for unpaid leaves\n\n#### 3. Create Payroll Entry\n- HR → Payroll Entry → New\n- Fill in: Posting Date (last day of month), Company (ConnectHear), Frequency (Monthly), Start/End dates\n- Payment Account: HBL bank account\n- Cost Center: 8600-Finance or split by department\n\n#### 4. Get Employees\n- Click \"Get Employees\"\n- Review list: Remove those who shouldn't be paid this month\n- Verify all expected employees included\n\n#### 5. Generate Salary Slips\n- Click \"Create Salary Slips\"\n- Review each slip: Gross correct? Deductions correct? Net pay correct?\n- If errors: Edit salary structure, regenerate\n\n#### 6. Link to Projects/Service Delivery ⭐ CRITICAL\n- For each employee identify which projects they worked on\n- Use ERPNext Project field to link salary expense to client projects\n- Example: Interpreter on ABC Corp training → Link to \"ABC Corp Training\" project\n- Multiple projects → Split proportionally\n- Back-office staff → Link to Main-CHPL (overhead)\n\n#### 7. Assign Cost Centers\n- By role/department:\n  - Interpreters/trainers → 8500-SL&Training\n  - Product/tech → 8300-Product&Projects\n  - BD → 8200-BizDev\n  - Finance → 8600-Finance\n  - Marketing → 8100-Marketing\n  - AdminOps → 8800-AdminOps\n  - Mixed/shared → Main-CHPL\n\n#### 8. Calculate Payroll Tax\n- System auto-calculates based on employee tax bracket\n- Verify calculation correct\n- Total tax = Amount to file with FBR\n\n#### 9. Submit Payroll Entry\n- Review summary: Total gross, deductions, net pay\n- Click \"Submit\" → Salary slips finalized\n\n#### 10. Generate Bank Payment File\n- Click \"Make Bank Entry\" or export payment list\n- Download with: Employee name, bank account, IBAN, net pay\n- Format for HBL bulk upload if needed\n\n#### 11. Process Bank Payments\n- Login to HBL bank portal\n- Navigate: Bulk Payments / Salary Upload\n- Upload file, review total, authorize\n- Get confirmation and transaction reference\n\n#### 12. Update ERPNext\n- Add comment: \"Payments processed [date], Bank ref: [number]\"\n- Status: \"Paid\"\n\n#### 13. File Payroll Tax\n- By 5th of next month\n- Follow Tax Compliance workstream process\n- Use total tax deducted from this payroll entry\n\n#### 14. Distribute Salary Slips\n- Generate PDF slips (each employee or bulk print)\n- Email to employees: \"Please find attached your salary slip for [Month]\"\n- Or upload to employee self-service portal\n\n#### Decision Points\n**Mid-month joiner:** Prorate based on working days\n**Unpaid leaves:** Deduct proportionally: (Unpaid days / Total days) × Monthly salary\n**Salary change mid-month:** May need two slips (old rate + new rate prorated)\n**Resignation before payday:** Calculate final settlement with pro-rated salary, leave encashment, dues\n\n#### Common Issues\n**Issue:** Bank upload file format rejected\n**Solution:** Check HBL format requirements (columns, headers, date format), reformat and re-upload\n\n**Issue:** Employee bank details wrong\n**Solution:** Payment bounces, get correct details, process individual payment, update for next month\n\n**Issue:** Project linking unclear (employee across departments)\n**Solution:** Use timesheet if available, or manager estimate percentage split, document assumption\n\n#### Tools & Access\n- ERPNext (HR and Accounts modules)\n- HBL Bank Portal (bulk payment feature)\n- FBR Portal (for tax filing)\n\n#### Key Notes\n- Project linking CRITICAL for accurate client costing and invoicing\n- Cost center assignment enables department expense tracking\n- File tax by 5th of next month (coordinate with Tax Compliance workstream)\n\n---\n"
+            },
+            {
+              "id": "expense-claims-processing",
+              "name": "Expense Claims Processing",
+              "description": "Processing employee reimbursement requests for business expenses with proper documentation, approval, and project/cost center allocation.",
+              "frequency": "As submitted (weekly processing)",
+              "output": [
+                "Expense claims verified and approved",
+                "Reimbursements paid to employees",
+                "Expenses properly allocated to projects and cost centers",
+                "Records filed"
+              ],
+              "dependencies": [
+                {
+                  "team": "HR",
+                  "reason": "for employee verification"
+                },
+                {
+                  "team": "Department Heads",
+                  "reason": "for approval"
+                },
+                {
+                  "team": "Projects",
+                  "reason": "for project-specific expense allocation"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "Finance Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Manager",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Line Manager",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "process_steps": {
+                "steps": [
+                  {
+                    "number": 1,
+                    "title": "Receive Expense Claim",
+                    "details": [
+                      "Employee submits via ERPNext OR email with receipts",
+                      "Must include: Date, description/purpose, amount, receipt/invoice, cost center, project (if applicable)"
+                    ]
+                  },
+                  {
+                    "number": 2,
+                    "title": "Verify Supporting Documents",
+                    "details": [
+                      "Check receipts/invoices: Valid (original, legible)? Amounts match? Vendor visible? Date reasonable?",
+                      "If missing/unclear: Return to employee for correction"
+                    ]
+                  },
+                  {
+                    "number": 3,
+                    "title": "Verify Expense is Legitimate",
+                    "details": [
+                      "Business-related: Travel (client meetings, events), meals (client entertainment), supplies (office/project), other approved",
+                      "If questionable: Ask employee, check with line manager, refer to expense policy"
+                    ]
+                  },
+                  {
+                    "number": 4,
+                    "title": "Verify Approval",
+                    "details": [
+                      "Must be approved by: Line manager (operational), Department head (larger amounts), Arhum/Azima (if > PKR 10k)",
+                      "If not approved: Route to appropriate approver"
+                    ]
+                  },
+                  {
+                    "number": 5,
+                    "title": "Create/Review in ERPNext",
+                    "details": [
+                      "If via email/paper: Create new (HR → Expense Claim → New)",
+                      "If in ERPNext: Open and review",
+                      "Fill in all fields"
+                    ]
+                  },
+                  {
+                    "number": 6,
+                    "title": "Link to Cost Center and Project ⭐ CRITICAL",
+                    "details": [
+                      "Assign Cost Center by department (8100-Marketing, 8200-BizDev, etc.)",
+                      "If project-specific: Link to Project and Customer",
+                      "Example: Travel for ABC Corp training → Project \"ABC Corp Training\", Customer \"ABC Corp\"",
+                      "Purpose: Accurate project costing for billing/profitability"
+                    ]
+                  },
+                  {
+                    "number": 7,
+                    "title": "Calculate Reimbursement",
+                    "details": [
+                      "Usually: Full expense amount",
+                      "Check: Per-diem limits, category caps, subtract any advance given",
+                      "Net reimbursement = Total - Advance - Disallowed"
+                    ]
+                  },
+                  {
+                    "number": 8,
+                    "title": "Submit in ERPNext",
+                    "details": [
+                      "Review all fields, attach receipts",
+                      "Click \"Submit\" → Status: \"Submitted\""
+                    ]
+                  },
+                  {
+                    "number": 9,
+                    "title": "Create Payment Entry",
+                    "details": [
+                      "From expense claim: Create → Payment Entry",
+                      "Type: Pay, Party: Employee, Amount: Reimbursement",
+                      "Link to expense claim"
+                    ]
+                  },
+                  {
+                    "number": 10,
+                    "title": "Process Payment",
+                    "details": [
+                      "**Bank Transfer (preferred):** HBL portal, enter employee bank details, process payment, note transaction reference",
+                      "**Cash (small amounts < PKR 1k):** From petty cash, get employee signature"
+                    ]
+                  },
+                  {
+                    "number": 11,
+                    "title": "Update ERPNext",
+                    "details": [
+                      "Add comment with payment details",
+                      "Mark status \"Paid\""
+                    ]
+                  },
+                  {
+                    "number": 12,
+                    "title": "File Records",
+                    "details": [
+                      "Naming: CHPL-EXP-.MM-.YY-.####",
+                      "Save: Claim form, receipts, payment confirmation",
+                      "Location: TBD (Google Drive > Finance > Expense Claims > [Year] > [Month])"
+                    ]
+                  }
+                ],
+                "decision_points": [],
+                "common_issues": [],
+                "tools": [],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Processing employee reimbursement requests for business expenses with proper documentation, approval, and project/cost center allocation.\n\n**Frequency:** As submitted (weekly processing)\n\n**Output:**\n- Expense claims verified and approved\n- Reimbursements paid to employees\n- Expenses properly allocated to projects and cost centers\n- Records filed\n\n**Dependencies:**\n- HR (for employee verification)\n- Department Heads (for approval)\n- Projects (for project-specific expense allocation)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate | ✅ | | | |\n| Finance Manager | | ✅ | | |\n| Line Manager | | | ✅ | |\n\n**Process Steps:**\n\n#### 1. Receive Expense Claim\n- Employee submits via ERPNext OR email with receipts\n- Must include: Date, description/purpose, amount, receipt/invoice, cost center, project (if applicable)\n\n#### 2. Verify Supporting Documents\n- Check receipts/invoices: Valid (original, legible)? Amounts match? Vendor visible? Date reasonable?\n- If missing/unclear: Return to employee for correction\n\n#### 3. Verify Expense is Legitimate\n- Business-related: Travel (client meetings, events), meals (client entertainment), supplies (office/project), other approved\n- If questionable: Ask employee, check with line manager, refer to expense policy\n\n#### 4. Verify Approval\n- Must be approved by: Line manager (operational), Department head (larger amounts), Arhum/Azima (if > PKR 10k)\n- If not approved: Route to appropriate approver\n\n#### 5. Create/Review in ERPNext\n- If via email/paper: Create new (HR → Expense Claim → New)\n- If in ERPNext: Open and review\n- Fill in all fields\n\n#### 6. Link to Cost Center and Project ⭐ CRITICAL\n- Assign Cost Center by department (8100-Marketing, 8200-BizDev, etc.)\n- If project-specific: Link to Project and Customer\n- Example: Travel for ABC Corp training → Project \"ABC Corp Training\", Customer \"ABC Corp\"\n- Purpose: Accurate project costing for billing/profitability\n\n#### 7. Calculate Reimbursement\n- Usually: Full expense amount\n- Check: Per-diem limits, category caps, subtract any advance given\n- Net reimbursement = Total - Advance - Disallowed\n\n#### 8. Submit in ERPNext\n- Review all fields, attach receipts\n- Click \"Submit\" → Status: \"Submitted\"\n\n#### 9. Create Payment Entry\n- From expense claim: Create → Payment Entry\n- Type: Pay, Party: Employee, Amount: Reimbursement\n- Link to expense claim\n\n#### 10. Process Payment\n- **Bank Transfer (preferred):** HBL portal, enter employee bank details, process payment, note transaction reference\n- **Cash (small amounts < PKR 1k):** From petty cash, get employee signature\n\n#### 11. Update ERPNext\n- Add comment with payment details\n- Mark status \"Paid\"\n\n#### 12. File Records\n- Naming: CHPL-EXP-.MM-.YY-.####\n- Save: Claim form, receipts, payment confirmation\n- Location: TBD (Google Drive > Finance > Expense Claims > [Year] > [Month])\n\n#### Decision Points\n**Exceeds policy limit:** Get special approval from Arhum/Azima, document reason\n**Receipt missing:** Cannot reimburse without proof (except <PKR 500 with employee declaration)\n**Questionable expense:** Discuss with employee and manager - if approved process, if rejected inform employee\n**Needs advance:** Process as Cash Advance (different from reimbursement), deduct from later claim\n\n#### Common Issues\n**Issue:** Claim submitted months late\n**Solution:** Check policy (usually 30-60 day limit), if beyond may need special approval\n\n**Issue:** Receipt illegible\n**Solution:** Ask for vendor duplicate receipt, if unavailable employee declaration + manager approval for small amounts\n\n**Issue:** Wrong project linked\n**Solution:** Amend expense claim, correct project, resubmit (critical for accurate costing)\n\n**Issue:** Multiple expenses spanning different cost centers\n**Solution:** Split into multiple claims OR use line-item cost center assignment\n\n#### Tools & Access\n- ERPNext (HR and Accounts)\n- HBL Bank Portal\n- Google Drive\n\n#### Key Notes\n- Project linking essential for client projects (accurate cost tracking)\n- Timely processing (7-14 days) keeps employees satisfied\n- Documentation (receipts) non-negotiable for > PKR 500\n\n---\n"
+            },
+            {
+              "id": "grant-transaction-tagging",
+              "name": "Grant Transaction Tagging",
+              "description": "Tagging all grant-funded expenses and revenues to specific grants and budget categories for donor reporting and compliance.",
+              "frequency": "Per Transaction (real-time tagging), Monthly (utilization review)",
+              "output": [
+                "All grant transactions tagged to grant projects in ERPNext",
+                "Budget utilization tracked by category",
+                "Monthly grant reports",
+                "Quarterly/annual donor reports"
+              ],
+              "dependencies": [
+                {
+                  "team": "Accounts Payable",
+                  "reason": "for expense tagging"
+                },
+                {
+                  "team": "Accounts Receivable",
+                  "reason": "if grant generates revenue"
+                },
+                {
+                  "team": "Payroll",
+                  "reason": "for salary allocation"
+                },
+                {
+                  "team": "Grant Management",
+                  "reason": "for budget and compliance oversight"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "Finance Associate",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Manager/Azima",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Grant Manager",
+                  "responsible": false,
+                  "accountable": false,
+                  "consulted": true,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "process_steps": {
+                "steps": [
+                  {
+                    "number": 1,
+                    "title": "Understand Grant Structure (One-Time Setup)",
+                    "details": [
+                      "For each grant document in ERPNext: Grant name/number, donor, amount, period, budget categories, restrictions",
+                      "Create Project in ERPNext for the grant",
+                      "Set up Budget linked to grant project"
+                    ]
+                  },
+                  {
+                    "number": 2,
+                    "title": "Identify Grant-Eligible Transactions",
+                    "details": [
+                      "When processing ANY transaction ask: \"Is this funded by a grant?\"",
+                      "If YES: Determine which grant",
+                      "If NO: Tag as \"General Operations\"",
+                      "Grant-eligible: Salaries (for staff on grant), program supplies, travel for grant activities, training costs, equipment (if approved)"
+                    ]
+                  },
+                  {
+                    "number": 3,
+                    "title": "Tag Transaction to Grant Project",
+                    "details": [
+                      "In every ERPNext form (Payment Entry, Expense Claim, Payroll Entry, Purchase Invoice):",
+                      "Project Field: Select grant project",
+                      "Cost Center: May be grant-specific or regular",
+                      "Customer: If grant services specific client/community",
+                      "Example: Interpreter salary for GSMA grant → Project \"GSMA Deaf Education\", Cost Center \"8500-SL&Training\", Note \"50% time on GSMA\""
+                    ]
+                  },
+                  {
+                    "number": 4,
+                    "title": "Allocate to Budget Category",
+                    "details": [
+                      "Each grant has categories (Personnel, Travel, Equipment, Supplies, Other per agreement)",
+                      "Use ERPNext Accounting Dimension or custom field",
+                      "If not available: Use description/remarks"
+                    ]
+                  },
+                  {
+                    "number": 5,
+                    "title": "Document Justification",
+                    "details": [
+                      "Add notes in ERPNext: Why charged to grant? What activity? What budget line?",
+                      "Example in remarks: \"Grant: GSMA, Activity: Teacher training workshop, Budget: Travel-Domestic, Justification: Transport for 2 trainers per deliverable 3.2\""
+                    ]
+                  },
+                  {
+                    "number": 6,
+                    "title": "Verify Against Budget",
+                    "details": [
+                      "Before processing: Check ERPNext → Projects → [Grant] → Budget",
+                      "View: Budgeted vs Actual vs Remaining",
+                      "If exceeded: Stop, check if reallocation allowed, get approval, document",
+                      "If not allowed: Cannot charge, use general funds"
+                    ]
+                  },
+                  {
+                    "number": 7,
+                    "title": "Monthly Utilization Review",
+                    "details": [
+                      "Generate: Project-wise transactions report",
+                      "Review by budget category: Total spent, remaining, burn rate",
+                      "Share summary with grant manager/Azima and donor if required"
+                    ]
+                  },
+                  {
+                    "number": 8,
+                    "title": "Quarterly/Annual Reporting",
+                    "details": [
+                      "Prepare for donors: Budget vs actual by category, narrative on funded activities, supporting docs",
+                      "Export from ERPNext: Financial report, budget utilization",
+                      "Format per donor requirements, submit by deadline"
+                    ]
+                  },
+                  {
+                    "number": 9,
+                    "title": "Audit Trail Maintenance",
+                    "details": [
+                      "Keep: Transaction records, receipts, timesheets, approvals, reports submitted",
+                      "Location: TBD (Google Drive > Finance > Grants > [Grant Name])",
+                      "Retention: Per grant (usually 5-7 years post-grant)"
+                    ]
+                  }
+                ],
+                "decision_points": [],
+                "common_issues": [],
+                "tools": [],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Tagging all grant-funded expenses and revenues to specific grants and budget categories for donor reporting and compliance.\n\n**Frequency:** Per Transaction (real-time tagging), Monthly (utilization review)\n\n**Output:**\n- All grant transactions tagged to grant projects in ERPNext\n- Budget utilization tracked by category\n- Monthly grant reports\n- Quarterly/annual donor reports\n\n**Dependencies:**\n- Accounts Payable (for expense tagging)\n- Accounts Receivable (if grant generates revenue)\n- Payroll (for salary allocation)\n- Grant Management (for budget and compliance oversight)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate | ✅ | | | |\n| Finance Manager/Azima | | ✅ | | |\n| Grant Manager | | | ✅ | |\n\n**Process Steps:**\n\n#### 1. Understand Grant Structure (One-Time Setup)\n- For each grant document in ERPNext: Grant name/number, donor, amount, period, budget categories, restrictions\n- Create Project in ERPNext for the grant\n- Set up Budget linked to grant project\n\n#### 2. Identify Grant-Eligible Transactions\n- When processing ANY transaction ask: \"Is this funded by a grant?\"\n- If YES: Determine which grant\n- If NO: Tag as \"General Operations\"\n- Grant-eligible: Salaries (for staff on grant), program supplies, travel for grant activities, training costs, equipment (if approved)\n\n#### 3. Tag Transaction to Grant Project\n- In every ERPNext form (Payment Entry, Expense Claim, Payroll Entry, Purchase Invoice):\n  - Project Field: Select grant project\n  - Cost Center: May be grant-specific or regular\n  - Customer: If grant services specific client/community\n- Example: Interpreter salary for GSMA grant → Project \"GSMA Deaf Education\", Cost Center \"8500-SL&Training\", Note \"50% time on GSMA\"\n\n#### 4. Allocate to Budget Category\n- Each grant has categories (Personnel, Travel, Equipment, Supplies, Other per agreement)\n- Use ERPNext Accounting Dimension or custom field\n- If not available: Use description/remarks\n\n#### 5. Document Justification\n- Add notes in ERPNext: Why charged to grant? What activity? What budget line?\n- Example in remarks: \"Grant: GSMA, Activity: Teacher training workshop, Budget: Travel-Domestic, Justification: Transport for 2 trainers per deliverable 3.2\"\n\n#### 6. Verify Against Budget\n- Before processing: Check ERPNext → Projects → [Grant] → Budget\n- View: Budgeted vs Actual vs Remaining\n- If exceeded: Stop, check if reallocation allowed, get approval, document\n- If not allowed: Cannot charge, use general funds\n\n#### 7. Monthly Utilization Review\n- Generate: Project-wise transactions report\n- Review by budget category: Total spent, remaining, burn rate\n- Share summary with grant manager/Azima and donor if required\n\n#### 8. Quarterly/Annual Reporting\n- Prepare for donors: Budget vs actual by category, narrative on funded activities, supporting docs\n- Export from ERPNext: Financial report, budget utilization\n- Format per donor requirements, submit by deadline\n\n#### 9. Audit Trail Maintenance\n- Keep: Transaction records, receipts, timesheets, approvals, reports submitted\n- Location: TBD (Google Drive > Finance > Grants > [Grant Name])\n- Retention: Per grant (usually 5-7 years post-grant)\n\n#### Decision Points\n**Transaction applies to multiple grants:** Determine primary or split proportionally (60% Grant A, 40% Grant B), document split ratio\n**Budget category overspent but surplus elsewhere:** Check if reallocation allowed, if YES get donor approval and document, if NO use general funds\n**Unsure if eligible:** Review grant agreement, consult grant manager, if doubt charge to general (safer for audit)\n\n#### Common Issues\n**Issue:** Forgot to tag transaction\n**Solution:** Amend in ERPNext, add project/grant tag, resubmit ASAP\n\n**Issue:** Tagged to wrong grant\n**Solution:** Amend, change to correct grant, document correction\n\n**Issue:** Grant budget exhausted mid-project\n**Solution:** Review spending, request reallocation if possible, escalate for additional funding or scope reduction\n\n**Issue:** Donor rejects expense in audit\n**Solution:** Move from grant to general funds retroactively, update reports, learn for future\n\n**Issue:** Multiple staff partially on grant\n**Solution:** Use timesheets for % of time, allocate proportionally (30% time = 30% of salary to grant)\n\n#### Tools & Access\n- ERPNext (Projects, Budget, Accounts)\n- Google Drive (grant documentation)\n- Grant agreements\n\n#### Key Notes\n- Tag EVERY transaction (missing tags = inaccurate reports = donor issues)\n- Budget monitoring continuous (don't wait for month-end)\n- Documentation CRITICAL (audits can happen years later)\n- When in doubt, ask (better to clarify than mis-charge)\n\n---\n"
+            },
+            {
+              "id": "petty-cash-management",
+              "name": "Petty Cash Management",
+              "description": "Managing small cash fund for urgent, minor expenses that cannot wait for regular payment processing.",
+              "frequency": "Daily (disbursements), Weekly (reconciliation), Monthly (replenishment and reporting)",
+              "output": [
+                "Petty cash disbursed for approved small expenses",
+                "Petty cash register maintained with all transactions",
+                "Regular reconciliation (cash on hand matches register)",
+                "Monthly petty cash report"
+              ],
+              "dependencies": [
+                {
+                  "team": "AdminOps",
+                  "reason": "often petty cash custodian"
+                },
+                {
+                  "team": "All Departments",
+                  "reason": "for small urgent purchases"
+                }
+              ],
+              "raci": [
+                {
+                  "role": "Petty Cash Custodian (AdminOps/Finance)",
+                  "responsible": true,
+                  "accountable": false,
+                  "consulted": false,
+                  "informed": false
+                },
+                {
+                  "role": "Finance Associate",
+                  "responsible": false,
+                  "accountable": true,
+                  "consulted": false,
+                  "informed": false
+                }
+              ],
+              "notes": [],
+              "process_steps": {
+                "steps": [
+                  {
+                    "number": 1,
+                    "title": "Petty Cash Setup (One-Time)",
+                    "details": [
+                      "Determine fund size: PKR 5,000 - 10,000 (based on monthly small expenses)",
+                      "Create petty cash register (Excel/log book)",
+                      "Columns: Date, Description, Amount, Receipt #, Paid To, Approved By, Balance",
+                      "Designate custodian",
+                      "Set limits: <PKR 500 no approval, PKR 500-1000 supervisor approval, >PKR 1000 avoid petty cash"
+                    ]
+                  },
+                  {
+                    "number": 2,
+                    "title": "Initial Funding",
+                    "details": [
+                      "Withdraw from bank (approved amount)",
+                      "Record in ERPNext: Payment Entry, From Bank to Petty Cash account",
+                      "Place in secure box/drawer",
+                      "Record opening balance in register"
+                    ]
+                  },
+                  {
+                    "number": 3,
+                    "title": "Disbursing Cash",
+                    "details": [
+                      "Staff requests: Purpose? Amount? Urgent?",
+                      "Verify: Urgent and can't wait? Within limits?",
+                      "If approved: Count and give cash, get acknowledgment (signature), note \"Receipt due within 24 hours\""
+                    ]
+                  },
+                  {
+                    "number": 4,
+                    "title": "Receiving Receipts",
+                    "details": [
+                      "Staff returns with: Receipt/invoice from vendor, any change",
+                      "Verify: Receipt valid (vendor, amount, date), amount matches or staff returns change",
+                      "If no receipt: Staff declaration for small amounts (<PKR 200), larger amounts staff must reimburse"
+                    ]
+                  },
+                  {
+                    "number": 5,
+                    "title": "Recording Transactions",
+                    "details": [
+                      "In register: Date, description (what purchased), amount, receipt #, paid to (staff/vendor), approved by (if needed), running balance",
+                      "Attach receipt to register or file separately"
+                    ]
+                  },
+                  {
+                    "number": 6,
+                    "title": "Daily/Weekly Reconciliation",
+                    "details": [
+                      "Count physical cash",
+                      "Compare to register balance",
+                      "Formula: Opening - Disbursements + Replenishments = Current balance",
+                      "If mismatch: Investigate (unrecorded transaction? Error? Missing receipt?), resolve immediately, report shortage if unresolved"
+                    ]
+                  },
+                  {
+                    "number": 7,
+                    "title": "Replenishing Petty Cash",
+                    "details": [
+                      "When low (e.g., <PKR 2,000): Tally receipts since last replenishment",
+                      "Prepare request: Total expenses PKR X, current balance PKR Y, replenishment needed PKR X",
+                      "Submit receipts to Finance for verification",
+                      "Get approval"
+                    ]
+                  },
+                  {
+                    "number": 8,
+                    "title": "Processing Replenishment",
+                    "details": [
+                      "Finance verifies receipts",
+                      "Create payment entry: Bank → Petty Cash, amount = replenishment",
+                      "Attach all receipts",
+                      "Withdraw cash, hand to custodian",
+                      "Update register: \"Replenishment received PKR X\""
+                    ]
+                  },
+                  {
+                    "number": 9,
+                    "title": "Assign Cost Centers",
+                    "details": [
+                      "When recording in ERPNext (replenishment or month-end):",
+                      "Office supplies for BD → 8200-BizDev",
+                      "Courier for Finance → 8600-Finance",
+                      "General office → 8800-AdminOps",
+                      "Project-specific → Link to project"
+                    ]
+                  },
+                  {
+                    "number": 10,
+                    "title": "Monthly Report",
+                    "details": [
+                      "Tally all expenses: By category (supplies, courier, refreshments, repairs, misc)",
+                      "Create summary: Opening balance, total expenses (by category), replenishments, closing balance",
+                      "Submit to Finance",
+                      "Finance records in ERPNext if not already done"
+                    ]
+                  },
+                  {
+                    "number": 11,
+                    "title": "Secure Storage",
+                    "details": [
+                      "Locked drawer or cash box",
+                      "Access only by custodian(s)",
+                      "Not left unattended",
+                      "Key: Custodian holds, spare with supervisor"
+                    ]
+                  }
+                ],
+                "decision_points": [],
+                "common_issues": [],
+                "tools": [],
+                "related_workstreams": []
+              },
+              "content_raw": "\n**Description:** Managing small cash fund for urgent, minor expenses that cannot wait for regular payment processing.\n\n**Frequency:** Daily (disbursements), Weekly (reconciliation), Monthly (replenishment and reporting)\n\n**Output:**\n- Petty cash disbursed for approved small expenses\n- Petty cash register maintained with all transactions\n- Regular reconciliation (cash on hand matches register)\n- Monthly petty cash report\n\n**Dependencies:**\n- AdminOps (often petty cash custodian)\n- All Departments (for small urgent purchases)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Petty Cash Custodian (AdminOps/Finance) | ✅ | | | |\n| Finance Associate | | ✅ | | |\n\n**Process Steps:**\n\n#### 1. Petty Cash Setup (One-Time)\n- Determine fund size: PKR 5,000 - 10,000 (based on monthly small expenses)\n- Create petty cash register (Excel/log book)\n- Columns: Date, Description, Amount, Receipt #, Paid To, Approved By, Balance\n- Designate custodian\n- Set limits: <PKR 500 no approval, PKR 500-1000 supervisor approval, >PKR 1000 avoid petty cash\n\n#### 2. Initial Funding\n- Withdraw from bank (approved amount)\n- Record in ERPNext: Payment Entry, From Bank to Petty Cash account\n- Place in secure box/drawer\n- Record opening balance in register\n\n#### 3. Disbursing Cash\n- Staff requests: Purpose? Amount? Urgent?\n- Verify: Urgent and can't wait? Within limits?\n- If approved: Count and give cash, get acknowledgment (signature), note \"Receipt due within 24 hours\"\n\n#### 4. Receiving Receipts\n- Staff returns with: Receipt/invoice from vendor, any change\n- Verify: Receipt valid (vendor, amount, date), amount matches or staff returns change\n- If no receipt: Staff declaration for small amounts (<PKR 200), larger amounts staff must reimburse\n\n#### 5. Recording Transactions\n- In register: Date, description (what purchased), amount, receipt #, paid to (staff/vendor), approved by (if needed), running balance\n- Attach receipt to register or file separately\n\n#### 6. Daily/Weekly Reconciliation\n- Count physical cash\n- Compare to register balance\n- Formula: Opening - Disbursements + Replenishments = Current balance\n- If mismatch: Investigate (unrecorded transaction? Error? Missing receipt?), resolve immediately, report shortage if unresolved\n\n#### 7. Replenishing Petty Cash\n- When low (e.g., <PKR 2,000): Tally receipts since last replenishment\n- Prepare request: Total expenses PKR X, current balance PKR Y, replenishment needed PKR X\n- Submit receipts to Finance for verification\n- Get approval\n\n#### 8. Processing Replenishment\n- Finance verifies receipts\n- Create payment entry: Bank → Petty Cash, amount = replenishment\n- Attach all receipts\n- Withdraw cash, hand to custodian\n- Update register: \"Replenishment received PKR X\"\n\n#### 9. Assign Cost Centers\n- When recording in ERPNext (replenishment or month-end):\n  - Office supplies for BD → 8200-BizDev\n  - Courier for Finance → 8600-Finance\n  - General office → 8800-AdminOps\n  - Project-specific → Link to project\n\n#### 10. Monthly Report\n- Tally all expenses: By category (supplies, courier, refreshments, repairs, misc)\n- Create summary: Opening balance, total expenses (by category), replenishments, closing balance\n- Submit to Finance\n- Finance records in ERPNext if not already done\n\n#### 11. Secure Storage\n- Locked drawer or cash box\n- Access only by custodian(s)\n- Not left unattended\n- Key: Custodian holds, spare with supervisor\n\n#### Decision Points\n**Exceeds limit:** Use regular payment process (Accounts Payable), don't deplete petty cash\n**No receipt:** <PKR 200 staff declaration may be accepted, >PKR 200 staff must reimburse OR produce receipt\n**Running low before schedule:** Replenish immediately (don't wait)\n**Shortage in reconciliation:** Investigate, if can't explain custodian may be responsible, document and report\n\n#### Common Issues\n**Issue:** Staff takes without signing\n**Solution:** Enforce policy - no signature = no cash\n\n**Issue:** Receipt submitted late\n**Solution:** Set policy (24-48 hours max), if late staff may explain or reimburse\n\n**Issue:** Constantly running out\n**Solution:** Increase fund size OR encourage planning and regular payments\n\n**Issue:** Receipt lost\n**Solution:** Staff declaration with detail, if frequent staff reimburses personally\n\n**Issue:** Cash vs register mismatch\n**Solution:** Recount, re-check math, review recent transactions, if persistent investigate thoroughly and report\n\n#### Tools & Access\n- Physical cash box (secure)\n- Petty cash register (Excel/log book)\n- Bank access for withdrawal\n\n#### Key Numbers\n- Transaction Limit: PKR 500-2,000 max\n- Fund Size: PKR 5,000-10,000 typical\n- Approval Threshold: <PKR 500 no approval, >PKR 500 supervisor\n- Receipt Required: Mandatory (except <PKR 200 with declaration)\n\n---\n"
             }
           ]
         },
@@ -1042,400 +1147,40 @@
           "id": "accounting-reporting",
           "name": "Accounting & Reporting",
           "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "bookkeeping",
-              "name": "Bookkeeping",
-              "description": "Record all financial transactions daily by date and cost center in ERPNext.",
-              "frequency": "Weekly (entry), Daily (monitoring)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Record all financial transactions daily by date and cost center in ERPNext.\n\n**Frequency:** Weekly (entry), Daily (monitoring)\n\n**Output:** Updated general ledger, transactions by cost center, organized records\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n---\n"
-            },
-            {
-              "id": "bank-reconciliation",
-              "name": "Bank Reconciliation",
-              "description": "**Daily Process (Target):** Match ledger with bank statements daily. **Currently:** Done every few weeks but should be daily.",
-              "frequency": "Daily (target)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** **Daily Process (Target):** Match ledger with bank statements daily. **Currently:** Done every few weeks but should be daily.\n\n**Frequency:** Daily (target)\n\n**Output:** Bank reconciliation report, matched transactions, discrepancies resolved, day-end position verified\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Implementation Goal:**\n- **Target:** Daily reconciliation to catch discrepancies same-day\n- **Benefit:** Identifies unauthorized transactions immediately\n- **Current State:** Happens every few weeks\n\n---\n"
-            },
-            {
-              "id": "financial-reporting",
-              "name": "Financial Reporting",
-              "description": "Prepare monthly income/expense summaries, P&L, balance sheet, cash flow statements.",
-              "frequency": "Monthly",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Leadership (Arhum)",
-                  "responsible": false,
-                  "accountable": true,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Prepare monthly income/expense summaries, P&L, balance sheet, cash flow statements.\n\n**Frequency:** Monthly\n\n**Output:** Monthly financial report package (Income Statement, Balance Sheet, Cash Flow, Cost center analysis, Budget vs Actual variance)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Leadership (Arhum) | | ✅ | | |\n\n---\n"
-            },
-            {
-              "id": "budgeting-forecasting",
-              "name": "Budgeting & Forecasting",
-              "description": "**Not Currently Implemented - Future Development.** Collect departmental budgets, prepare annual budgets, create quarterly forecasts.",
-              "frequency": "Annual (budget), Quarterly (forecast)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Department Heads",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [
-                {
-                  "title": "Key Notes",
-                  "content": [
-                    "Will inform: annual increments, bonuses, capital purchases",
-                    "Enables sustainability planning",
-                    "Umaima to provide guidance on processes"
-                  ]
-                }
-              ],
-              "content_raw": "\n**Description:** **Not Currently Implemented - Future Development.** Collect departmental budgets, prepare annual budgets, create quarterly forecasts.\n\n**Frequency:** Annual (budget), Quarterly (forecast)\n\n**Output:** Annual budget by department/cost center, quarterly forecasts, resource allocation plan, sustainability analysis\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Department Heads | | | ✅ | |\n\n**Key Notes:**\n- Will inform: annual increments, bonuses, capital purchases\n- Enables sustainability planning\n- Umaima to provide guidance on processes\n\n---\n"
-            },
-            {
-              "id": "audit-preparation",
-              "name": "Audit Preparation",
-              "description": "Compile records, receipts, ledgers for internal and external audits.",
-              "frequency": "Annual (external), Ongoing (internal readiness)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "External Auditor",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Compile records, receipts, ledgers for internal and external audits.\n\n**Frequency:** Annual (external), Ongoing (internal readiness)\n\n**Output:** Organized audit documentation, complete transaction records, response to auditor queries\n\n**Dependencies:** External Auditor, All Departments\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| External Auditor | | | ✅ | |\n\n**Audit Types:**\n- **External:** Third-party review for fraud detection and compliance\n- **Internal:** Self-review of processes and controls\n\n---\n"
-            }
-          ]
+          "workstreams": []
         },
         {
           "id": "grants-management",
           "name": "Grants Management",
           "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "grant-registry-budget-allocation-expense-tracking",
-              "name": "Grant Registry, Budget Allocation, Expense Tracking",
-              "description": "Record active grants, distribute funds across cost centers, track utilization monthly.",
-              "frequency": "Per Grant (setup), Monthly (tracking)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Record active grants, distribute funds across cost centers, track utilization monthly.\n\n**Frequency:** Per Grant (setup), Monthly (tracking)\n\n**Output:** Grant registry, allocated budgets, utilization reports, variance analysis\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Critical Requirement:**\n- **Transaction Tagging:** Every expense taggable to specific grant in ERPNext\n- **Example:** GSMA grant - all related expenses tagged \"GSMA Project\"\n- Can generate ledger showing only GSMA income and expenses\n- **Donor Requirement:** GSMA asked \"Can your system isolate our grant transactions?\" - System must support this\n\n---\n"
-            },
-            {
-              "id": "donor-reporting-grant-close-out",
-              "name": "Donor Reporting & Grant Close-Out",
-              "description": "Submit financial and narrative reports per grant cycle. Prepare final statements at completion.",
-              "frequency": "Per Grant Cycle, At Completion",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "Program Teams",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Submit financial and narrative reports per grant cycle. Prepare final statements at completion.\n\n**Frequency:** Per Grant Cycle, At Completion\n\n**Output:** Financial reports by grant, narrative reports, supporting documentation, final statements, archived grant files\n\n**Dependencies:** All Departments (for program activities)\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| Program Teams | | | ✅ | |\n\n---\n"
-            }
-          ]
+          "workstreams": []
         },
         {
           "id": "legal-compliance",
           "name": "Legal & Compliance",
           "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "contract-review",
-              "name": "Contract Review",
-              "description": "Review all agreements for financial terms, legal compliance, payment clauses. Track special terms (e.g., annual price increases).",
-              "frequency": "Per Contract",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "BD Team",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Review all agreements for financial terms, legal compliance, payment clauses. Track special terms (e.g., annual price increases).\n\n**Frequency:** Per Contract\n\n**Output:** Contract reviewed/approved, key terms logged, contract filed, financial obligations flagged\n\n**Dependencies:** BD, Leadership\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| BD Team | | | ✅ | |\n\n**Example:** HBL 3-year contract with 5% annual price increase - Finance tracks pricing must increase after 12 months\n\n---\n"
-            },
-            {
-              "id": "tax-compliance",
-              "name": "Tax Compliance",
-              "description": "File all required taxes. ConnectHear uses **cash basis accounting** - revenue only reported when payment received.",
-              "frequency": "Daily/Monthly/Quarterly/Annual",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** File all required taxes. ConnectHear uses **cash basis accounting** - revenue only reported when payment received.\n\n**Tax Schedule:**\n- **Monthly:** (1) Payroll Tax on payday, (2) Sales Tax 15% on payments received that month, (3) Withholding Tax 4% on vendor payments\n- **Quarterly:** Advance Income Tax (AIT) - prediction and prepayment\n- **Annual:** Income Tax - final filing reconciling AIT with actual profit\n\n**Frequency:** Daily/Monthly/Quarterly/Annual\n\n**Output:** Tax returns filed on time, payment receipts, calculation documentation, compliance records\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n\n**Critical Understanding - Cash Basis:**\n- **Example:** UBL hasn't paid 2023/2024 invoices\n- ConnectHear has NOT reported this revenue to FBR (payment not received)\n- When UBL pays in 2025, revenue reported in 2025 tax filings\n- **Benefit:** Don't pay tax on money not yet received\n- **Implication:** Accounts receivable tracking is critical\n\n---\n"
-            },
-            {
-              "id": "regulatory-liaison-risk-register-insurance",
-              "name": "Regulatory Liaison, Risk Register, Insurance",
-              "description": "Coordinate with SECP, FBR, SRB, PRA. Maintain risk register with impact-likelihood matrix. Maintain insurance coverage for assets and people.",
-              "frequency": "Monthly/Quarterly/Annual",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "All Department Heads",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Coordinate with SECP, FBR, SRB, PRA. Maintain risk register with impact-likelihood matrix. Maintain insurance coverage for assets and people.\n\n**Frequency:** Monthly/Quarterly/Annual\n\n**Output:** Portal access maintained, compliance filings, risk register with mitigation strategies, active insurance policies\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| All Department Heads | | | ✅ | |\n\n---\n"
-            }
-          ]
+          "workstreams": []
         },
         {
-          "id": "procurement-vendor",
-          "name": "Procurement & Vendor",
+          "id": "procurement-vendor-management",
+          "name": "Procurement & Vendor Management",
           "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "vendor-onboarding-purchase-requisition-payment-po-asset-register",
-              "name": "Vendor Onboarding, Purchase Requisition, Payment & PO, Asset Register",
-              "description": "Collect vendor documentation (NTN, CNIC, bank details), approve purchases above threshold, match invoice to PO before payment, track capital assets with depreciation.",
-              "frequency": "Per Vendor/Purchase, Quarterly (asset register)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "AdminOps",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Collect vendor documentation (NTN, CNIC, bank details), approve purchases above threshold, match invoice to PO before payment, track capital assets with depreciation.\n\n**Frequency:** Per Vendor/Purchase, Quarterly (asset register)\n\n**Output:** Vendor profiles in ERPNext, approved purchases, three-way match completed, asset register updated\n\n**Dependencies:** AdminOps, Vendors\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| AdminOps | | | ✅ | |\n\n---\n"
-            }
-          ]
+          "workstreams": []
         },
         {
-          "id": "audit-controls",
-          "name": "Audit & Controls",
+          "id": "audit-internal-controls",
+          "name": "Audit & Internal Controls",
           "emoji": "📍",
-          "workstreams": [
-            {
-              "id": "internal-checks-external-audit-process-documentation",
-              "name": "Internal Checks, External Audit, Process Documentation",
-              "description": "Monthly random transaction sampling, coordinate annual external audit, maintain finance SOPs using GSMA policies as template.",
-              "frequency": "Monthly (internal checks), Annual (external audit/SOP review)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "External Auditor",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Monthly random transaction sampling, coordinate annual external audit, maintain finance SOPs using GSMA policies as template.\n\n**Frequency:** Monthly (internal checks), Annual (external audit/SOP review)\n\n**Output:** Internal audit reports, external audit facilitation and recommendations, complete finance SOPs\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| External Auditor | | | ✅ | |\n\n**Key Reference:** GSMA policies to be shared by Arhum as template\n\n---\n"
-            },
-            {
-              "id": "approval-thresholds",
-              "name": "Approval Thresholds",
-              "description": "Implement spending approval limits based on transaction amount.",
-              "frequency": "Continuous (enforcement), Quarterly (review)",
-              "output": [],
-              "dependencies": [],
-              "raci": [
-                {
-                  "role": "Finance Associate (Umaima)",
-                  "responsible": true,
-                  "accountable": false,
-                  "consulted": false,
-                  "informed": false
-                },
-                {
-                  "role": "All Department Heads",
-                  "responsible": false,
-                  "accountable": false,
-                  "consulted": true,
-                  "informed": false
-                }
-              ],
-              "notes": [],
-              "content_raw": "\n**Description:** Implement spending approval limits based on transaction amount.\n\n**Proposed Structure (Example - To Be Finalized):**\n- Up to PKR 1,000: Line Manager\n- PKR 1,001-10,000: Finance Associate\n- Above PKR 10,000: Leadership (Arhum/Azima)\n\n**Frequency:** Continuous (enforcement), Quarterly (review)\n\n**Output:** Approval matrix documented, threshold enforcement in ERPNext, exception reports\n\n**RACI:**\n\n| Role | R | A | C | I |\n|------|---|---|---|---|\n| Finance Associate (Umaima) | ✅ | | | |\n| All Department Heads | | | ✅ | |\n\n---\n"
-            }
-          ]
+          "workstreams": []
         }
       ]
-    },
-    {
-      "id": "content-design",
-      "name": "Content & Design",
-      "emoji": "🔷",
-      "areas": []
-    },
-    {
-      "id": "product-projects",
-      "name": "Product & Projects",
-      "emoji": "🔷",
-      "areas": []
-    },
-    {
-      "id": "sign-language-training-interpretation",
-      "name": "Sign Language – Training & Interpretation",
-      "emoji": "🔷",
-      "areas": []
-    },
-    {
-      "id": "marketing",
-      "name": "Marketing",
-      "emoji": "🔷",
-      "areas": []
-    },
-    {
-      "id": "adminops",
-      "name": "AdminOps",
-      "emoji": "🔷",
-      "areas": []
-    },
-    {
-      "id": "leadership-pmo",
-      "name": "Leadership / PMO",
-      "emoji": "🔷",
-      "areas": []
     }
   ],
   "metadata": {
     "version": "2.0",
     "last_updated": "November 2025",
-    "total_departments": 8,
-    "total_areas": 12,
-    "total_workstreams": 40
+    "total_departments": 1,
+    "total_areas": 6,
+    "total_workstreams": 8
   }
 }
